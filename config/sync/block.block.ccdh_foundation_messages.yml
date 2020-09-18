@@ -1,0 +1,22 @@
+uuid: a0f6853e-4aff-4339-9770-0480536a4678
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - ccdh_foundation
+_core:
+  default_config_hash: 9RnnTUBcn0WRWXfrGOnId2H0Q31uQUeu_F5TnDxl2yg
+id: ccdh_foundation_messages
+theme: ccdh_foundation
+region: header
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

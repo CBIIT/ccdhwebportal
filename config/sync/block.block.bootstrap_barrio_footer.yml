@@ -1,0 +1,27 @@
+uuid: cc245a08-e8dc-430f-8f80-4ec1a3b9091f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - bootstrap_barrio
+_core:
+  default_config_hash: 4VDn3bLy009pYlPUWQBHaaGVJu8FPnxNfr2DYrAnNHI
+id: bootstrap_barrio_footer
+theme: bootstrap_barrio
+region: top_header
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

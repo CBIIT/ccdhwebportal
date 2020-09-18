@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Bootstrap for Drupal theme.
+ */
+
+/**
+ * Site name, logo and slogan global variable.
+ */
+function bootstrap_for_drupal_preprocess(&$variables) {
+  $site_config = \Drupal::config('system.site');
+  $variables['site_name'] = $site_config->get('name');
+  $variables['site_slogan'] = $site_config->get('slogan');
+  $variables['logopath'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+};
+
+/**
+ * Set a placeholder for all search form elements.
+ */
+function bootstrap_for_drupal_preprocess_input(&$variables) {
+  if ($variables['attributes']['type'] == 'search') {
+    $variables['attributes']['placeholder'] = t('Search');
+  }
+}
+
+/**
+ * Implements theme_preprocess_textarea.
+ */
+function bootstrap_for_drupal_preprocess_textarea(&$variables) {
+  $variables['attributes']['class'][] = 'form-control';
+}

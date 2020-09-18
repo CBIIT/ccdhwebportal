@@ -1,0 +1,21 @@
+uuid: 7804e0c4-929c-41eb-bdcd-df5d034e2454
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.full_page_
+  module:
+    - layout_builder
+id: node.full_page_.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: full_page_
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

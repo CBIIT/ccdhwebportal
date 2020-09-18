@@ -1,0 +1,8 @@
+uuid: bba03581-b6f2-4217-9f28-468750a5725d
+langcode: en
+status: true
+dependencies: {  }
+id: faq
+label: FAQ
+description: ''
+locked: false

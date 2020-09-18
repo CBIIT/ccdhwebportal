@@ -1,0 +1,25 @@
+uuid: 6dd8624d-882a-4dcf-a39e-fe0c40704c59
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - nci_barrio
+id: mainnavigation
+theme: nci_barrio
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 032b9940-f6a2-4088-8f15-f39890b12e87
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ccdh_foundation
+_core:
+  default_config_hash: fNNLN48MSGSLiqwIFywCuxH2Dk_IxDbaP0kYhg_IPrg
+id: ccdh_foundation_content
+theme: ccdh_foundation
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

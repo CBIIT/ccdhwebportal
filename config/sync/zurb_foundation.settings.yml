@@ -1,0 +1,45 @@
+features:
+  comment_user_picture: 1
+  favicon: 1
+  node_user_picture: 1
+settings:
+  zurb_foundation_status_in_reveal: false
+  zurb_foundation_use_respondjs: false
+  zurb_foundation_disable_base_css: false
+  zurb_foundation_disable_base_js: false
+  zurb_foundation_meta_header_grid: true
+  zurb_foundation_top_bar_enable: false
+  zurb_foundation_top_bar_grid: false
+  zurb_foundation_top_bar_sticky: false
+  zurb_foundation_top_bar_menu_text: Menu
+  zurb_foundation_top_bar_custom_back_text: true
+  zurb_foundation_top_bar_back_text: Back
+  zurb_foundation_top_bar_is_hover: true
+  zurb_foundation_top_bar_search: false
+  zurb_foundation_top_bar_languageswitcher: false
+  zurb_foundation_page_account_info: true
+  zurb_foundation_block_copyright_show: true
+  zurb_foundation_block_copyright_custom_text: false
+  zurb_foundation_block_copyright_text: ''
+langcode: en
+_core:
+  default_config_hash: 34bO-DNU9S8mKFU-DmtVAT7Q0lV8ilL47-SPZwvXiuc
+favicon:
+  use_default: 1
+zurb_foundation_status_in_reveal: 0
+zurb_foundation_use_respondjs: 0
+zurb_foundation_meta_header_grid: 0
+zurb_foundation_top_bar_enable: '1'
+zurb_foundation_top_bar_grid: 0
+zurb_foundation_top_bar_sticky: 0
+zurb_foundation_top_bar_is_hover: 0
+zurb_foundation_top_bar_menu_text: ''
+zurb_foundation_top_bar_custom_back_text: 0
+zurb_foundation_top_bar_back_text: ''
+zurb_foundation_top_bar_search: 1
+zurb_foundation_page_account_info: 0
+zurb_foundation_block_copyright_show: 0
+zurb_foundation_block_copyright_custom_text: 0
+zurb_foundation_block_copyright_text: ''
+zurb_foundation_disable_base_css: 0
+zurb_foundation_disable_base_js: 0

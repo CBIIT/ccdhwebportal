@@ -1,0 +1,31 @@
+# METADATA
+name: Bootstrap for Drupal
+type: theme
+description: 'Bootstrap for Drupal - octogone.dev'
+core: 8.x
+core_version_requirement: ^8 || ^9
+base theme: classy
+
+libraries:
+  - bootstrap_for_drupal/global-styling
+
+regions:
+  header_special: 'Header - special'
+  nav_main: 'Navigation - Main'
+  nav_add: 'Navigation - Additional '
+  content_before: 'Content - before'
+  content: 'Content - main '
+  content_after: 'Content - after'
+  sidebar_left: 'Content - Sidebar'
+  footer_left: 'Footer - left box'
+  footer_center: 'Footer - center box'
+  footer_right: 'Footer - right box'
+  footer_sub_left: 'Footer sub - left box'
+  footer_sub_center: 'Footer sub - center box'
+  footer_sub_right: 'Footer sub - right box'
+  modal_container: 'Modal box container'
+
+# Information added by Drupal.org packaging script on 2020-04-28
+version: '8.x-2.10'
+project: 'bfd'
+datestamp: 1588088946

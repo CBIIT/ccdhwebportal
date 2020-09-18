@@ -1,0 +1,20 @@
+uuid: 929b31dc-092b-49d9-8ea8-f9a8851895b9
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ccdh_foundation
+_core:
+  default_config_hash: ffxthelqQF8xcr4GTG4HlaNNsluiHftN0pujmQpW0bQ
+id: ccdh_foundation_local_actions
+theme: ccdh_foundation
+region: header
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

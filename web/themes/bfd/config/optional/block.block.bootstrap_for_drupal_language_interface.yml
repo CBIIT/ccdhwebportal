@@ -1,0 +1,18 @@
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - bootstrap_for_drupal
+id: bootstrap_for_drupal_language_interface
+theme: bootstrap_for_drupal
+region: nav_add
+weight: 2
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: ''
+  provider: language
+  label_display: visible
+visibility: {  }

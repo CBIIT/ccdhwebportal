@@ -1,0 +1,25 @@
+uuid: d9c178ca-2d4f-4a74-8c6b-6807dbffd06a
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:6c7d48b1-a998-44d4-8ede-e8b919d9ca0e'
+  module:
+    - block_content
+  theme:
+    - ccdh_foundation
+id: ccdh_foundation_otherresources
+theme: ccdh_foundation
+region: sidebar_second
+weight: -1
+provider: null
+plugin: 'block_content:6c7d48b1-a998-44d4-8ede-e8b919d9ca0e'
+settings:
+  id: 'block_content:6c7d48b1-a998-44d4-8ede-e8b919d9ca0e'
+  label: 'Other Resources'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,18 @@
+status: true
+dependencies:
+  module:
+    - shortcut
+  theme:
+    - bootstrap_for_drupal
+id: bootstrap_for_drupal_shortcuts
+theme: bootstrap_for_drupal
+region: sidebar_left
+weight: -14
+provider: null
+plugin: shortcuts
+settings:
+  id: shortcuts
+  label: 'shortcut'
+  provider: shortcut
+  label_display: visible
+visibility: {  }

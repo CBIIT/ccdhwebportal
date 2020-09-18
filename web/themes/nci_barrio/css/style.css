@@ -1,0 +1,152 @@
+/**
+ * Place your custom styles here.
+ */
+
+.region-footer { padding-top: 5px;}
+.region-footer .block-menu { display:block; width:100%; float:none;}
+.region-footer ul.menu { margin: 0; padding: 0 0 0.5em; list-style-type: none; text-align: center; }
+.region-footer ul.menu li {display: inline-block;}
+.region-footer ul.menu li a {text-decoration: none; padding: 0 5px; color: #737373; font-size: 12px;}
+.region-footer ul.menu li a:hover {color: #0e3a55; }
+.region-footer .block-block div {text-align: center; padding-top: 0.5em; font-size: 12px; color: #737373;}
+.footer {
+	padding-top:15px;
+}
+
+div[role="main"] h1 {
+    display:none;
+}
+.nav-tabs > li {
+	display:none;
+}
+
+.nav-tabs {
+    border-bottom: 0px;
+}
+
+#site-logo img {
+    display: block;
+    width: 500px;
+    height: auto;
+}
+
+
+#navbar {
+  background-color:#fff;
+}
+
+/* cct-srk */
+dt {
+  width:200px;
+  float:left;
+}
+/* Globals */
+.eventsreg-red, .nci-red, .site-color, #cct-srk-title {
+	color: #C6375E;
+}
+.nci-body, #cct-srk-body {
+	font-size:16px;
+}
+/* Center table */
+/* https://www.granneman.com/webdev/coding/css/centertables */
+div.container-table-eventsreg {
+  width:98%; 
+  margin:1%;
+}
+table#table1 {
+}
+/* Need a differnet width? Add max-width style on <table> */
+/* and/or add min-width */
+table.table-eventsreg {
+    margin-left:auto; 
+    margin-right:auto; 
+    max-width:600px;
+    background-color:white;
+}
+
+table.table-eventsreg > thead > tr  {
+  background-color:LightSteelBlue;
+  font-weight:bold;
+  text-align:center;
+} 
+
+/* Directors Colloquium */
+
+/*fixes padding issues for Select Other boxes inside of flexbox -- usded on CCT/FYI Colloquium */
+.legend-fix > legend {
+  padding-bottom: 4px;
+}
+
+/*changes panel title to bold and larger font -- usded on CCT/FYI Colloquium */
+.panel-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/*changes specific other option to have margin below -- usded on CCT/FYI Colloquium */
+#edit-organization-type-other {
+  margin-bottom: 10px;
+}
+
+/*changes specific abstract view -- usded on CCT/FYI Colloquium */
+.row-style {
+  margin-top: 20px;
+}
+
+.item-list2 li {
+    list-style-type: none;
+    border-top: 2px solid #CCC;
+    padding-bottom: 15px;
+}
+.abstract-submission-results-table > div > h2 {
+    font-weight:normal;
+    font-size:30px;
+    margin-top:0px;
+}
+
+/* Webform as a Node show author by default.  Let's remove it. */
+.author {
+  display:none;
+}
+
+/* Remove delete option from the quick-edit menu */
+.entitynodedelete-form {
+  display:none;
+}
+
+/* nci d8 Migrate */
+#main-wrapper {
+    background-color: #FFFFFB;
+    padding: 1.5em;
+    -webkit-box-shadow: 10px 0 10px -7px rgba(0,0,0,.5),-10px 0 10px -7px rgba(0,0,0,.5);
+    box-shadow: 10px 0 10px -7px rgba(0,0,0,.5),-10px 0 10px -7px rgba(0,0,0,.5);
+    min-height: 500px;
+}
+header {
+    margin-bottom: 0px;
+}
+
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+#edit-name--description, #edit-pass--description {
+  display:none;
+}
+
+.form-required::after {
+  content: none;
+}
+/* Hamburger */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+#block-nci-barrio-evsrelatedlinks {
+    border:0px;
+}

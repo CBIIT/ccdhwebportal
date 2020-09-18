@@ -1,0 +1,22 @@
+uuid: 43ab658d-5f5d-4254-bc96-979a3732dadc
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ccdh_foundation
+_core:
+  default_config_hash: qHdtze2DZ2mFfaJadxjZz6epm92_SN9SAFY4yJGl8Fo
+id: ccdh_foundation_local_tasks
+theme: ccdh_foundation
+region: header
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

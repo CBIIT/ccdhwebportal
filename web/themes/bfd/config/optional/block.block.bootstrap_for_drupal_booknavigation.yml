@@ -1,0 +1,27 @@
+status: true
+dependencies:
+  module:
+    - book
+    - node
+  theme:
+    - bootstrap_for_drupal
+id: bootstrap_for_drupal_booknavigation
+theme: bootstrap_for_drupal
+region: sidebar_left
+weight: -9
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Book navigation'
+  provider: book
+  label_display: visible
+  block_mode: 'all pages'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      book: book
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

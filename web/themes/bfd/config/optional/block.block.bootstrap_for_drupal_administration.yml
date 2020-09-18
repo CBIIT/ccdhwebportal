@@ -1,0 +1,23 @@
+status: true
+dependencies:
+  config:
+    - system.menu.admin
+  module:
+    - system
+  theme:
+    - bootstrap_for_drupal
+id: bootstrap_for_drupal_administration
+theme: bootstrap_for_drupal
+region: sidebar_left
+weight: -12
+provider: null
+plugin: 'system_menu_block:admin'
+settings:
+  id: 'system_menu_block:admin'
+  label: 'Administration'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

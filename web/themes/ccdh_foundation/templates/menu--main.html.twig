@@ -1,0 +1,101 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+
+{% if top_bar %}
+  {% if top_bar_sticky %}
+  <div id="top-bar-sticky-container" data-sticky-container>
+  {% endif %}
+    <div {{ top_bar_attributes }}>
+      <div class="site-navigation" >
+        <div class="grid-container">
+
+          <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle></button>
+            <div class="title-bar-title">{{ top_bar_menu_text }}</div>
+          </div>
+          <nav class="top-bar" id="main-menu" role="navigation">
+            <div class="top-bar-left">
+              <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">
+                  {#{{ site_name }}#}
+                  <img src="/themes/ccdh_foundation/images/1x60-0000ff7f.png" alt="CRDC" />
+                </li>
+              </ul>
+            </div>
+            <div class="top-bar-right">
+              {{ menus.menu_links(items, attributes, 0, 1) }}
+              {% if top_bar_search %}
+                {{ top_bar_search }}
+              {% endif %}
+              {% if top_bar_languageswitcher %}
+                {{ top_bar_languageswitcher }}
+              {% endif %}
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  {% if top_bar_sticky %}
+  </div>
+  {% endif %}
+{% else %}
+  {{ menus.menu_links(items, attributes, 0, 0) }}
+{% endif %}
+
+{% macro menu_links(items, attributes, menu_level, top_bar) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if top_bar %}
+      {% if menu_level == 0 %}
+        <ul{{ attributes.addClass('menu', 'vertical', 'medium-horizontal').setAttribute('data-responsive-menu', 'drilldown medium-dropdown') }}>
+      {% else %}
+        <ul class="submenu menu vertical" data-submenu>
+        <span class="menuTopArrow"><svg class="svg-inline--fa fa-caret-up fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg><!-- <i class="fas fa-caret-up"></i> --></span>
+      {% endif %}
+    {% else %}
+      {% if menu_level == 0 %}
+        <ul{{ attributes.addClass('dropdown', 'menu') }} data-dropdown-menu>
+      {% else %}
+        <ul class="menu">
+      {% endif %}
+    {% endif %}
+    {% for item in items %}
+      {% if top_bar %}
+        {%
+          set item_classes = [
+            item.below is not empty ? 'has-submenu' ,
+            item.is_expanded ? 'menu-item--expanded',
+            item.is_collapsed ? 'menu-item--collapsed',
+            item.in_active_trail ? 'menu-item--active-trail is-active',
+          ]
+        %}
+      {% endif %}
+      <li{{ item.attributes.addClass(item_classes) }}>
+        {{ link(item.title, item.url) }}
+        {% if item.below %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1, top_bar) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

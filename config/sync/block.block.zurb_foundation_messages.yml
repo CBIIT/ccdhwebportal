@@ -1,0 +1,22 @@
+uuid: 793121e5-2dbd-48f9-98ca-b40daffe240a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zurb_foundation
+_core:
+  default_config_hash: dqzHPrWKOFZg0C2LSS89u9zn02nkQbAjqMC5H5IMtgw
+id: zurb_foundation_messages
+theme: zurb_foundation
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

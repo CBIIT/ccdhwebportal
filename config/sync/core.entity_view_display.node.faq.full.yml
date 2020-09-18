@@ -1,0 +1,36 @@
+uuid: fb2b78b1-804a-4b77-959a-0ea22eab6185
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.faq.field_answer
+    - field.field.node.faq.field_sort_order
+    - node.type.faq
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.faq.full
+targetEntityType: node
+bundle: faq
+mode: full
+content:
+  field_answer:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_sort_order: true

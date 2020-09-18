@@ -1,0 +1,22 @@
+uuid: 886ec9fa-36bc-432c-8946-41e9e9005ad8
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - zurb_foundation
+_core:
+  default_config_hash: F9razTMNH9dD3hmzkpIPTFwJeYqb-XBSgYMGRdB0I68
+id: zurb_foundation_breadcrumbs
+theme: zurb_foundation
+region: header
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

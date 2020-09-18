@@ -1,0 +1,22 @@
+uuid: abf183e4-a760-4c95-be4b-9729cab0028f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zurb_foundation
+_core:
+  default_config_hash: iLsnkroCNXMJqpfxJPPEnV9pCoAbnxLOr4-1Aai7zUA
+id: zurb_foundation_powered
+theme: zurb_foundation
+region: footer_last
+weight: -6
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

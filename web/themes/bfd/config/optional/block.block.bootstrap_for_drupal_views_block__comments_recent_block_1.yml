@@ -1,0 +1,22 @@
+status: true
+dependencies:
+  config:
+    - views.view.comments_recent
+  module:
+    - views
+  theme:
+    - bootstrap_for_drupal
+id: bootstrap_for_drupal_views_block__comments_recent_block_1
+theme: bootstrap_for_drupal
+region: sidebar_left
+weight: -7
+provider: null
+plugin: 'views_block:comments_recent-block_1'
+settings:
+  id: 'views_block:comments_recent-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: 5
+visibility: {  }

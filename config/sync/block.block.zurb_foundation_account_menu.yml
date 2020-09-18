@@ -1,0 +1,27 @@
+uuid: d95bee7a-1deb-4917-b17d-73d3ca62a3f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - zurb_foundation
+_core:
+  default_config_hash: 6IFAC3qIfKON-TCvIwSOD46i3w6gG_wvEspLN3EBBkA
+id: zurb_foundation_account_menu
+theme: zurb_foundation
+region: header
+weight: -4
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

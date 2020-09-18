@@ -1,0 +1,20 @@
+uuid: 3bbd7ef5-e77a-46ab-984c-826475abf2ff
+langcode: en
+status: true
+dependencies:
+  theme:
+    - nci_barrio
+_core:
+  default_config_hash: ffxthelqQF8xcr4GTG4HlaNNsluiHftN0pujmQpW0bQ
+id: nci_barrio_local_actions
+theme: nci_barrio
+region: header
+weight: 20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

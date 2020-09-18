@@ -1,0 +1,27 @@
+uuid: e1820cf1-c127-471d-9496-f7f45b3fa9f4
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - ccdh_foundation
+_core:
+  default_config_hash: HrZTblWpMF4fo6BdbBcyHEu5Hp9ds1IZF3FiRd2Q8rU
+id: ccdh_foundation_account_menu
+theme: ccdh_foundation
+region: header
+weight: 1
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

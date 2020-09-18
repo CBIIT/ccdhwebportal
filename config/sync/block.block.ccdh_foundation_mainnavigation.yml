@@ -1,0 +1,25 @@
+uuid: 98b27d01-a901-40c6-a04d-dd2dc4a678d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - ccdh_foundation
+id: ccdh_foundation_mainnavigation
+theme: ccdh_foundation
+region: header
+weight: 2
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

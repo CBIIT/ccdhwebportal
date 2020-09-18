@@ -1,0 +1,24 @@
+uuid: 53d848ea-a33c-4b1e-88e6-ddb4a480ece3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.faq.field_answer
+    - field.field.node.faq.field_sort_order
+    - node.type.faq
+  module:
+    - user
+id: node.faq.teaser
+targetEntityType: node
+bundle: faq
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_answer: true
+  field_sort_order: true

@@ -1,0 +1,25 @@
+uuid: 9b2cc3d0-b0eb-4aff-b312-fcb7dabf20ee
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4c367fb6-a0eb-4267-89a9-927298d2dfcd'
+  module:
+    - block_content
+  theme:
+    - nci_barrio
+id: contactus
+theme: nci_barrio
+region: sidebar_second
+weight: -2
+provider: null
+plugin: 'block_content:4c367fb6-a0eb-4267-89a9-927298d2dfcd'
+settings:
+  id: 'block_content:4c367fb6-a0eb-4267-89a9-927298d2dfcd'
+  label: 'Contact Us'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
