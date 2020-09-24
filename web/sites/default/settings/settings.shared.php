@@ -741,6 +741,7 @@ $settings['trusted_host_patterns'] = array(
   'staging\.example\.com$',
   'example\.com$',
   'pedscommons\.org$',
+  'datacommons\.cancer\.gov$',
 );
 
 /**
