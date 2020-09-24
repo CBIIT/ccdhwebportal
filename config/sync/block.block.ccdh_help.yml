@@ -1,0 +1,22 @@
+uuid: f7ea9542-d9bf-4a85-bffe-4accdd46a999
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - ccdh
+_core:
+  default_config_hash: MhtNdV__HKRTab0ZPjkPNfYL4Ng4UPBucDLoC7Rg5Eo
+id: ccdh_help
+theme: ccdh
+region: header
+weight: -1
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

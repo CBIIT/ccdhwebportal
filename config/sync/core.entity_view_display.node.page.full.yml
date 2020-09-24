@@ -5,10 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.page.body
+    - field.field.node.page.field_page_file
     - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
     - layout_builder
+    - layout_discovery
     - text
     - user
 third_party_settings:
@@ -67,4 +69,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_page_file: true
   layout_builder__layout: true

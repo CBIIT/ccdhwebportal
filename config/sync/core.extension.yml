@@ -22,6 +22,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  gdoc_field: 0
   google_analytics: 0
   help: 0
   history: 0
@@ -61,6 +62,7 @@ theme:
   nci_barrio: 0
   zurb_foundation: 0
   ccdh_foundation: 0
+  ccdh: 0
 profile: standard
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

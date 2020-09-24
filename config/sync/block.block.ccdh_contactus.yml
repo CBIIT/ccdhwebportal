@@ -1,0 +1,41 @@
+uuid: dee72990-928f-47ba-99ed-1b1bb5b69a95
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:4c367fb6-a0eb-4267-89a9-927298d2dfcd'
+  module:
+    - block_content
+    - node
+    - system
+  theme:
+    - ccdh
+id: ccdh_contactus
+theme: ccdh
+region: sidebar_second
+weight: -2
+provider: null
+plugin: 'block_content:4c367fb6-a0eb-4267-89a9-927298d2dfcd'
+settings:
+  id: 'block_content:4c367fb6-a0eb-4267-89a9-927298d2dfcd'
+  label: 'Contact Us'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      article: article
+      faq: faq
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
