@@ -1,0 +1,25 @@
+uuid: 75e07e29-3f65-4809-8de1-a483c78473ba
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a63f19de-a5f5-4125-a484-939a46dcae1a'
+  module:
+    - block_content
+  theme:
+    - ccdh_foundation
+id: tagline
+theme: ccdh_foundation
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:a63f19de-a5f5-4125-a484-939a46dcae1a'
+settings:
+  id: 'block_content:a63f19de-a5f5-4125-a484-939a46dcae1a'
+  label: tagline
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

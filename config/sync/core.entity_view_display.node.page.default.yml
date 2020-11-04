@@ -4,11 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_page_file
     - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
-    - file
     - layout_builder
     - layout_discovery
     - text
@@ -48,22 +46,6 @@ third_party_settings:
               id: 'extra_field_block:node:page:links'
             additional: {  }
             weight: 1
-          ca92076c-09f5-4d56-9420-40e9d9ee025b:
-            uuid: ca92076c-09f5-4d56-9420-40e9d9ee025b
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:page:field_page_file'
-              formatter:
-                label: above
-                settings:
-                  use_description_as_link_text: true
-                third_party_settings: {  }
-                type: file_default
-            additional: {  }
-            weight: 2
         third_party_settings: {  }
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
@@ -79,14 +61,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_page_file:
-    weight: 102
-    label: above
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
-    region: content
   links:
     weight: 101
     region: content
