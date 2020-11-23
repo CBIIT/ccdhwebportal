@@ -177,12 +177,12 @@ START HEADER
 
 @media print,screen and (min-width: 48em) {
     .site-logo-header a {
-        max-width:440px
+        max-width:550px
     }
 
     .site-logo-header a img {
         height: 100px;
-        padding: 15px;
+        padding: 5px;
     }
 }
 
