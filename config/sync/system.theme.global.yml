@@ -9,7 +9,7 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: sites/default/files/CCDH_54px-Logo-COLOR.png
+  path: sites/default/files/ccdh_logo_color.png
   url: ''
   use_default: false
 _core:
