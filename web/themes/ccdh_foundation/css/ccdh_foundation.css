@@ -2174,3 +2174,20 @@ h5,.as-h5 {
   .card-divider {
       background-color: #e8f6ff;
   }
+
+  nav#returnToNCInav {
+    margin: 0;
+    background: #F1F1F1;
+    border-bottom: 1px #999999 solid;
+    height: 100%;
+    display: block;
+    line-height: 25px;
+    text-align: center;
+    color: #333333;
+    text-decoration: none;
+    font-size: 10px;
+    font-family: "Noto Sans", Arial, sans-serif;
+  }
+  nav#returnToNCInav a{
+    color: #333333;  
+  }
