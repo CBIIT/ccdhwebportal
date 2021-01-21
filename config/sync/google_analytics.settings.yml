@@ -1,7 +1,7 @@
 account: UA-177224248-1
 premium: false
-domain_mode: 1
-cross_domains: ''
+domain_mode: 2
+cross_domains: harmonization.datacommons.cancer.gov
 visibility:
   request_path_mode: 0
   request_path_pages: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
