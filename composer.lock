@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca75321de65d8f7ebd1a15152e6bef2e",
+    "content-hash": "5eef2b3ec72ee74b54e49fa5ce0fc38e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1845,6 +1845,56 @@
             "time": "2016-12-12T23:26:36+00:00"
         },
         {
+            "name": "drupal/bootstrap_barrio",
+            "version": "5.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/bootstrap_barrio.git",
+                "reference": "5.1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_barrio-5.1.4.zip",
+                "reference": "5.1.4",
+                "shasum": "957a76d18eecfb1062088f22d3ba9ae9b79af240"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "twbs/bootstrap": "^4.4.1"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "5.1.4",
+                    "datestamp": "1603660710",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alberto Siles",
+                    "homepage": "https://www.drupal.org/user/2824325",
+                    "email": "alberto@siles.pe"
+                },
+                {
+                    "name": "hatuhay",
+                    "homepage": "https://www.drupal.org/user/827704"
+                }
+            ],
+            "description": "Bootstrap 4 base theme.",
+            "homepage": "https://www.drupal.org/project/bootstrap_barrio",
+            "support": {
+                "source": "https://git.drupalcode.org/project/bootstrap_barrio"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "8.9.13",
             "source": {
@@ -2315,17 +2365,17 @@
         },
         {
             "name": "drupal/ldap_auth",
-            "version": "1.21.0",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ldap_auth.git",
-                "reference": "8.x-1.21"
+                "reference": "8.x-1.23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ldap_auth-8.x-1.21.zip",
-                "reference": "8.x-1.21",
-                "shasum": "e2c6f1cb64ce00ef6c894b5b67813ec8cc874c6d"
+                "url": "https://ftp.drupal.org/files/projects/ldap_auth-8.x-1.23.zip",
+                "reference": "8.x-1.23",
+                "shasum": "9732e1e854ec31aac32b941113bd1ec81f0964cc"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -2333,8 +2383,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.21",
-                    "datestamp": "1610494652",
+                    "version": "8.x-1.23",
+                    "datestamp": "1612511569",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6064,6 +6114,67 @@
             "time": "2020-05-11T07:51:54+00:00"
         },
         {
+            "name": "twbs/bootstrap",
+            "version": "v4.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "6ffb0b48e455430f8a5359ed689ad64c1143fac2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/6ffb0b48e455430f8a5359ed689ad64c1143fac2",
+                "reference": "6ffb0b48e455430f8a5359ed689ad64c1143fac2",
+                "shasum": ""
+            },
+            "replace": {
+                "twitter/bootstrap": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                },
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "https://getbootstrap.com/",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "mobile-first",
+                "responsive",
+                "sass",
+                "web"
+            ],
+            "support": {
+                "issues": "https://github.com/twbs/bootstrap/issues",
+                "source": "https://github.com/twbs/bootstrap/tree/v4.6.0"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/bootstrap",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2021-01-19T16:16:38+00:00"
+        },
+        {
             "name": "twig/twig",
             "version": "v1.42.5",
             "source": {
@@ -6323,5 +6434,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
