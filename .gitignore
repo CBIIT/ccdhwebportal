@@ -7,9 +7,10 @@
 /web/themes/contrib/
 /web/profiles/contrib/
 /web/libraries/
+/web/tmp/
 
-# Core's dependencies are managed with Composer.
-/vendor
+# Ignore  NPM Packages
+/node_modules/
 
 # Ignore configuration files that may contain sensitive information.
 /web/sites/*/settings/settings.local.php
@@ -22,7 +23,10 @@
 /web/sites/*/files/js/*
 /web/sites/*/files/php/*
 
-/*/.DS_Store
-/.DS_Store
+# Ignore Mac hidden files
+.DS_Store
 
-/database/*
+# Ignore IDE and development files
+/.vscode/
+/.ddev/
+
