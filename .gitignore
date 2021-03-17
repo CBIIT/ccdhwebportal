@@ -26,7 +26,8 @@
 # Ignore Mac hidden files
 .DS_Store
 
-# Ignore IDE and development files
+# Ignore IDE and development files/folders
 /.vscode/
 /.ddev/
+/database/*
 
