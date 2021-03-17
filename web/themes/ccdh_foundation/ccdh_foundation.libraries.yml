@@ -4,12 +4,24 @@ global:
     base:
       css/ccdh_foundation.css: {}
   js:
-    js/STARTER.js: {}
+    #js/STARTER.js: {}
     js/sticky_footer.js: {}
     'https://use.fontawesome.com/releases/v5.12.0/js/all.js': { type: external, minified: true }
     'https://use.fontawesome.com/releases/v5.12.0/js/v4-shims.js': { type: external, minified: true }
 fonts:
   css:
-    theme: 
+    theme:
       '//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap': { type: external, minified: true }
       '//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap': { type: external, minified: true }
+
+modernizr:
+  # Block the page from being loaded until Modernizr is initialized.
+  header: true
+  remote: https://github.com/Modernizr/Modernizr
+  license:
+    name: MIT
+    url: http://modernizr.com/license/
+    gpl-compatible: true
+  version: "v3.6.0"
+  js:
+    js/modernizr.min.js: { preprocess: 0, weight: -21, minified: true }

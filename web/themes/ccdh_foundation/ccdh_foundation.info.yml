@@ -11,11 +11,12 @@ base theme: zurb_foundation
 # Uncomment these lines and change "STARTER" to your theme name if you
 # need to add custom CSS or JS
 libraries:
- - ccdh_foundation/global
- - ccdh_foundation/fonts
+  - ccdh_foundation/global
+  - ccdh_foundation/fonts
+libraries-override:
+  core/modernizr: ccdh_foundation/modernizr
 
 # Regions are output in the page.html.twig
-
 regions:
   header: Header
   meta_header: 'Meta header'
