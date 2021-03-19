@@ -14,7 +14,7 @@ $port = 3306;
 // so use the host-side bind port on docker IP
 if (empty(getenv('DDEV_PHP_VERSION') && getenv('IS_DDEV_PROJECT') == 'true')) {
   $host = "127.0.0.1";
-  $port = 63206;
+  $port = 51198;
 }
 
 $databases['default']['default'] = array(
@@ -27,7 +27,7 @@ $databases['default']['default'] = array(
   'prefix' => "",
 );
 
-$settings['hash_salt'] = 'OfPRnLwgPpzIsNGJhrZrdWvzuWgLWOzGAcrqeoRIWzYczwmFVbmefJIqpmEkEiLl';
+$settings['hash_salt'] = 'ivFFhGnMQfPXgTgesNPtWNkbgnrcePxxOjOBKIqFwqyELTgnhkGveLMrNiphcflm';
 
 // This will prevent Drupal from setting read-only permissions on sites/default.
 $settings['skip_permissions_hardening'] = TRUE;
@@ -46,7 +46,7 @@ if (version_compare(Drupal::VERSION, "8.8.0", '<') &&
   empty($config_directories[CONFIG_SYNC_DIRECTORY])) {
   $config_directories[CONFIG_SYNC_DIRECTORY] = 'sites/default/files/sync';
 }
-// For D8.8/D8.9, set $settings['config_sync_directory'] if neither 
+// For D8.8/D8.9, set $settings['config_sync_directory'] if neither
 // $config_directories nor $settings['config_sync_directory is set
 if (version_compare(DRUPAL::VERSION, "8.8.0", '>=') &&
   version_compare(DRUPAL::VERSION, "9.0.0", '<') &&

@@ -1,5 +1,5 @@
-name: CCDH ZURB Foundation Sub-theme
-description: "CCDH custom sub-theme, inherits from the Foundation base theme read <a href=\"http://foundation.zurb.com/docs/index.php\">framework documentation</a>"
+name: CCDH Foundation (subtheme of ZURB Foundation)
+description: "Custom sub-theme, inherits from the Foundation base theme read <a href=\"http://foundation.zurb.com/docs/index.php\">framework documentation</a>"
 core: 8.x
 core_version_requirement: ^8 || ^9
 type: theme
@@ -8,8 +8,6 @@ base theme: zurb_foundation
 # Image appears on admin/appearance
 # screenshot: images/screenshot.jpg
 
-# Uncomment these lines and change "STARTER" to your theme name if you
-# need to add custom CSS or JS
 libraries:
   - ccdh_foundation/global
   - ccdh_foundation/fonts
