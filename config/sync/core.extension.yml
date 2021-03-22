@@ -58,8 +58,6 @@ theme:
   stable: 0
   classy: 0
   seven: 0
-  bootstrap_barrio: 0
-  nci_barrio: 0
   zurb_foundation: 0
   ccdh_foundation: 0
 profile: standard

@@ -7,9 +7,9 @@ dependencies:
   module:
     - system
   theme:
-    - nci_barrio
+    - ccdh_foundation
 id: mainnavigation
-theme: nci_barrio
+theme: ccdh_foundation
 region: header
 weight: 0
 provider: null

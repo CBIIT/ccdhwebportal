@@ -7,9 +7,9 @@ dependencies:
   module:
     - block_content
   theme:
-    - nci_barrio
+    - ccdh_foundation
 id: otherresources
-theme: nci_barrio
+theme: ccdh_foundation
 region: sidebar_second
 weight: -1
 provider: null
