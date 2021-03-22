@@ -9,9 +9,17 @@
 CWD=`dirname "$0"`/..
 cd $CWD
 
-BRANCH='master'
-if [ ! -z "$1" ] && [[ $1 == 'develop' ]]; then
+BRANCH=
+BRANCHES=('develop' 'master')
+if [ -z "$1" ]; then
+  echo "Please specify a git branch to deploy"
+  exit 1
+elif echo ${BRANCHES[@]} | grep -q -w "$1"; then
   BRANCH=$1
+  echo "Branch:  $BRANCH"
+else
+  echo "Please specify a git branch to deploy.  '$1' is not valid."
+  exit 1
 fi
 
 DB_EXPORT_DIR="./database/export"
@@ -39,7 +47,7 @@ echo "Import config settings"
 ddev drush -y cim
 
 # Run Drupal database updates
-echo "Run Drupal updatedb"
+echo "Running Drupal updatedb"
 ddev drush -y updatedb
 
 echo "Clear Drupal Cache"
