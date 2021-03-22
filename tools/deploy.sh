@@ -6,7 +6,8 @@
 #
 
 # switch to the ddev app dir
-cd ..
+CWD=`dirname "$0"`/..
+cd $CWD
 
 BRANCH='master'
 if [ ! -z "$1" ] && [[ $1 == 'develop' ]]; then

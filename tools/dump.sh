@@ -6,7 +6,8 @@
 #
 
 # Switch to the ddev app dir.
-cd ..
+CWD=`dirname "$0"`/..
+cd $CWD
 
 DB_EXPORT_DIR="./database/export"
 DBFILE_PFX="ccdh_"
