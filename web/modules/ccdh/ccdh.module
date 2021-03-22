@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements HOOK_link_alter
+ *
+ * Opens external menu links in a new window
+ *
+ * {@inheritdoc}
+ */
+function ccdh_link_alter(&$variables) {
+  if ($variables['url']->isExternal()) {
+    $variables['options']['attributes']['target'] = '_blank';
+  }
+}
