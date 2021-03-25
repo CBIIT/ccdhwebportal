@@ -23,6 +23,7 @@
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "8.9.*",
         "drupal/google_analytics": "^2.5",
+        "drupal/google_tag": "^1.4",
         "drupal/ldap_auth": "^1.23",
         "drupal/zurb_foundation": "^6",
         "drush/drush": "^10.3"
