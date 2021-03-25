@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Inter|Lato|Nunito+Sans:200,300,400,500,600,700,800,900");
 @import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
 
-/* 
+/*
 START FOOTER
 */
 footer {
     background: #0B446B;
     color: #fff;
-    padding: 50px 0 42px
+    padding: 50px 0 42px;
+    font-family: "Lato",sans-serif;
+    font-weight: 400;
 }
 
 footer h3 {
@@ -62,11 +64,11 @@ footer .footer-internal-links,footer .footer-external-links {
 }
 
 .more-info {
-    padding: 0
+    padding: 0;
 }
 
 .more-info a {
-    margin-right: 6px
+    margin-right: 13px;
 }
 
 .more-info,.org-nav {
@@ -95,12 +97,12 @@ footer .footer-internal-links,footer .footer-external-links {
     text-align: center
 }
 
-/* 
+/*
 END FOOTER
 */
 
 
-/* 
+/*
 START HEADER
 */
 
@@ -249,11 +251,11 @@ START HEADER
     }
 }
 
-/* 
+/*
 END HEADER
 */
 
-/* 
+/*
 START TOP BAR
 */
 
@@ -2093,32 +2095,32 @@ h5,.as-h5 {
     padding: 1.25rem;
     background: #fefefe;
   }
-  
+
   .card-profile-stats .card-profile-stats-intro {
     text-align: center;
   }
-  
+
   .card-profile-stats .card-profile-stats-intro .card-profile-stats-intro-pic {
     border-radius: 50%;
     margin: 0 0 1.25rem;
   }
-  
+
   .card-profile-stats .card-profile-stats-intro .card-profile-stats-intro-content p:last-child {
     margin: 0;
   }
-  
+
   .card-profile-stats .card-profile-stats-container {
     text-align: center;
   }
-  
+
   .card-profile-stats .card-profile-stats-container .card-profile-stats-statistic {
     margin: 0 0 1.25rem;
   }
-  
+
   .card-profile-stats .card-profile-stats-container .card-profile-stats-statistic p:last-child {
     margin: 0;
   }
-  
+
   .card-profile-stats .card-profile-stats-more .card-profile-stats-more-link {
     margin: 0;
     text-align: center;
@@ -2127,12 +2129,12 @@ h5,.as-h5 {
     padding: 0.5rem;
     cursor: pointer;
   }
-  
+
   .card-profile-stats .card-profile-stats-more .card-profile-stats-more-content {
     display: none;
   }
-  
-  
+
+
   @media print, screen and (min-width: 64em) {
     .card-profile-stats .card-profile-stats-intro {
       -webkit-align-items: center;
@@ -2162,7 +2164,7 @@ h5,.as-h5 {
               justify-content: space-around;
     }
   }
-  
+
   .block-ccdh-foundation-content  {
       padding: 30px 0px;
   }
@@ -2189,5 +2191,5 @@ h5,.as-h5 {
     font-family: "Noto Sans", Arial, sans-serif;
   }
   nav#returnToNCInav a{
-    color: #333333;  
+    color: #333333;
   }
