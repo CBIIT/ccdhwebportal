@@ -2193,3 +2193,46 @@ h5,.as-h5 {
   nav#returnToNCInav a{
     color: #333333;
   }
+
+  /*
+  GDPR POPUP
+  */
+  #gdpr-popup {
+    font-family: "Lato",sans-serif;
+    padding-top: 8px;
+    padding: 8px;
+    background-color: #1074B9;
+    border-top: #C3E0EC 1px solid;
+  }
+  #gdpr-popup .gdpr-popup-content .gdpr-popup-text {
+    float: none;
+    max-width: inherit;
+    text-align: center;
+  }
+  #gdpr-popup .gdpr-popup-content .gdpr-popup-text p {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  #gdpr-popup .gdpr-popup-content .gdpr-popup-text p.gdpr-popup-analytics {
+    content: '';
+    display: none;
+  }
+  #gdpr-popup .gdpr-popup-buttons {
+    font-size: 22px;
+    padding: 6px;
+  }
+  #gdpr-popup .gdpr-popup-content .gdpr-popup-buttons button {
+    border-radius: 6px;
+    min-width: 165px;
+    padding: 8px;
+    margin: 6px;
+  }
+  #gdpr-popup .gdpr-popup-content .gdpr-popup-buttons button:hover,
+  #gdpr-popup .gdpr-popup-content .gdpr-popup-buttons button:active {
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  /*
+  END GDPR POPUP
+  */

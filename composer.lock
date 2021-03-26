@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8a82bef8294c0393710426764a5cb10",
+    "content-hash": "f14a7c8e7ad0c948d17380ea4cea2fce",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2235,6 +2235,58 @@
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
             "time": "2021-01-19T23:11:00+00:00"
+        },
+        {
+            "name": "drupal/gdpr_compliance",
+            "version": "1.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/gdpr_compliance.git",
+                "reference": "8.x-1.18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/gdpr_compliance-8.x-1.18.zip",
+                "reference": "8.x-1.18",
+                "shasum": "21cb248aa68da6f05eb876827b80d3e6ba3edca7"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.18",
+                    "datestamp": "1593416983",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "APolitsin",
+                    "homepage": "https://www.drupal.org/user/400653"
+                },
+                {
+                    "name": "Kseniya Myarkovskaya",
+                    "homepage": "https://www.drupal.org/user/3590754"
+                },
+                {
+                    "name": "politsin",
+                    "homepage": "https://www.drupal.org/user/1820324"
+                }
+            ],
+            "description": "General Data Protection Regulation Compliance",
+            "homepage": "https://www.drupal.org/project/gdpr_compliance",
+            "support": {
+                "source": "https://git.drupalcode.org/project/gdpr_compliance"
+            }
         },
         {
             "name": "drupal/google_analytics",
@@ -6594,6 +6646,80 @@
                 "source": "https://www.drupal.org/project/coder"
             },
             "time": "2020-12-06T09:34:55+00:00"
+        },
+        {
+            "name": "kint-php/kint",
+            "version": "3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kint-php/kint.git",
+                "reference": "335ac1bcaf04d87df70d8aa51e8887ba2c6d203b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kint-php/kint/zipball/335ac1bcaf04d87df70d8aa51e8887ba2c6d203b",
+                "reference": "335ac1bcaf04d87df70d8aa51e8887ba2c6d203b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.6"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "phpunit/phpunit": "^4.0",
+                "seld/phar-utils": "^1.0",
+                "symfony/finder": "^2.0 || ^3.0 || ^4.0",
+                "vimeo/psalm": "^3.0"
+            },
+            "suggest": {
+                "ext-ctype": "Simple data type tests",
+                "ext-iconv": "Provides fallback detection for ambiguous legacy string encodings such as the Windows and ISO 8859 code pages",
+                "ext-mbstring": "Provides string encoding detection",
+                "kint-php/kint-js": "Provides a simplified dump to console.log()",
+                "kint-php/kint-twig": "Provides d() and s() functions in twig templates",
+                "symfony/polyfill-ctype": "Replacement for ext-ctype if missing",
+                "symfony/polyfill-iconv": "Replacement for ext-iconv if missing",
+                "symfony/polyfill-mbstring": "Replacement for ext-mbstring if missing"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "init.php"
+                ],
+                "psr-4": {
+                    "Kint\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Vollebregt",
+                    "homepage": "https://github.com/jnvsor"
+                },
+                {
+                    "name": "Rokas Šleinius",
+                    "homepage": "https://github.com/raveren"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/kint-php/kint/graphs/contributors"
+                }
+            ],
+            "description": "Kint - debugging tool for PHP developers",
+            "homepage": "https://kint-php.github.io/kint/",
+            "keywords": [
+                "debug",
+                "kint",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/kint-php/kint/issues",
+                "source": "https://github.com/kint-php/kint/tree/master"
+            },
+            "time": "2019-10-17T18:05:24+00:00"
         },
         {
             "name": "sirbrillig/phpcs-variable-analysis",
