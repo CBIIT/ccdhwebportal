@@ -24,6 +24,7 @@ module:
   file: 0
   filter: 0
   gdoc_field: 0
+  gdpr_compliance: 0
   google_analytics: 0
   google_tag: 0
   help: 0
