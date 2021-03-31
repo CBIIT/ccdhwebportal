@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f14a7c8e7ad0c948d17380ea4cea2fce",
+    "content-hash": "d6cd9316533147c493ce6f6b24637dbf",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2237,27 +2237,27 @@
             "time": "2021-01-19T23:11:00+00:00"
         },
         {
-            "name": "drupal/gdpr_compliance",
-            "version": "1.18.0",
+            "name": "drupal/eu_cookie_compliance",
+            "version": "1.14.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/gdpr_compliance.git",
-                "reference": "8.x-1.18"
+                "url": "https://git.drupalcode.org/project/eu-cookie-compliance.git",
+                "reference": "8.x-1.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/gdpr_compliance-8.x-1.18.zip",
-                "reference": "8.x-1.18",
-                "shasum": "21cb248aa68da6f05eb876827b80d3e6ba3edca7"
+                "url": "https://ftp.drupal.org/files/projects/eu_cookie_compliance-8.x-1.14.zip",
+                "reference": "8.x-1.14",
+                "shasum": "37b7d8e33d5bc466272a288dbbb386d8702ed3c1"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8.8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.18",
-                    "datestamp": "1593416983",
+                    "version": "8.x-1.14",
+                    "datestamp": "1606569775",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2270,22 +2270,39 @@
             ],
             "authors": [
                 {
-                    "name": "APolitsin",
-                    "homepage": "https://www.drupal.org/user/400653"
+                    "name": "Marcin Pajdzik",
+                    "homepage": "https://www.drupal.org/u/marcin-pajdzik",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "Kseniya Myarkovskaya",
-                    "homepage": "https://www.drupal.org/user/3590754"
+                    "name": "Sven Berg Ryen",
+                    "homepage": "https://www.drupal.org/u/svenryen",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "politsin",
-                    "homepage": "https://www.drupal.org/user/1820324"
+                    "name": "Neslee Canil Pinto",
+                    "homepage": "https://www.drupal.org/u/neslee-canil-pinto",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "See other contributors",
+                    "homepage": "https://www.drupal.org/node/1538032/committers"
                 }
             ],
-            "description": "General Data Protection Regulation Compliance",
-            "homepage": "https://www.drupal.org/project/gdpr_compliance",
+            "description": "This module aims at making the website compliant with the new EU cookie regulation.",
+            "homepage": "https://drupal.org/project/eu_cookie_compliance",
+            "keywords": [
+                "Cookie",
+                "CookieCompliance",
+                "Drupal",
+                "GDPR"
+            ],
             "support": {
-                "source": "https://git.drupalcode.org/project/gdpr_compliance"
+                "source": "https://git.drupalcode.org/project/eu-cookie-compliance",
+                "docs": "https://www.drupal.org/docs/contributed-modules/eu-cookie-compliance",
+                "forum": "https://drupal.stackexchange.com/search?q=eu+cookie+compliance",
+                "issues": "https://www.drupal.org/project/issues/eu_cookie_compliance?version=8.x",
+                "slack": "https://app.slack.com/client/T06GX3JTS/C012XBTH81E"
             }
         },
         {
