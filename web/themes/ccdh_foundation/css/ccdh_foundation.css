@@ -2,115 +2,70 @@
 @import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
 
 /*
-START FOOTER
+START: BASE STYLES
 */
-footer {
-  background: #0b446b;
-  color: #fff;
-  padding: 50px 0 42px;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-}
+ html,
+ body {
+   color: #0a0a0a;
+   font-family: "Inter", sans-serif;
+   font-size: 16px;
+ }
 
-footer h3 {
-  color: #fff;
-  font-size: 19px;
-  padding: 0 0 3px;
-  text-transform: uppercase;
-}
+ h1,
+ h2,
+ h3,
+ h4 {
+   font-family: "Nunito Sans", sans-serif;
+ }
 
-footer .footer-internal-links {
-  margin-bottom: 60px;
-}
+ h1,
+ .as-h1 {
+   font-size: 48px;
+   line-height: 39px;
+   font-weight: 600;
+   letter-spacing: -1px;
+ }
 
-footer .footer-internal-links,
-footer .footer-external-links {
-  display: block;
-}
+ h2,
+ .as-h2 {
+   color: #0a0a0a;
+   font-size: 33px;
+   line-height: 27.5px;
+   font-weight: 800;
+   letter-spacing: -1.5px;
+ }
 
-.nci-wordmark {
-  display: inline-block;
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  min-width: 280px;
-}
+ h3,
+ .as-h3 {
+   color: #0772b6;
+   font-size: 20px;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+ }
 
-.nci-wordmark::before {
-  content: "National Cancer Institute";
-  display: block;
-  font-size: 25px;
-  line-height: 22px;
-  padding-bottom: 5px;
-}
+ h4,
+ .as-h4 {
+   color: #0a0a0a;
+   font-size: 16px;
+   font-weight: 700;
+ }
 
-.nci-wordmark::after {
-  content: "at the National Institutes of Health";
-  font-size: 16px;
-}
-
-.follow-us {
-  text-align: center;
-}
-
-.follow-us .social-link {
-  background: #fff;
-  border-radius: 50%;
-  color: #0b446b;
-  display: inline-block;
-  height: 44px;
-  line-height: 44px;
-  margin: 0 5px;
-  text-align: center;
-  width: 44px;
-}
-
-.more-info {
-  padding: 0;
-}
-
-.more-info a {
-  margin-right: 13px;
-}
-
-.more-info,
-.org-nav {
-  font-size: 16px;
-}
-
-.more-info a,
-.org-nav a {
-  color: #fff;
-}
-
-.more-info a:visited,
-.org-nav a:visited {
-  color: #fff;
-}
-
-.more-info a:hover,
-.more-info a:focus,
-.org-nav a:hover,
-.org-nav a:focus {
-  text-decoration: underline;
-}
-
-.org-nav a:not(:first-child)::before {
-  content: " | ";
-}
-
-.org-nav,
-.tagline {
-  font-size: 16px;
-  margin: 5px 0;
-  text-align: center;
-}
+ h5,
+ .as-h5 {
+   font-family: "Inter", sans-serif;
+   font-size: 16px;
+   font-weight: 700;
+   letter-spacing: 1.5px;
+ }
 
 /*
-END FOOTER
+END: BASE STYLES
 */
 
+
 /*
-START HEADER
+START: HEADER
 */
 
 .header-main {
@@ -261,11 +216,225 @@ START HEADER
 }
 
 /*
-END HEADER
+END: HEADER
 */
 
 /*
-START TOP BAR
+START: FOOTER
+*/
+footer {
+  background: #0b446b;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+footer ul {
+  list-style-type: none;
+  list-style-position: unset;
+  margin-left: 0;
+}
+
+footer ul li {
+  white-space: nowrap;
+}
+footer ul.agencies li {
+  display: flex; /* inline */
+  justify-content: center;
+}
+
+@media all and (max-width: 640px) {
+  footer {
+    padding: 30px 0 30px 0;
+  }
+  footer .more-info,
+  footer .wordmark {
+    margin: 15px 0 15px 0;
+    text-align: center;
+  }
+  footer .nci-wordmark {
+    text-align: center;
+  }
+  footer ul.more-info-links {
+    text-align: center;
+  }
+}
+/* just for handling some quirkiness with the agencies links wrapping */
+@media all and (max-width: 660px) {
+  footer ul.agencies {
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 16px;
+  }
+  footer ul.agencies li::before {
+    content: "";
+    padding: 0;
+  }
+}
+@media all and (min-width: 641px) {
+  footer {
+    padding: 30px 15px 30px 15px;
+  }
+  footer ul.more-info-links,
+  footer .more-info {
+    margin: 0;
+    text-align: right;
+  }
+  footer .nci-wordmark {
+    text-align: left;
+  }
+  footer .wordmark {
+    margin: 0;
+    text-align: left;
+  }
+  footer ul.agencies li {
+    font-size: 14px;
+  }
+}
+@media all and (min-width: 661px) {
+  footer ul.agencies {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 640px;
+  }
+  footer ul.agencies li:nth-child(2)::before,
+  footer ul.agencies li:nth-child(4)::before {
+    content: "|";
+    padding: 0 4px 0 4px;
+  }
+}
+
+@media all and (min-width: 1025px) {
+  footer {
+    padding: 30px 40px 30px 40px;
+  }
+  footer ul.agencies {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    max-width: 1025px;
+  }
+  footer ul.agencies li:not(:first-child)::before {
+    content: "|";
+    padding: 0 4px 0 4px;
+  }
+}
+
+footer .footer-internal-links {
+  margin-bottom: 60px;
+}
+
+footer .footer-internal-links,
+footer .footer-external-links {
+  display: block;
+}
+
+.nci-wordmark {
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  min-width: 280px;
+}
+
+.nci-wordmark::before {
+  content: "National Cancer Institute";
+  display: block;
+  font-size: 25px;
+  line-height: 22px;
+  padding-bottom: 5px;
+}
+
+.nci-wordmark::after {
+  content: "at the National Institutes of Health";
+  font-size: 16px;
+}
+
+footer .more-info {
+  display: block;
+  white-space: nowrap;
+}
+
+footer ul.more-info-links li {
+  display: inline;
+}
+
+footer .more-info h3 {
+  color: #fff;
+  font-size: 19px;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+.more-info li {
+  margin-right: 8px;
+}
+.more-info li:last-child {
+  margin-right: 0;
+}
+
+.more-info h3,
+.more-info a {
+  font-size: 16px;
+}
+
+.more-info a,
+.agencies li a {
+  color: #fff;
+  white-space: nowrap;
+}
+
+.more-info a:visited,
+.agencies li a:visited {
+  color: #fff;
+}
+
+.more-info a:hover,
+.more-info a:focus,
+.agencies li a:hover,
+.agencies li a:focus {
+  text-decoration: underline;
+}
+
+.footer-external-links,
+ul.agencies,
+ul.agencies li,
+.tagline {
+  text-align: center;
+}
+
+ul.agencies,
+.tagline {
+  margin: 12px 0 12px 0;
+}
+
+.tagline {
+  font-size: 16px;
+}
+
+
+/* .follow-us {
+  text-align: center;
+}
+
+.follow-us .social-link {
+  background: #fff;
+  border-radius: 50%;
+  color: #0b446b;
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  margin: 0 5px;
+  text-align: center;
+  width: 44px;
+} */
+
+/*
+END: FOOTER
+*/
+
+/*
+START: TOP BAR
 */
 
 .top-bar {
@@ -1301,60 +1470,11 @@ body.toolbar-fixed .sticky.is-stuck.is-at-top {
   text-align: left;
 }
 
-html,
-body {
-  color: #0a0a0a;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-}
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Nunito Sans", sans-serif;
-}
+/*
+ * MENU
+ */
 
-h1,
-.as-h1 {
-  font-size: 48px;
-  line-height: 39px;
-  font-weight: 600;
-  letter-spacing: -1px;
-}
-
-h2,
-.as-h2 {
-  color: #0a0a0a;
-  font-size: 33px;
-  line-height: 27.5px;
-  font-weight: 800;
-  letter-spacing: -1.5px;
-}
-
-h3,
-.as-h3 {
-  color: #0772b6;
-  font-size: 20px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-h4,
-.as-h4 {
-  color: #0a0a0a;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-h5,
-.as-h5 {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
 .menu {
   padding: 0;
   margin: 0;
@@ -2289,7 +2409,7 @@ nav#returnToNCInav a {
 }
 
 /*
-GDPR POPUP - EU COOKIE COMPLIANCE
+START: GDPR POPUP - EU COOKIE COMPLIANCE
 */
 #sliding-popup.sliding-popup-bottom {
   font-family: "Lato", sans-serif;
@@ -2379,5 +2499,5 @@ GDPR POPUP - EU COOKIE COMPLIANCE
 }
 
 /*
-END GDPR POPUP
+END: GDPR POPUP
 */

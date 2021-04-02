@@ -1,0 +1,40 @@
+<footer>
+  <div class="footer-internal-links grid-x align-justify">
+    <div class="columns wordmark cell small-12 medium-6 large-6">
+      <div class="nci-wordmark"></div>
+    </div>
+    <div class="columns more-info cell small-12 medium-6 large-6">
+      <h3>More Information</h3>
+      <ul class="more-info-links">
+      <li><a href="https://www.cancer.gov/policies/accessibility" target="_blank" aria-label="Cancer.gov policy on accessibility">Accessibility</a></li>
+      <li><a href="https://www.cancer.gov/policies/foia" target="_blank" aria-label="Cancer.gov FOIA policy">FOIA</a></li>
+      <li><a href="https://www.cancer.gov/policies" target="_blank" aria-label="Cancer.gov policies">Policies</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-external-links columns">
+    <ul class="org-nav agencies">
+      <li><a href="https://www.hhs.gov" target="_blank">U.S. Department of Health and Human Services</a></li>
+      <li><a href="https://www.nih.gov" target="_blank">National Institutes of Health</a></li>
+      <li><a href="https://www.cancer.gov" target="_blank">National Cancer Institute</a></li>
+      <li><a href="https://www.usa.gov" target="_blank">USA.gov</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-tagline NIH-tagline">
+    <div class="tagline">
+      NIH&hellip; Turning Discovery Into Health<sup>&reg;</sup>
+    </div>
+    {% if block_copyright_show %}
+    <div class="bottom-bar callout secondary large-12">
+      {% if not block_copyright_custom_text %}
+        <p>&copy; {{ "now"|date('Y') }} {{ site_name }} {{ 'All rights reserved.'|t }}</p>
+      {% else %}
+        {{ block_copyright }}
+      {% endif %}
+    </div>
+    {% endif %}
+
+  </div>
+</footer>

@@ -47,76 +47,14 @@
 <div class="off-canvas-wrapper">
   <div class="inner-wrap off-canvas-wrapper-inner" id="inner-wrap" data-off-canvas-wrapper>
     <div class="off-canvas-content" data-off-canvas-content>
-    <nav id="returnToNCInav"><a target="_new" tabindex="1" id="returnToNCIlink--home" href="https://datacommons.cancer.gov/?cid=crdcnav_hp_pdc.cancer.gov">NCI Cancer Research Data Commons</a></nav>
+      <nav id="returnToNCInav"><a target="_new" tabindex="1" id="returnToNCIlink--home" href="https://datacommons.cancer.gov/?cid=crdcnav_hp_pdc.cancer.gov">NCI Cancer Research Data Commons</a></nav>
       {% if page.meta_header %}
-        {% if meta_header_grid %}
-          <div class="row">
-            <div class="large-12 columns">
-        {% endif %}
-        {{ page.meta_header }}
-        {% if meta_header_grid %}
-            </div>
-          </div>
-        {% endif %}
+        {% include '@ccdh_foundation/regions/meta-header.html.twig' %}
       {% endif %}
-      <header class="header-main" role="banner" aria-label="{{ 'Site header'|t }}">
-        {% if page.header %}
-          <div class="grid-container">
-            <div class="site-logo-header">
-              <a href="/" aria-label="Return to CCDH home">
-                <img src="/sites/default/files/CCDH Logo COLOR.svg" alt="National Cancer Institute Center for Cancer Data Harmonization" />
-              </a>
-              <div class="header-search">
-                <form action="/search/node" class="searchForm" method="get">
-                  <div class="menu search-bar-form">
-                    <input id="search-site-main" type="search" name="keys" placeholder="Search" aria-label="search" />
-                    <button type="submit" class="search-button">
-                      <i class="fas fa-search" aria-hidden="true"></i>
-                      <span class="show-for-sr">Submit</span>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div>
-            {{ page.header }}
-          </div>
-        {% endif %}
-      </header>
+      {% include '@ccdh_foundation/regions/header.html.twig' %}
+
       <div class="row">
-        {% if show_account_info %}
-          <div class="{{ site_slogan ? 'large-6' : 'large-4 columns large-offset-8' }} columns hide-for-small">
-            <p>
-              {% if logged_in %}
-                <a href="{{ path('user.page') }}">{{ 'My Account'|t }}</a>
-                <a href="{{ path('user.logout') }}">{{ 'Logout'|t }}</a>
-              {% else %}
-                <a href="{{ path('user.login') }}">{{ 'Login'|t }}</a>
-                <a href="{{ path('user.register') }}">{{ 'Sign Up'|t }}</a>
-              {% endif %}
-            </p>
-          </div>
-        {% endif %}
-        {% if site_slogan %}
-          <div class="large-6 columns hide-for-small">
-            {{ site_slogan }}
-          </div>
-        {% endif %}
-        {% if show_account_info %}
-          <div class="show-for-small">
-            <div class="six mobile-two columns">
-              <p>
-                <a href="{{ path('user.login') }}" class="radius button">{{ 'Login'|t }}</a>
-              </p>
-            </div>
-            <div class="six mobile-two columns">
-              <p>
-                <a href="{{ path('user.register') }}" class="radius success button">{{ 'Sign Up'|t }}</a>
-              </p>
-            </div>
-          </div>
-        {% endif %}
+        {% include '@ccdh_foundation/regions/account-info.html.twig' %}
       </div>
 
       {% if messages and not zurb_foundation_messages_modal %}
@@ -136,70 +74,18 @@
       {% endif %}
 
       <div class="row">
-        <main id="main" class="{{ main_grid }} columns" role="main">
-          {% if page.highlighted %}
-            {% apply spaceless %}
-              {{ page.highlighted }}
-            {% endapply %}
-          {% endif %}
-          <a id="main-content"></a>
-          {% if breadcrumb %} {{ breadcrumb }} {% endif %}
-          <section>
-            {{ page.content }}
-          </section>
-        </main>
+        {% include '@ccdh_foundation/regions/main.html.twig' %}
+
         {% if page.sidebar_first %}
-          <div id="sidebar-first" class="{{ sidebar_first_grid }} columns sidebar ">
-            {{ page.sidebar_first }}
-          </div>
+          {% include '@ccdh_foundation/regions/sidebar-first.html.twig' %}
         {% endif %}
+
         {% if page.sidebar_second %}
-          <div id="sidebar-second" class="{{ sidebar_sec_grid }} columns sidebar">
-            {{ page.sidebar_second }}
-          </div>
+          {% include '@ccdh_foundation/regions/sidebar-second.html.twig' %}
         {% endif %}
       </div>
-      <footer>
-        <div class="grid-container">
-          <div class="row footer-internal-links grid-x">
-            <div class="columns cell small-12 large-4 align-spaced">
-              <div class="nci-wordmark"></div>
-            </div>
-            <div class="columns more-info cell large-4 align-spaced align-right">
-              <h3>More Information</h3>
-              <!--List of links -->
-              <a href="https://www.cancer.gov/policies/accessibility" target="_blank" aria-label="Cancer.gov policy on accessibility">Accessibility</a>
-              <a href="https://www.cancer.gov/policies/foia" target="_blank" aria-label="Cancer.gov policy on FOIA">FOIA</a>
-              <a href="https://www.cancer.gov/policies" target="_blank" aria-label="Cancer.gov policies">Policies</a>
-            </div>
-          </div>
 
-          <div class="row footer-external-links grid-x">
-            <div class="columns org-nav cell">
-              <!--List of links -->
-              <a href="https://www.hhs.gov" target="_blank">U.S. Department of Health and Human Services</a>
-              <a href="https://www.nih.gov" target="_blank">National Institutes of Health</a>
-              <a href="https://www.cancer.gov" target="_blank">National Cancer Institute</a>
-              <a href="https://www.usa.gov" target="_blank">USA.gov</a>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="columns tagline">
-              NIH&hellip; Turning Discovery Into Health<sup>&reg;</sup>
-            </div>
-          </div>
-        </div>
-      </footer>
-      {% if block_copyright_show %}
-        <div class="bottom-bar callout secondary large-12 columns">
-          {% if not block_copyright_custom_text %}
-            <p>&copy; {{ "now"|date('Y') }} {{ site_name }} {{ 'All rights reserved.'|t }}</p>
-          {% else %}
-            {{ block_copyright }}
-          {% endif %}
-        </div>
-      {% endif %}
+      {% include '@ccdh_foundation/regions/footer.html.twig' %}
     </div>
   </div>
 </div>

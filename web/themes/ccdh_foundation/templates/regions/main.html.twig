@@ -1,0 +1,12 @@
+<main id="main" class="{{ main_grid }} columns" role="main">
+  {% if page.highlighted %}
+    {% apply spaceless %}
+      {{ page.highlighted }}
+    {% endapply %}
+  {% endif %}
+  <a id="main-content"></a>
+  {% if breadcrumb %} {{ breadcrumb }} {% endif %}
+  <section>
+    {{ page.content }}
+  </section>
+</main>
