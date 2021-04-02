@@ -4,7 +4,7 @@ global:
     base:
       css/ccdh_foundation.css: {}
   js:
-    #js/ccdh_foundation.js: {}
+    js/ccdh_foundation.js: {}
     js/sticky_footer.js: {}
     'https://use.fontawesome.com/releases/v5.12.0/js/all.js': { type: external, minified: true }
     'https://use.fontawesome.com/releases/v5.12.0/js/v4-shims.js': { type: external, minified: true }
@@ -14,13 +14,13 @@ fonts:
       '//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap': { type: external, minified: true }
       '//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap': { type: external, minified: true }
 
-gdpr.check:
-  version: VERSION
-  js:
-    js/gdpr_check.js: { minified: true }
-  dependencies:
-    - core/jquery
-    - core/drupal
+# gdpr.check:
+#   version: VERSION
+#   js:
+#     js/gdpr_check.js: { minified: true }
+#   dependencies:
+#     - core/jquery
+#     - core/drupal
 
 modernizr:
   # Block the page from being loaded until Modernizr is initialized.

@@ -434,6 +434,15 @@ END: FOOTER
 */
 
 /*
+START: CONTENT - styling for db-stored content
+*/
+
+
+/*
+END: CONTENT
+*/
+
+/*
 START: TOP BAR
 */
 
@@ -2287,6 +2296,12 @@ body.toolbar-fixed .sticky.is-stuck.is-at-top {
 
 .is-dropdown-submenu.js-dropdown-active {
   display: block;
+}
+
+.is-dropdown-submenu-item .fa-external-link,
+.is-dropdown-submenu-item svg.fa-external-link-alt {
+  color: #fff;
+  margin: 0 6px 0 6px;
 }
 
 .row {
