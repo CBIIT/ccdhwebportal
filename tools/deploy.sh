@@ -30,15 +30,15 @@ echo "Begin Deploying Site::$BRANCH"
 echo "Pull source code from origin/$BRANCH"
 git pull origin $BRANCH
 
-# Turn ON maint mode.
-echo "Turn ON maintenance mode"
-ddev drush sset system.maintenance_mode 1 --input-format=integer
-
 # Update vendor sources
 ddev composer install
 
+# Turn ON maint mode
+# echo "Turn ON maintenance mode"
+# ddev drush state:set system.maintenance_mode 1 --input-format=integer --quiet
+
 # Load database
-DBFILE=$DB_EXPORT_DIR/`ls database/export | sort -r | head -1`
+DBFILE=$DB_EXPORT_DIR/`ls ./database/export | sort -r | head -1`
 echo "Loading latest database: $DBFILE"
 ddev drush -y sql-cli < $DBFILE
 
