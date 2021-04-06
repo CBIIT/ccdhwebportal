@@ -1,0 +1,16 @@
+uuid: 73fe77f6-0c04-434f-9d5e-6d44d908b450
+langcode: en
+status: false
+dependencies: {  }
+id: qa
+label: qa
+description: harmonization-qa.datacommons.cancer.gov
+folder: ../config/qa
+module: {  }
+theme: {  }
+blacklist:
+  - google_tag.container.ccdh_web_portal
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: false
+weight: 0

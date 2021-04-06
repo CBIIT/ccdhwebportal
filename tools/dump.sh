@@ -33,7 +33,7 @@ ddev drush -y cache:rebuild
 
 if [ -z "$MODE" ] || [[ $MODE == "--cf" ]]; then
   # Export config settings to files.
-  ddev drush -y cex
+  ddev drush -y csex
 fi
 
 if [ -z "$MODE" ] || [[ $MODE == "--db" ]]; then

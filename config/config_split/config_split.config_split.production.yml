@@ -1,0 +1,16 @@
+uuid: 15ab4c24-2673-41ed-87e9-f4c8994fc69b
+langcode: en
+status: false
+dependencies: {  }
+id: production
+label: production
+description: harmonization.datacommons.cancer.gov
+folder: ../config/production
+module: {  }
+theme: {  }
+blacklist:
+  - google_tag.container.ccdh_web_portal
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: false
+weight: 0

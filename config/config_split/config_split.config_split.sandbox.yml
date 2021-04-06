@@ -1,0 +1,16 @@
+uuid: 726aa854-7c23-46b1-b11d-7e241c1cb022
+langcode: en
+status: false
+dependencies: {  }
+id: sandbox
+label: sandbox
+description: ccdhportaldev.pedscommons.org
+folder: ../config/sandbox
+module: {  }
+theme: {  }
+blacklist:
+  - google_tag.container.ccdh_web_portal
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: false
+weight: 0

@@ -3,6 +3,7 @@
 
 ### Deploy the Site
 1. Git clone/pull this repo
+2. Have DDev-Local running
 2. Git clone/pull the repo for the database backup files
 3. Place the preferred *.sql backup file in ccdhwebportal/database/export
 4. ```cd ccdhwebportal```

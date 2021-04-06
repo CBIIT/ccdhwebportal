@@ -1,7 +1,7 @@
 account: UA-177224248-1
 premium: false
 domain_mode: 2
-cross_domains: harmonization.datacommons.cancer.gov
+cross_domains: "harmonization.datacommons.cancer.gov\r\nharmonization-stage.datacommons.cancer.gov\r\nharmonization-qa.datacommons.cancer.gov\r\nharmonization-dev.datacommons.cancer.gov\r\nccdhportaldev.pedscommons.org"
 visibility:
   request_path_mode: 0
   request_path_pages: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
@@ -28,7 +28,7 @@ custom:
   metric: {  }
 codesnippet:
   create: {  }
-  before: "var gaCode = 'UA-177224248-1';\r\nwindow['ga-disable-' + gaCode] = true;\r\nif(document.cookie.valueOf('cookie-agreed').indexOf(\"cookie-agreed=2\") != -1) {\r\n  window['ga-disable-' + gaCode] = false;\r\n}\r\n// Testing:\r\n// console.log(\"cookies: \", document.cookie);\r\nconsole.log(\"tracking disabled?\", window['ga-disable-' + gaCode]);"
+  before: "// var gaCode = 'UA-177224248-1';\r\n// window['ga-disable-' + gaCode] = true;\r\n// if(document.cookie.valueOf('cookie-agreed').indexOf(\"cookie-agreed=2\") != -1) {\r\n//   window['ga-disable-' + gaCode] = false;\r\n// }\r\n// Testing:\r\n// console.log(\"cookies: \", document.cookie);\r\n// console.log(\"tracking disabled?\", window['ga-disable-' + gaCode]);"
   after: ''
 translation_set: false
 cache: false

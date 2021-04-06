@@ -29,5 +29,6 @@
 # Ignore IDE and development files/folders
 /.vscode/
 /.ddev/
+/.env
 /database/*
 

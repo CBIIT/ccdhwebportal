@@ -19,15 +19,19 @@
         "drupal/admin_toolbar": "^2.3",
         "drupal/admin_toolbar_tools": "^2.3",
         "drupal/backup_migrate": "^4.1",
+        "drupal/config_split": "^1.7",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "8.9.*",
         "drupal/eu_cookie_compliance": "^1.14",
+        "drupal/gdoc_field": "^1.1",
         "drupal/google_analytics": "^2.5",
         "drupal/google_tag": "^1.4",
         "drupal/ldap_auth": "^1.23",
         "drupal/zurb_foundation": "^6",
-        "drush/drush": "^10.3"
+        "drush/drush": "^10.4.1",
+        "enlightn/security-checker": "^1.7",
+        "vlucas/phpdotenv": "^5.3"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -36,6 +40,11 @@
     "prefer-stable": true,
     "config": {
         "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Ccdh\\Libraries\\ccdh_lib\\": "web/libraries/ccdh_lib/src"
+        }
     },
     "extra": {
         "drupal-scaffold": {
