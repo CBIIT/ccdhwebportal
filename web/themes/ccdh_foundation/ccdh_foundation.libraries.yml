@@ -22,15 +22,4 @@ fonts:
 #     - core/jquery
 #     - core/drupal
 
-modernizr:
-  # Block the page from being loaded until Modernizr is initialized.
-  header: true
-  remote: https://github.com/Modernizr/Modernizr
-  license:
-    name: MIT
-    url: http://modernizr.com/license/
-    gpl-compatible: true
-  version: "v3.6.0"
-  js:
-    js/modernizr.min.js: { preprocess: 0, weight: -21, minified: true }
 

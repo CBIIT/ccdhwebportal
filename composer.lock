@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ddfbbf66199aae930b3e5c657b9ea970",
+    "content-hash": "2cae77e23c57381cdb6407ee067752da",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -56,6 +56,10 @@
                 "cors",
                 "stack"
             ],
+            "support": {
+                "issues": "https://github.com/asm89/stack-cors/issues",
+                "source": "https://github.com/asm89/stack-cors/tree/1.3.0"
+            },
             "time": "2019-12-24T22:41:47+00:00"
         },
         {
@@ -309,6 +313,11 @@
                 "validation",
                 "versioning"
             ],
+            "support": {
+                "irc": "irc://irc.freenode.org/composer",
+                "issues": "https://github.com/composer/semver/issues",
+                "source": "https://github.com/composer/semver/tree/1.5.1"
+            },
             "time": "2020-01-13T12:06:48+00:00"
         },
         {
@@ -1107,6 +1116,54 @@
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
+            "name": "cweagans/composer-patches",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cweagans/composer-patches.git",
+                "reference": "ae02121445ad75f4eaff800cc532b5e6233e2ddf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/ae02121445ad75f4eaff800cc532b5e6233e2ddf",
+                "reference": "ae02121445ad75f4eaff800cc532b5e6233e2ddf",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0 || ~2.0",
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "cweagans\\Composer\\Patches"
+            },
+            "autoload": {
+                "psr-4": {
+                    "cweagans\\Composer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cameron Eagans",
+                    "email": "me@cweagans.net"
+                }
+            ],
+            "description": "Provides a way to patch Composer packages.",
+            "support": {
+                "issues": "https://github.com/cweagans/composer-patches/issues",
+                "source": "https://github.com/cweagans/composer-patches/tree/1.7.0"
+            },
+            "time": "2020-09-30T17:56:20+00:00"
+        },
+        {
             "name": "dflydev/dot-access-data",
             "version": "v1.1.0",
             "source": {
@@ -1264,6 +1321,10 @@
                 "docblock",
                 "parser"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/annotations/issues",
+                "source": "https://github.com/doctrine/annotations/tree/v1.4.0"
+            },
             "time": "2017-02-24T16:22:25+00:00"
         },
         {
@@ -1334,6 +1395,10 @@
                 "cache",
                 "caching"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/cache/issues",
+                "source": "https://github.com/doctrine/cache/tree/1.6.x"
+            },
             "time": "2017-07-22T12:49:21+00:00"
         },
         {
@@ -1401,6 +1466,10 @@
                 "collections",
                 "iterator"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/collections/issues",
+                "source": "https://github.com/doctrine/collections/tree/master"
+            },
             "time": "2017-01-03T10:49:41+00:00"
         },
         {
@@ -1474,6 +1543,10 @@
                 "persistence",
                 "spl"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/common/issues",
+                "source": "https://github.com/doctrine/common/tree/v2.7.3"
+            },
             "time": "2017-07-22T08:35:12+00:00"
         },
         {
@@ -1541,6 +1614,9 @@
                 "singularize",
                 "string"
             ],
+            "support": {
+                "source": "https://github.com/doctrine/inflector/tree/master"
+            },
             "time": "2017-07-22T12:18:28+00:00"
         },
         {
@@ -1601,6 +1677,10 @@
                 "parser",
                 "php"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/lexer/issues",
+                "source": "https://github.com/doctrine/lexer/tree/1.0.2"
+            },
             "time": "2019-06-08T11:03:04+00:00"
         },
         {
@@ -1947,16 +2027,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.9.13",
+            "version": "8.9.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "a53db77b55a035453d7229e0c3069f8591cb4cb6"
+                "reference": "84796e158cd3bd50af08974dd62931d0cc78dc7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/a53db77b55a035453d7229e0c3069f8591cb4cb6",
-                "reference": "a53db77b55a035453d7229e0c3069f8591cb4cb6",
+                "url": "https://api.github.com/repos/drupal/core/zipball/84796e158cd3bd50af08974dd62931d0cc78dc7e",
+                "reference": "84796e158cd3bd50af08974dd62931d0cc78dc7e",
                 "shasum": ""
             },
             "require": {
@@ -2174,11 +2254,14 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2021-01-19T23:11:00+00:00"
+            "support": {
+                "source": "https://github.com/drupal/core/tree/8.9.14"
+            },
+            "time": "2021-04-20T23:05:40+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "8.9.13",
+            "version": "8.9.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -2221,11 +2304,14 @@
             "keywords": [
                 "drupal"
             ],
+            "support": {
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/8.9.5"
+            },
             "time": "2020-08-07T22:30:30+00:00"
         },
         {
             "name": "drupal/core-project-message",
-            "version": "8.9.13",
+            "version": "8.9.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
@@ -2259,20 +2345,23 @@
             "keywords": [
                 "drupal"
             ],
+            "support": {
+                "source": "https://github.com/drupal/core-project-message/tree/8.9.14"
+            },
             "time": "2020-08-02T22:04:49+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "8.9.13",
+            "version": "8.9.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "7a940fd5b64d2b22366680e2a60d96bf2c10089d"
+                "reference": "4e468b0df84cdcf6f30594feb4e080c5c6ea7ab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/7a940fd5b64d2b22366680e2a60d96bf2c10089d",
-                "reference": "7a940fd5b64d2b22366680e2a60d96bf2c10089d",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/4e468b0df84cdcf6f30594feb4e080c5c6ea7ab3",
+                "reference": "4e468b0df84cdcf6f30594feb4e080c5c6ea7ab3",
                 "shasum": ""
             },
             "require": {
@@ -2284,7 +2373,7 @@
                 "doctrine/common": "v2.7.3",
                 "doctrine/inflector": "v1.2.0",
                 "doctrine/lexer": "1.0.2",
-                "drupal/core": "8.9.13",
+                "drupal/core": "8.9.14",
                 "easyrdf/easyrdf": "0.9.1",
                 "egulias/email-validator": "2.1.17",
                 "guzzlehttp/guzzle": "6.5.4",
@@ -2341,7 +2430,10 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
-            "time": "2021-01-19T23:11:00+00:00"
+            "support": {
+                "source": "https://github.com/drupal/core-recommended/tree/8.9.14"
+            },
+            "time": "2021-04-20T23:05:40+00:00"
         },
         {
             "name": "drupal/eu_cookie_compliance",
@@ -2887,6 +2979,12 @@
                 "rdfa",
                 "sparql"
             ],
+            "support": {
+                "forum": "http://groups.google.com/group/easyrdf/",
+                "irc": "irc://chat.freenode.net/easyrdf",
+                "issues": "http://github.com/njh/easyrdf/issues",
+                "source": "https://github.com/easyrdf/easyrdf/tree/0.9.1"
+            },
             "time": "2015-02-27T09:45:49+00:00"
         },
         {
@@ -2945,6 +3043,10 @@
                 "validation",
                 "validator"
             ],
+            "support": {
+                "issues": "https://github.com/egulias/EmailValidator/issues",
+                "source": "https://github.com/egulias/EmailValidator/tree/2.1.17"
+            },
             "time": "2020-02-13T22:36:52+00:00"
         },
         {
@@ -3234,6 +3336,10 @@
                 "rest",
                 "web service"
             ],
+            "support": {
+                "issues": "https://github.com/guzzle/guzzle/issues",
+                "source": "https://github.com/guzzle/guzzle/tree/6.5"
+            },
             "time": "2020-05-25T19:35:05+00:00"
         },
         {
@@ -3285,6 +3391,10 @@
             "keywords": [
                 "promise"
             ],
+            "support": {
+                "issues": "https://github.com/guzzle/promises/issues",
+                "source": "https://github.com/guzzle/promises/tree/master"
+            },
             "time": "2016-12-20T10:07:11+00:00"
         },
         {
@@ -3356,6 +3466,10 @@
                 "uri",
                 "url"
             ],
+            "support": {
+                "issues": "https://github.com/guzzle/psr7/issues",
+                "source": "https://github.com/guzzle/psr7/tree/1.6.1"
+            },
             "time": "2019-07-01T23:21:34+00:00"
         },
         {
@@ -3431,6 +3545,14 @@
                 "psr",
                 "psr-7"
             ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-diactoros/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-diactoros/issues",
+                "rss": "https://github.com/laminas/laminas-diactoros/releases.atom",
+                "source": "https://github.com/laminas/laminas-diactoros"
+            },
             "time": "2020-03-23T15:28:28+00:00"
         },
         {
@@ -3480,6 +3602,14 @@
                 "escaper",
                 "laminas"
             ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-escaper/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-escaper/issues",
+                "rss": "https://github.com/laminas/laminas-escaper/releases.atom",
+                "source": "https://github.com/laminas/laminas-escaper"
+            },
             "time": "2019-12-31T16:43:30+00:00"
         },
         {
@@ -3547,6 +3677,14 @@
                 "feed",
                 "laminas"
             ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-feed/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-feed/issues",
+                "rss": "https://github.com/laminas/laminas-feed/releases.atom",
+                "source": "https://github.com/laminas/laminas-feed"
+            },
             "time": "2020-03-29T12:36:29+00:00"
         },
         {
@@ -3597,6 +3735,14 @@
                 "laminas",
                 "stdlib"
             ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-stdlib/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-stdlib/issues",
+                "rss": "https://github.com/laminas/laminas-stdlib/releases.atom",
+                "source": "https://github.com/laminas/laminas-stdlib"
+            },
             "time": "2019-12-31T17:51:15+00:00"
         },
         {
@@ -3649,6 +3795,12 @@
                 "laminas",
                 "zf"
             ],
+            "support": {
+                "forum": "https://discourse.laminas.dev/",
+                "issues": "https://github.com/laminas/laminas-zendframework-bridge/issues",
+                "rss": "https://github.com/laminas/laminas-zendframework-bridge/releases.atom",
+                "source": "https://github.com/laminas/laminas-zendframework-bridge"
+            },
             "funding": [
                 {
                     "url": "https://funding.communitybridge.org/projects/laminas-project",
@@ -3785,6 +3937,10 @@
                 "serializer",
                 "xml"
             ],
+            "support": {
+                "issues": "https://github.com/Masterminds/html5-php/issues",
+                "source": "https://github.com/Masterminds/html5-php/tree/2.x"
+            },
             "time": "2017-09-04T12:26:28+00:00"
         },
         {
@@ -3882,6 +4038,11 @@
                 "pseudorandom",
                 "random"
             ],
+            "support": {
+                "email": "info@paragonie.com",
+                "issues": "https://github.com/paragonie/random_compat/issues",
+                "source": "https://github.com/paragonie/random_compat"
+            },
             "time": "2018-07-02T15:55:56+00:00"
         },
         {
@@ -3948,6 +4109,10 @@
                 "archive",
                 "tar"
             ],
+            "support": {
+                "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Archive_Tar",
+                "source": "https://github.com/pear/Archive_Tar"
+            },
             "funding": [
                 {
                     "url": "https://github.com/mrook",
@@ -4005,6 +4170,10 @@
                 }
             ],
             "description": "More info available on: http://pear.php.net/package/Console_Getopt",
+            "support": {
+                "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Console_Getopt",
+                "source": "https://github.com/pear/Console_Getopt"
+            },
             "time": "2019-11-20T18:27:48+00:00"
         },
         {
@@ -4049,6 +4218,10 @@
                 }
             ],
             "description": "Minimal set of PEAR core files to be used as composer dependency",
+            "support": {
+                "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=PEAR",
+                "source": "https://github.com/pear/pear-core-minimal"
+            },
             "time": "2019-11-19T19:00:24+00:00"
         },
         {
@@ -4104,6 +4277,10 @@
             "keywords": [
                 "exception"
             ],
+            "support": {
+                "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=PEAR_Exception",
+                "source": "https://github.com/pear/PEAR_Exception"
+            },
             "time": "2019-12-10T10:24:42+00:00"
         },
         {
@@ -4222,6 +4399,10 @@
                 "container-interop",
                 "psr"
             ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container/tree/master"
+            },
             "time": "2017-02-14T16:28:37+00:00"
         },
         {
@@ -4272,6 +4453,9 @@
                 "request",
                 "response"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/master"
+            },
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
@@ -4319,6 +4503,9 @@
                 "psr",
                 "psr-3"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/1.1.3"
+            },
             "time": "2020-03-23T09:12:05+00:00"
         },
         {
@@ -4431,6 +4618,10 @@
                 }
             ],
             "description": "A polyfill for getallheaders.",
+            "support": {
+                "issues": "https://github.com/ralouphie/getallheaders/issues",
+                "source": "https://github.com/ralouphie/getallheaders/tree/develop"
+            },
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
@@ -4480,6 +4671,10 @@
             "keywords": [
                 "stack"
             ],
+            "support": {
+                "issues": "https://github.com/stackphp/builder/issues",
+                "source": "https://github.com/stackphp/builder/tree/master"
+            },
             "time": "2017-11-18T14:57:29+00:00"
         },
         {
@@ -4539,6 +4734,10 @@
                 "database",
                 "routing"
             ],
+            "support": {
+                "issues": "https://github.com/symfony-cmf/routing/issues",
+                "source": "https://github.com/symfony-cmf/routing/tree/1.4"
+            },
             "time": "2017-05-09T08:10:41+00:00"
         },
         {
@@ -4595,6 +4794,9 @@
             ],
             "description": "Symfony ClassLoader Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/class-loader/tree/3.4"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4681,6 +4883,9 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/console/tree/v3.4.41"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4751,6 +4956,9 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/debug/tree/3.4"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4836,6 +5044,9 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/dependency-injection/tree/3.4"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4913,6 +5124,9 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/event-dispatcher/tree/3.4"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5101,6 +5315,9 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/http-foundation/tree/3.4"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5205,6 +5422,9 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/http-kernel/tree/v3.4.44"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5277,6 +5497,9 @@
                 "polyfill",
                 "portable"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.17.0"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5350,6 +5573,9 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-iconv/tree/v1.17.0"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5426,6 +5652,9 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-intl-idn/tree/master"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5499,6 +5728,9 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.17.0"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5569,6 +5801,9 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php56/tree/v1.17.0"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5642,6 +5877,9 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php70/tree/master"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5711,6 +5949,9 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php72/tree/master"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5860,6 +6101,9 @@
                 "polyfill",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-util/tree/master"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -5923,6 +6167,9 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/process/tree/v3.4.41"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6000,6 +6247,10 @@
                 "psr-17",
                 "psr-7"
             ],
+            "support": {
+                "issues": "https://github.com/symfony/psr-http-message-bridge/issues",
+                "source": "https://github.com/symfony/psr-http-message-bridge/tree/v1.1.2"
+            },
             "time": "2019-04-03T17:09:40+00:00"
         },
         {
@@ -6076,6 +6327,9 @@
                 "uri",
                 "url"
             ],
+            "support": {
+                "source": "https://github.com/symfony/routing/tree/3.4"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6169,6 +6423,9 @@
             ],
             "description": "Symfony Serializer Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/serializer/tree/v3.4.41"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6253,6 +6510,9 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/translation/tree/3.4"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6353,6 +6613,9 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/validator/tree/3.4"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6371,16 +6634,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.4.20",
+            "version": "v4.4.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "a1eab2f69906dc83c5ddba4632180260d0ab4f7f"
+                "reference": "0da0e174f728996f5d5072d6a9f0a42259dbc806"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/a1eab2f69906dc83c5ddba4632180260d0ab4f7f",
-                "reference": "a1eab2f69906dc83c5ddba4632180260d0ab4f7f",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/0da0e174f728996f5d5072d6a9f0a42259dbc806",
+                "reference": "0da0e174f728996f5d5072d6a9f0a42259dbc806",
                 "shasum": ""
             },
             "require": {
@@ -6440,7 +6703,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v4.4.20"
+                "source": "https://github.com/symfony/var-dumper/tree/v4.4.21"
             },
             "funding": [
                 {
@@ -6456,7 +6719,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-27T09:09:26+00:00"
+            "time": "2021-03-27T19:49:03+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -6515,6 +6778,9 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/yaml/tree/v3.4.41"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -6593,6 +6859,10 @@
             "keywords": [
                 "templating"
             ],
+            "support": {
+                "issues": "https://github.com/twigphp/Twig/issues",
+                "source": "https://github.com/twigphp/Twig/tree/1.x"
+            },
             "time": "2020-02-11T05:59:23+00:00"
         },
         {
@@ -6643,6 +6913,10 @@
                 "security",
                 "stream-wrapper"
             ],
+            "support": {
+                "issues": "https://github.com/TYPO3/phar-stream-wrapper/issues",
+                "source": "https://github.com/TYPO3/phar-stream-wrapper/tree/master"
+            },
             "time": "2019-12-10T11:53:27+00:00"
         },
         {
@@ -7105,5 +7379,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

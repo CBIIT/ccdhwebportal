@@ -42,6 +42,7 @@ else
 fi
 
 DB_EXPORT_DIR="./database/export"
+DDEV=
 
 echo "Begin Deploying Site::$BRANCH"
 
@@ -55,39 +56,46 @@ echo "Deploy .env.${ENV_TIER}"
 if [ "$ENV_TIER"  == "ddevlocal" ]; then
   # For DDev, this is where dot files go to be deployed in the container
   cp -f ./env/.env.${ENV_TIER} ./.ddev/homeadditions/.env
+  DDEV='ddev '
 else
   cp -f ./env/.env.${ENV_TIER} ./.env
 fi
 
 
 # Update vendor sources
-ddev composer install
+${DDEV}composer install
 
 # Turn ON maint mode
 # echo "Turn ON maintenance mode"
-# ddev drush state:set system.maintenance_mode 1 --input-format=integer --quiet
+# ${DDEV}drush state:set system.maintenance_mode 1 --input-format=integer --quiet
 
 # Load database
 DBFILE=$DB_EXPORT_DIR/`ls ./database/export | sort -r | head -1`
 echo "Loading latest database: $DBFILE"
-ddev drush -y sql-cli < $DBFILE
+${DDEV}drush -y sql-cli < $DBFILE
 
 # Import config settings
 echo "Import config settings"
 # import everything from the main config directory
-ddev drush -y cim
-# import the environment-specific configs
-ddev drush -y csim ${ENV_TIER}
+${DDEV}drush -y cim
 
 # Run Drupal database updates
 echo "Running Drupal updatedb"
-ddev drush -y updatedb
+${DDEV}drush -y updatedb
+
+# import the environment-specific configs
+echo "Import '${ENV_TIER}' config settings"
+${DDEV}drush -y csim ${ENV_TIER}
+
+# Run Drupal database updates
+echo "Running Drupal updatedb"
+${DDEV}drush -y updatedb
 
 echo "Turn OFF maintenance mode"
-ddev drush -y state:set system.maintenance_mode 0 --input-format=integer
+${DDEV}drush -y state:set system.maintenance_mode 0 --input-format=integer
 
 echo "Clear Drupal Cache"
-ddev drush -y cache:rebuild
+${DDEV}drush -y cache:rebuild
 
 # Done!
 echo "Site Deployed"
