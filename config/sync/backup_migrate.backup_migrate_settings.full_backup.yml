@@ -24,11 +24,14 @@ config:
       cache_data: cache_data
       cache_default: cache_default
       cache_discovery: cache_discovery
+      cache_discovery_migration: cache_discovery_migration
       cache_dynamic_page_cache: cache_dynamic_page_cache
       cache_entity: cache_entity
       cache_menu: cache_menu
+      cache_migrate: cache_migrate
+      cache_page: cache_page
       cache_render: cache_render
-      sessions: sessions
+      cache_toolbar: cache_toolbar
       watchdog: watchdog
   private_files_exclude:
     exclude_filepaths:
