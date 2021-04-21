@@ -823,7 +823,6 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  */
 $settings['config_sync_directory'] = '../config/sync';
 
-$config['config_split.config_split.config_split']['status'] = TRUE;
 $config['config_split.config_split.' . getenv('CCDH_ENV')]['status'] = TRUE;
 
 

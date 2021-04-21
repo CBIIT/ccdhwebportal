@@ -74,11 +74,9 @@ ddev drush -y sql-cli < $DBFILE
 
 # Import config settings
 echo "Import config settings"
-# Import the config_split settings first,
-# in case there are split changes.
-ddev drush -y csim config_split
-# now import everything else.
+# import everything from the main config directory
 ddev drush -y cim
+# import the environment-specific configs
 ddev drush -y csim ${ENV_TIER}
 
 # Run Drupal database updates
