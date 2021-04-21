@@ -1,15 +1,15 @@
 uuid: e93d83c7-4d78-498a-8560-4b5fa43f80fd
 langcode: en
-status: true
+status: false
 dependencies:
   content:
     - 'block_content:basic:6c7d48b1-a998-44d4-8ede-e8b919d9ca0e'
   module:
     - block_content
   theme:
-    - nci_barrio
+    - ccdh_foundation
 id: otherresources
-theme: nci_barrio
+theme: ccdh_foundation
 region: sidebar_second
 weight: -1
 provider: null

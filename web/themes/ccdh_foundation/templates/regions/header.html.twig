@@ -1,0 +1,25 @@
+<header class="header-main" role="banner" aria-label="{{ 'Site header'|t }}">
+  {% if page.header %}
+    <div class="grid-container">
+      <div class="site-logo-header">
+        <a href="/" aria-label="Return to CCDH home">
+          <img src="/sites/default/files/CCDH Logo COLOR.svg" alt="National Cancer Institute Center for Cancer Data Harmonization" />
+        </a>
+        <div class="header-search">
+          <form action="/search/node" class="searchForm" method="get">
+            <div class="menu search-bar-form">
+              <input id="search-site-main" type="search" name="keys" placeholder="Search" aria-label="search" />
+              <button type="submit" class="search-button">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <span class="show-for-sr">Submit</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div>
+      {{ page.header }}
+    </div>
+  {% endif %}
+</header>

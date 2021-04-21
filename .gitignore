@@ -6,7 +6,7 @@
 /web/modules/contrib/
 /web/themes/contrib/
 /web/profiles/contrib/
-/web/libraries/
+#/web/libraries/contrib/
 /web/tmp/
 
 # Ignore  NPM Packages
@@ -29,5 +29,6 @@
 # Ignore IDE and development files/folders
 /.vscode/
 /.ddev/
+/.env
 /database/*
 

@@ -1,0 +1,6 @@
+name: 'CCDH Module'
+description: 'Home of multiple non-specific customizations'
+core_version_requirement: ^8 || ^9
+core: 8.x
+type: module
+

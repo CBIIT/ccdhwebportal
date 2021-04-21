@@ -1,5 +1,5 @@
-name: CCDH ZURB Foundation Sub-theme
-description: "CCDH custom sub-theme, inherits from the Foundation base theme read <a href=\"http://foundation.zurb.com/docs/index.php\">framework documentation</a>"
+name: CCDH Foundation (subtheme of ZURB Foundation)
+description: "Custom sub-theme, inherits from the Foundation base theme read <a href=\"http://foundation.zurb.com/docs/index.php\">framework documentation</a>"
 core: 8.x
 core_version_requirement: ^8 || ^9
 type: theme
@@ -8,14 +8,14 @@ base theme: zurb_foundation
 # Image appears on admin/appearance
 # screenshot: images/screenshot.jpg
 
-# Uncomment these lines and change "STARTER" to your theme name if you
-# need to add custom CSS or JS
 libraries:
- - ccdh_foundation/global
- - ccdh_foundation/fonts
+  - ccdh_foundation/global
+  - ccdh_foundation/fonts
+  - ccdh_foundation/gdpr.check
+libraries-override:
+  core/modernizr: ccdh_foundation/modernizr
 
 # Regions are output in the page.html.twig
-
 regions:
   header: Header
   meta_header: 'Meta header'
@@ -26,9 +26,9 @@ regions:
   content: Content
   sidebar_first: 'Left sidebar'
   sidebar_second: 'Right sidebar'
-  footer_first: 'Footer first column'
-  footer_middle: 'Footer middle column'
-  footer_last: 'Footer last column'
+  # footer_first: 'Footer first column'
+  # footer_middle: 'Footer middle column'
+  # footer_last: 'Footer last column'
   left_off_canvas: 'Left off canvas'
   right_off_canvas: 'Right off canvas'
 regions_hidden:

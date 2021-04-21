@@ -1,0 +1,32 @@
+{% if show_account_info %}
+  <div class="{{ site_slogan ? 'large-6' : 'large-4 columns large-offset-8' }} columns hide-for-small">
+    <p>
+      {% if logged_in %}
+        <a href="{{ path('user.page') }}">{{ 'My Account'|t }}</a>
+        <a href="{{ path('user.logout') }}">{{ 'Logout'|t }}</a>
+      {% else %}
+        <a href="{{ path('user.login') }}">{{ 'Login'|t }}</a>
+        <a href="{{ path('user.register') }}">{{ 'Sign Up'|t }}</a>
+      {% endif %}
+    </p>
+  </div>
+{% endif %}
+{% if site_slogan %}
+  <div class="large-6 columns hide-for-small">
+    {{ site_slogan }}
+  </div>
+{% endif %}
+{% if show_account_info %}
+  <div class="show-for-small">
+    <div class="six mobile-two columns">
+      <p>
+        <a href="{{ path('user.login') }}" class="radius button">{{ 'Login'|t }}</a>
+      </p>
+    </div>
+    <div class="six mobile-two columns">
+      <p>
+        <a href="{{ path('user.register') }}" class="radius success button">{{ 'Sign Up'|t }}</a>
+      </p>
+    </div>
+  </div>
+{% endif %}

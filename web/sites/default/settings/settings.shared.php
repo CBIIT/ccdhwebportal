@@ -2,6 +2,17 @@
 
 // @codingStandardsIgnoreFile
 
+use Ccdh\Libraries\ccdh_lib\ServerEnv;
+
+if (!class_exists('Ccdh\\Libraries\\ccdh_lib\\ServerEnv')) {
+  print "Error:  Unable to load ServerEnv class.";
+  die;
+}
+if (!ServerEnv::loadSettings()) {
+  print "Error:  Unable to load ServerEnv settings.";
+  die;
+}
+
 /**
  * @file
  * Drupal site-specific configuration file.
@@ -806,7 +817,13 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 #$settings['config_sync_directory'] = 'sites/default/files/config_D8cMmCq_13n3JjJknq_rgaBO-yegG0lZYP-iSZBaKzRkzjzS4NTfrbw35FJySd4aGz8UkGyeAw/sync';
+
+/*
+ *  Configure config split & env directories
+ */
 $settings['config_sync_directory'] = '../config/sync';
+
+$config['config_split.config_split.' . getenv('CCDH_ENV')]['status'] = TRUE;
 
 
 if (file_exists(__DIR__ . '/settings.local.php')) {

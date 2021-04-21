@@ -1,0 +1,16 @@
+uuid: b70079c9-15b8-4978-87dd-1562cc4559ee
+langcode: en
+status: false
+dependencies: {  }
+id: ddevlocal
+label: ddevlocal
+description: ccdhwebportal.ddev.site
+folder: ../config/ddevlocal
+module: {  }
+theme: {  }
+blacklist:
+  - google_tag.container.ccdh_web_portal
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: false
+weight: 0

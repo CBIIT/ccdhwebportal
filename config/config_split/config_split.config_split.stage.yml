@@ -1,0 +1,16 @@
+uuid: fca26700-3fba-4288-a234-744a533fc4ab
+langcode: en
+status: false
+dependencies: {  }
+id: stage
+label: stage
+description: harmonization-stage.datacommons.cancer.gov
+folder: ../config/stage
+module: {  }
+theme: {  }
+blacklist:
+  - google_tag.container.ccdh_web_portal
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: false
+weight: 0
