@@ -83,11 +83,10 @@ ddev drush -y csim ${ENV_TIER}
 echo "Running Drupal updatedb"
 ddev drush -y updatedb
 
-echo "Clear Drupal Cache"
-ddev drush -y cache:rebuild
-
 echo "Turn OFF maintenance mode"
-ddev drush -y sset system.maintenance_mode 0 --input-format=integer
+ddev drush -y state:set system.maintenance_mode 0 --input-format=integer
+
+echo "Clear Drupal Cache"
 ddev drush -y cache:rebuild
 
 # Done!
