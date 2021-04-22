@@ -1,7 +1,0 @@
-{
-  "patches": {
-    "drupal/core": {
-        "Modernizr Upgrade 3.11.7": "patches/ModernizrUpgrade.patch"
-    }
-  }
-}

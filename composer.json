@@ -100,7 +100,12 @@
                 "      composer remove drupal/core-project-message"
             ]
         },
-        "enable-patching": true
+        "enable-patching": true,
+        "patches": {
+            "drupal/core": {
+                "Modernizr Upgrade 3.11.7": "patches/ModernizrUpgrade.patch"
+            }
+        }
     },
     "require-dev": {
         "drupal/coder": "^8.3",

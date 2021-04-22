@@ -1,0 +1,18 @@
+{
+  "classPrefix": "",
+  "enableClasses": true,
+  "enableJSClass": true,
+  "scriptGlobalName": "window",
+  "usePrefixes": true,
+  "minify": true,
+  "options": [
+    "addTest",
+    "prefixes",
+    "setClasses",
+    "testStyles"
+  ],
+  "feature-detects": [
+    "elem/details",
+    "inputtypes",
+  ]
+}
