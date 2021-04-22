@@ -11,9 +11,7 @@ base theme: zurb_foundation
 libraries:
   - ccdh_foundation/global
   - ccdh_foundation/fonts
-  - ccdh_foundation/gdpr.check
-libraries-override:
-  core/modernizr: ccdh_foundation/modernizr
+  # - ccdh_foundation/gdpr.check
 
 # Regions are output in the page.html.twig
 regions:
