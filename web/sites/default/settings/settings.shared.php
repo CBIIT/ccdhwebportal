@@ -825,6 +825,10 @@ $settings['config_sync_directory'] = '../config/sync';
 
 $config['config_split.config_split.' . getenv('CCDH_ENV')]['status'] = TRUE;
 
+if (getenv('CCDH_ENV') == 'sandbox') {
+  $settings['file_private_path'] = '/var/www/html/files/private';
+}
+
 
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';

@@ -1,0 +1,10 @@
+uuid: e93de82c-3a61-4a88-97b0-234d3912506a
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.token
+label: Token
+targetEntityType: contact_message
+cache: true
