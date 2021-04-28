@@ -51,14 +51,13 @@ echo "Pull source code from origin/$BRANCH"
 git pull origin $BRANCH
 
 
-# Deploy .env file
+# Deploy .env file for DDev only
+# the other .env files already exist on their respective servers
 echo "Deploy .env.${ENV_TIER}"
 if [ "$ENV_TIER"  == "ddevlocal" ]; then
   # For DDev, this is where dot files go to be deployed in the container
   cp -f ./env/.env.${ENV_TIER} ./.ddev/homeadditions/.env
   DDEV='ddev '
-else
-  cp -f ./env/.env.${ENV_TIER} ./.env
 fi
 
 
@@ -73,6 +72,13 @@ ${DDEV}composer install
 DBFILE=$DB_EXPORT_DIR/`ls ./database/export | sort -r | head -1`
 echo "Loading latest database: $DBFILE"
 ${DDEV}drush -y sql-cli < $DBFILE
+
+# Run Drupal database updates
+echo "Running Drupal updatedb"
+${DDEV}drush -y updatedb
+
+echo "Clear Drupal Cache"
+${DDEV}drush -y cache:rebuild
 
 # Import config settings
 echo "Import config settings"
