@@ -35,6 +35,7 @@ module:
   layout_discovery: 0
   ldap_auth: 0
   link: 0
+  menu_link_attributes: 0
   menu_ui: 0
   migrate: 0
   node: 0

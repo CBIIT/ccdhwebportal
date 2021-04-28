@@ -30,6 +30,7 @@
         "drupal/google_analytics": "^2.5",
         "drupal/google_tag": "^1.4",
         "drupal/ldap_auth": "^1.23",
+        "drupal/menu_link_attributes": "^1.2",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.6",
         "drupal/token": "^1.9",
