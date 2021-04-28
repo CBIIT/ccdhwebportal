@@ -6,7 +6,7 @@ id: full_backup
 label: 'Full Backup'
 config:
   namer:
-    filename: ccdh_
+    filename: ccdh
     timestamp: 1
     timestamp_format: YmdHis
   compressor:
