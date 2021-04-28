@@ -12,8 +12,9 @@
 # Ignore  NPM Packages
 /node_modules/
 
+# DEPRECATED - local no longer being used for sensitive info
 # Ignore configuration files that may contain sensitive information.
-/web/sites/*/settings/settings.local.php
+# /web/sites/*/settings/settings.local.php
 
 # Ignore paths that contain user-generated content.
 #/web/sites/*/files/*

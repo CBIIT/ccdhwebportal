@@ -345,8 +345,7 @@ $settings['hash_salt'] = getenv('CCDH_HASH_SALT', TRUE);
  * After finishing the upgrade, be sure to open this file again and change the
  * TRUE back to a FALSE!
  */
-$settings['update_free_access'] = (getenv('CCDH_ENV', TRUE) == 'ddevlocal');
-
+$settings['update_free_access'] = in_array(getenv('CCDH_ENV', TRUE), ['ddevlocal', 'sandbox']);
 /**
  * External access proxy settings:
  *
