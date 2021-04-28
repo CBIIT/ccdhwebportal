@@ -1,7 +1,5 @@
 <?php
 
-// @codingStandardsIgnoreFile
-
 use Ccdh\Libraries\ccdh_lib\ServerEnv;
 
 if (!class_exists('Ccdh\\Libraries\\ccdh_lib\\ServerEnv')) {
@@ -12,6 +10,8 @@ if (!ServerEnv::loadSettings()) {
   print "Error:  Unable to load ServerEnv settings.";
   die;
 }
+
+// @codingStandardsIgnoreFile
 
 /**
  * @file
@@ -99,7 +99,18 @@ if (!ServerEnv::loadSettings()) {
  * ];
  * @endcode
  */
-#$databases = [];
+// $databases = [];
+
+$databases['default']['default'] = array (
+  'database' => getenv('CCDH_DATABASE', TRUE),
+  'username' => getenv('CCDH_USERNAME', TRUE),
+  'password' => getenv('CCDH_PASSWORD', TRUE),
+  'prefix' => getenv('CCDH_PREFIX', TRUE),
+  'host' => getenv('CCDH_HOST', TRUE),
+  'port' => getenv('CCDH_PORT', TRUE),
+  'namespace' => getenv('CCDH_NAMESPACE', TRUE),
+  'driver' => getenv('CCDH_DRIVER', TRUE),
+);
 
 /**
  * Customizing database settings.
@@ -274,6 +285,16 @@ if (!ServerEnv::loadSettings()) {
  */
 # $settings['config_sync_directory'] = '/directory/outside/webroot';
 
+/*
+ *  Configure config split & env directories
+ */
+$settings['config_sync_directory'] = '../config/sync';
+
+$config['config_split.config_split.' . getenv('CCDH_ENV', TRUE) ]['status'] = TRUE;
+
+
+
+
 /**
  * Settings:
  *
@@ -301,7 +322,7 @@ if (!ServerEnv::loadSettings()) {
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'f7F9qdlFlgN5XW49_Tl2JwsmsO9DXDvm_IX6jFbV2D7fCqx6wPXT1stKZ_sdAhP8pIdicNajDA';
+$settings['hash_salt'] = getenv('CCDH_HASH_SALT', TRUE);
 
 /**
  * Deployment identifier.
@@ -324,7 +345,7 @@ $settings['hash_salt'] = 'f7F9qdlFlgN5XW49_Tl2JwsmsO9DXDvm_IX6jFbV2D7fCqx6wPXT1s
  * After finishing the upgrade, be sure to open this file again and change the
  * TRUE back to a FALSE!
  */
-$settings['update_free_access'] = FALSE;
+$settings['update_free_access'] = (getenv('CCDH_ENV', TRUE) == 'ddevlocal');
 
 /**
  * External access proxy settings:
@@ -557,6 +578,12 @@ if ($settings['hash_salt']) {
  */
 # $settings['file_private_path'] = '';
 
+if (getenv('CCDH_ENV', TRUE) == 'ddevlocal') {
+  $settings['file_private_path'] = DRUPAL_ROOT . '/../database';
+} else {
+  $settings['file_private_path'] = DRUPAL_ROOT . '/../../files/private';
+}
+
 /**
  * Temporary file path:
  *
@@ -741,18 +768,14 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
-/**
- * Trusted host configuration.
- * ...
- */
+
 $settings['trusted_host_patterns'] = array(
   '^localhost$',
   '^127.0.0.1$',
-  'example\.dev$',
-  'staging\.example\.com$',
-  'example\.com$',
+  '^.+\.ddev\.site$',
   'pedscommons\.org$',
   'datacommons\.cancer\.gov$',
+  'harmonization(-.+)?\.datacommons\.cancer\.gov$',
 );
 
 /**
@@ -805,31 +828,30 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 /**
  * Load local development override configuration, if available.
  *
- * Use settings.local.php to override variables on secondary (staging,
- * development, etc) installations of this site. Typically used to disable
- * caching, JavaScript/CSS compression, re-routing of outgoing emails, and
- * other things that should not happen on development and testing sites.
+ * Create a settings.local.php file to override variables on secondary (staging,
+ * development, etc.) installations of this site.
+ *
+ * Typical uses of settings.local.php include:
+ * - Disabling caching.
+ * - Disabling JavaScript/CSS compression.
+ * - Rerouting outgoing emails.
  *
  * Keep this code block at the end of this file to take full effect.
  */
 #
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
-#$settings['config_sync_directory'] = 'sites/default/files/config_D8cMmCq_13n3JjJknq_rgaBO-yegG0lZYP-iSZBaKzRkzjzS4NTfrbw35FJySd4aGz8UkGyeAw/sync';
-
-/*
- *  Configure config split & env directories
- */
-$settings['config_sync_directory'] = '../config/sync';
-
-$config['config_split.config_split.' . getenv('CCDH_ENV')]['status'] = TRUE;
-
-if (getenv('CCDH_ENV') == 'sandbox') {
-  $settings['file_private_path'] = '/var/www/html/files/private';
+if (in_array(getenv('CCDH_ENV', TRUE), ['ddevlocal', 'sandbox'])) {
+  if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+    include $app_root . '/' . $site_path . '/settings.local.php';
+  }
 }
 
 
-if (file_exists(__DIR__ . '/settings.local.php')) {
-  include __DIR__ . '/settings.local.php';
-}
+// === DEBUG ====
+// if ( ( isset($_SERVER['argv'][0]) ) &&
+//      ( strpos($_SERVER['argv'][0], 'drush') ) ) {
+// print("CCDH_ENV: " . getenv('CCDH_ENV', TRUE) . "\n");
+// print("--------- SERVER ----------\n");
+// print_r($_SERVER);
+// print("---------- ENV -----------\n");
+// print_r($_ENV);
+// }
