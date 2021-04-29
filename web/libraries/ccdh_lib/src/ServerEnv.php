@@ -29,6 +29,8 @@ class ServerEnv {
         $filepath = DRUPAL_ROOT . '/../.ddev/homeadditions';
       }
       // loads the env variables with PutenvAdapter
+      // making env vars accessible via getenv()
+      // 'unsafe' refers to thread-unsafe, but its safe for our purposes
       $dotenv = Dotenv::createUnsafeImmutable($filepath);
       $dotenv->load();
 
