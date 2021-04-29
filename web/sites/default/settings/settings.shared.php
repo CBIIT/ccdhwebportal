@@ -102,14 +102,14 @@ if (!ServerEnv::loadSettings()) {
 // $databases = [];
 
 $databases['default']['default'] = array (
-  'database' => getenv('CCDH_DATABASE', TRUE),
-  'username' => getenv('CCDH_USERNAME', TRUE),
-  'password' => getenv('CCDH_PASSWORD', TRUE),
-  'prefix' => getenv('CCDH_PREFIX', TRUE),
-  'host' => getenv('CCDH_HOST', TRUE),
-  'port' => getenv('CCDH_PORT', TRUE),
-  'namespace' => getenv('CCDH_NAMESPACE', TRUE),
-  'driver' => getenv('CCDH_DRIVER', TRUE),
+  'database' => getenv('CCDH_DATABASE'),
+  'username' => getenv('CCDH_USERNAME'),
+  'password' => getenv('CCDH_PASSWORD'),
+  'prefix' => getenv('CCDH_PREFIX'),
+  'host' => getenv('CCDH_HOST'),
+  'port' => getenv('CCDH_PORT'),
+  'namespace' => getenv('CCDH_NAMESPACE'),
+  'driver' => getenv('CCDH_DRIVER'),
 );
 
 /**
@@ -290,7 +290,7 @@ $databases['default']['default'] = array (
  */
 $settings['config_sync_directory'] = '../config/sync';
 
-$config['config_split.config_split.' . getenv('CCDH_ENV', TRUE) ]['status'] = TRUE;
+$config['config_split.config_split.' . getenv('CCDH_ENV') ]['status'] = TRUE;
 
 
 
@@ -322,7 +322,7 @@ $config['config_split.config_split.' . getenv('CCDH_ENV', TRUE) ]['status'] = TR
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = getenv('CCDH_HASH_SALT', TRUE);
+$settings['hash_salt'] = getenv('CCDH_HASH_SALT');
 
 /**
  * Deployment identifier.
@@ -345,7 +345,7 @@ $settings['hash_salt'] = getenv('CCDH_HASH_SALT', TRUE);
  * After finishing the upgrade, be sure to open this file again and change the
  * TRUE back to a FALSE!
  */
-$settings['update_free_access'] = in_array(getenv('CCDH_ENV', TRUE), ['ddevlocal', 'sandbox']);
+$settings['update_free_access'] = in_array(getenv('CCDH_ENV'), ['ddevlocal', 'sandbox']);
 /**
  * External access proxy settings:
  *
@@ -577,7 +577,7 @@ if ($settings['hash_salt']) {
  */
 # $settings['file_private_path'] = '';
 
-if (getenv('CCDH_ENV', TRUE) == 'ddevlocal') {
+if (getenv('CCDH_ENV') == 'ddevlocal') {
   $settings['file_private_path'] = DRUPAL_ROOT . '/../database';
 } else {
   $settings['file_private_path'] = DRUPAL_ROOT . '/../../files/private';
@@ -838,7 +838,7 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  * Keep this code block at the end of this file to take full effect.
  */
 #
-if (in_array(getenv('CCDH_ENV', TRUE), ['ddevlocal', 'sandbox'])) {
+if (in_array(getenv('CCDH_ENV'), ['ddevlocal', 'sandbox'])) {
   if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
     include $app_root . '/' . $site_path . '/settings.local.php';
   }
@@ -846,11 +846,11 @@ if (in_array(getenv('CCDH_ENV', TRUE), ['ddevlocal', 'sandbox'])) {
 
 
 // === DEBUG ====
-// if ( ( isset($_SERVER['argv'][0]) ) &&
-//      ( strpos($_SERVER['argv'][0], 'drush') ) ) {
-// print("CCDH_ENV: " . getenv('CCDH_ENV', TRUE) . "\n");
-// print("--------- SERVER ----------\n");
-// print_r($_SERVER);
-// print("---------- ENV -----------\n");
-// print_r($_ENV);
-// }
+if ( ( isset($_SERVER['argv'][0]) ) &&
+     ( strpos($_SERVER['argv'][0], 'drush') ) ) {
+print("CCDH_ENV: " . getenv('CCDH_ENV', TRUE) . "\n");
+print("--------- SERVER ----------\n");
+print_r($_SERVER);
+print("---------- ENV -----------\n");
+print_r($_ENV);
+}
