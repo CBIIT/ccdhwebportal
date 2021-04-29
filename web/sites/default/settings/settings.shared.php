@@ -846,11 +846,9 @@ if (in_array(getenv('CCDH_ENV'), ['ddevlocal', 'sandbox'])) {
 
 
 // === DEBUG ====
+/*
 if ( ( isset($_SERVER['argv'][0]) ) &&
      ( strpos($_SERVER['argv'][0], 'drush') ) ) {
 print("CCDH_ENV: " . getenv('CCDH_ENV', TRUE) . "\n");
-print("--------- SERVER ----------\n");
-print_r($_SERVER);
-print("---------- ENV -----------\n");
-print_r($_ENV);
 }
+*/
