@@ -2,9 +2,8 @@
 
 ## Requirements as of version 1.2.0 - April/May 2021
 
-### System Packages (already installed)
+### System Packages (installed via yum)
 - patch
-- vim
 
 ### Cron Setup - Apache User (DDev-Local only)
 ```
@@ -15,20 +14,27 @@
 0 * * * *  https://ccdhportaldev.pedscommons.org/cron/[cron-key]
 ```
 
+### File System Setup (DDev-Local)
+```
+cp ccdhwebportal/env/.env.ddevlocal .ddev/.homeadditions/.env
+```
 
-### File System Setup
+### File System Setup (cloud servers)
 ```
-mkdir -p /var/www/access
-chown root:apache /var/www/access
-cp /var/www/html/ccdhwebportal/env/.env.[ENV TIER] /var/www/access/.env
-chown apache:apache /var/www/access/.env
-chmod 750 /var/www/access/.env
+mkdir -p /local/drupal/access
+chown root:apache /local/drupal/access
+cp /var/www/html/ccdhwebportal/env/.env.TIER /local/drupal/access/.env
+chown apache:apache /local/drupal/access.env
+chmod 750 /local/drupal/access/.env
 ```
-Edit the .env changing the settings to match,
+
+Edit the .env changing the settings to match what was in
 /var/www/html/ccdhwebportal/web/sites/default/settings/settings.local.php
 This file will remain in place outside of the project directory
 Drupal will access these variables via dotenv load and through env vars.
-We shouldn't have to bother with separately deployed settings.local.php again.
+The settings.local.php is being repurposed for drupal settings in dev environments:
+ddevlocal, sandbox
+
 ```
 #
 #  .env

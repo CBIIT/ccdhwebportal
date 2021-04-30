@@ -31,12 +31,13 @@
         "drupal/google_tag": "^1.4",
         "drupal/ldap_auth": "^1.23",
         "drupal/menu_link_attributes": "^1.2",
+        "drupal/password_policy": "^3.0@beta",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.6",
         "drupal/token": "^1.9",
         "drupal/zurb_foundation": "^6",
         "drush/drush": "^10.4.1",
-        "enlightn/security-checker": "^1.7",
+        "enlightn/security-checker": "^1",
         "vlucas/phpdotenv": "^5.3"
     },
     "conflict": {
