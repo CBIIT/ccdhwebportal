@@ -63,7 +63,7 @@ if [ "$ENV_TIER"  == "ddevlocal" ]; then
 
 elif [ "$ENV_TIER"  == "sandbox" ]; then
 
-  # Git pull, keep local changes
+  # Git pull, keep local changes in the even there are uncommitted image files
   echo "Pull source code from origin/$BRANCH"
   git reset --keep origin/$BRANCH
   git pull origin $BRANCH
@@ -74,15 +74,19 @@ elif [ "$ENV_TIER"  == "sandbox" ]; then
 else
   # nci tiers
 
-  # Git pull the project branch, discard local changes
-  echo "Pull source code from origin/$BRANCH"
-  git reset --hard origin/$BRANCH
-  git pull origin $BRANCH
-
   # Git pull the database repo
   DB_EXPORT_DIR="~drupal/ccdh_web_portal_db_backups"
-  git -C $DB_EXPORT_DIR checkout $BRANCH
-  git -C $DB_EXPORT_DIR pull origin $BRANCH
+  # git -C doesn't work on versions, have to cd into the repo
+  PROJ_DIR=`pwd`
+  cd $DB_EXPORT_DIR
+  git checkout $BRANCH
+  git pull origin $BRANCH
+
+  # Git pull the project branch, discard local changes
+  echo "Pull source code from origin/$BRANCH"
+  cd $PROJ_DIR
+  git reset --hard origin/$BRANCH
+  git pull origin $BRANCH
 fi
 
 
