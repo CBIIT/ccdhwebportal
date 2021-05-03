@@ -47,10 +47,10 @@ fi
 
 echo "Begin Deploying Site::$BRANCH"
 
-# Deploy .env file for DDev only
-# the other .env files already exist on their respective servers
-echo "Deploy .env.${ENV_TIER}"
 if [ "$ENV_TIER"  == "ddevlocal" ]; then
+  # Deploy .env file for DDev only
+  # the other .env files already exist on their respective servers
+  echo "Deploy .env.${ENV_TIER}"
 
   # Git pull, keep local changes
   echo "Pull source code from origin/$BRANCH"
@@ -75,12 +75,12 @@ else
   # nci tiers
 
   # Git pull the database repo
-  DB_EXPORT_DIR="~drupal/ccdh_web_portal_db_backups"
+  DB_EXPORT_DIR="/local/home/drupal/ccdh_webportal_db_backups"
   # git -C doesn't work on versions, have to cd into the repo
   PROJ_DIR=`pwd`
   cd $DB_EXPORT_DIR
-  git checkout $BRANCH
-  git pull origin $BRANCH
+  git checkout main
+  git pull origin main
 
   # Git pull the project branch, discard local changes
   echo "Pull source code from origin/$BRANCH"
@@ -99,7 +99,7 @@ ${DDEV}composer install
 
 if [ ! -z "$DB_EXPORT_DIR" ]; then
   # Load database
-  DBFILE=$DB_EXPORT_DIR/`ls $DB_EXPORT_DIR | sort -r | head -1`
+  DBFILE=`ls $DB_EXPORT_DIR/*.sql | sort -r | head -1`
   if [ ! -z "DBFILE" ]; then
     echo "Loading latest database: $DBFILE"
     ${DDEV}drush -y sql-cli < $DBFILE
