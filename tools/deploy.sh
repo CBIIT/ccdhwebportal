@@ -2,7 +2,7 @@
 #
 #  deploy source code branch, import database, load config files
 #
-#  run:   deploy.sh develop*    # *=optional
+#  run from project root:   ./tools/deploy.sh [branch] [tier]
 #
 
 # switch to the ddev app dir
@@ -10,6 +10,9 @@ CWD=`dirname "$0"`/..
 cd $CWD
 
 USAGE="deploy.sh [master|develop] [production|stage|qa|dev|sandbox|ddevlocal]"
+
+DB_EXPORT_DIR=
+DDEV=
 
 BRANCH=
 BRANCHES=('develop' 'master')
@@ -41,44 +44,65 @@ else
   exit 1
 fi
 
-DB_EXPORT_DIR="./database/export"
-DDEV=
 
 echo "Begin Deploying Site::$BRANCH"
-
-# Git pull
-echo "Pull source code from origin/$BRANCH"
-git pull origin $BRANCH
-
 
 # Deploy .env file for DDev only
 # the other .env files already exist on their respective servers
 echo "Deploy .env.${ENV_TIER}"
 if [ "$ENV_TIER"  == "ddevlocal" ]; then
+
+  # Git pull, keep local changes
+  echo "Pull source code from origin/$BRANCH"
+  git pull origin $BRANCH
+
   # For DDev, this is where dot files go to be deployed in the container
   cp -f ./env/.env.${ENV_TIER} ./.ddev/homeadditions/.env
   DDEV='ddev '
+  DB_EXPORT_DIR="./database/export"
+
+elif [ "$ENV_TIER"  == "sandbox" ]; then
+
+  # Git pull, keep local changes
+  echo "Pull source code from origin/$BRANCH"
+  git reset --keep origin/$BRANCH
+  git pull origin $BRANCH
+
+  # don't overwrite the sandbox database
+  DB_EXPORT_DIR=''
+
+else
+  # nci tiers
+
+  # Git pull the project branch, discard local changes
+  echo "Pull source code from origin/$BRANCH"
+  git reset --hard origin/$BRANCH
+  git pull origin $BRANCH
+
+  # Git pull the database repo
+  DB_EXPORT_DIR="~drupal/ccdh_web_portal_db_backups"
+  git -C $DB_EXPORT_DIR checkout $BRANCH
+  git -C $DB_EXPORT_DIR pull origin $BRANCH
 fi
 
 
 # Update vendor sources
 ${DDEV}composer install
 
-# Turn ON maint mode
+# Turn ON maint mode -- don't do this, causing more problems than it's worth
 # echo "Turn ON maintenance mode"
 # ${DDEV}drush state:set system.maintenance_mode 1 --input-format=integer --quiet
 
-# Load database
-DBFILE=$DB_EXPORT_DIR/`ls ./database/export | sort -r | head -1`
-echo "Loading latest database: $DBFILE"
-${DDEV}drush -y sql-cli < $DBFILE
-
-# Run Drupal database updates
-echo "Running Drupal updatedb"
-${DDEV}drush -y updatedb
-
-echo "Clear Drupal Cache"
-${DDEV}drush -y cache:rebuild
+if [ ! -z "$DB_EXPORT_DIR" ]; then
+  # Load database
+  DBFILE=$DB_EXPORT_DIR/`ls $DB_EXPORT_DIR | sort -r | head -1`
+  if [ ! -z "DBFILE" ]; then
+    echo "Loading latest database: $DBFILE"
+    ${DDEV}drush -y sql-cli < $DBFILE
+  else
+    echo "Unable to find database to load."
+  fi
+fi
 
 # Import config settings
 echo "Import config settings"

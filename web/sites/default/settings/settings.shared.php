@@ -581,8 +581,10 @@ if ($settings['hash_salt']) {
 
 if (getenv('CCDH_ENV') == 'ddevlocal') {
   $settings['file_private_path'] = DRUPAL_ROOT . '/../database';
-} else {
+} elseif (getenv('CCDH_ENV') == 'sandbox') {
   $settings['file_private_path'] = DRUPAL_ROOT . '/../../files/private';
+} else {
+  $settings['file_private_path'] = '';
 }
 
 /**
