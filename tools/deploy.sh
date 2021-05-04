@@ -128,6 +128,9 @@ ${DDEV}drush -y updatedb
 echo "Turn OFF maintenance mode"
 ${DDEV}drush -y state:set system.maintenance_mode 0 --input-format=integer
 
+echo "Make 'sites/default/files/google_tag' writeable"
+chmod 777 ./web/sites/default/files/google_tag
+
 echo "Clear Drupal Cache"
 ${DDEV}drush -y cache:rebuild
 
