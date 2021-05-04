@@ -24,7 +24,7 @@ cp ccdhwebportal/env/.env.ddevlocal .ddev/.homeadditions/.env
 mkdir -p /local/drupal/access
 chown drupal:drupal /local/drupal/access
 cp /var/www/html/ccdhwebportal/env/.env.TIER /local/drupal/access/.env
-chown drupal:drupal /local/drupal/access.env
+chown drupal:drupal /local/drupal/access/.env
 chmod 750 /local/drupal/access/.env
 ```
 
