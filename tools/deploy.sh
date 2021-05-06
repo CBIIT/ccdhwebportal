@@ -128,6 +128,12 @@ ${DDEV}drush -y updatedb
 echo "Turn OFF maintenance mode"
 ${DDEV}drush -y state:set system.maintenance_mode 0 --input-format=integer
 
+echo "Adjust permissions for group write to files directory"
+# allow group write to directories
+chmod 775 ./web/sites/default/files
+chmod 775 ./web/sites/default/files/google_tag
+chmod 664 ./web/sites/default/files/gooogle_tag/ccdh_web_portal/*.js
+
 echo "Clear Drupal Cache"
 ${DDEV}drush -y cache:rebuild
 
