@@ -128,6 +128,15 @@ ${DDEV}drush -y updatedb
 echo "Turn OFF maintenance mode"
 ${DDEV}drush -y state:set system.maintenance_mode 0 --input-format=integer
 
+echo "Deploy robots.txt"
+if [ "$ENV_TIER"  == "production" ]; then
+  # production
+  cp -f ./robots/robots.txt ./web/robots.txt
+else
+  # all non-production tiers - Disallow crawls
+  cp -f ./robots/robots-preprod.txt ./web/robots.txt
+fi
+
 echo "Adjust permissions for group write to files directory"
 # allow group write to directories
 chmod 775 ./web/sites/default/files
