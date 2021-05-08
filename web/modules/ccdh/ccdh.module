@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Implements HOOK_link_alter
+ * Implements HOOK_link_alter.
  *
  * Opens external menu links in a new window
  *
@@ -12,3 +12,28 @@ function ccdh_link_alter(&$variables) {
     $variables['options']['attributes']['target'] = '_blank';
   }
 }
+
+/**
+ * Implements HOOK_page_top.
+ *
+ * Removed from html.html.twig due to ordering conflict with google_tag
+ * {$@inheritDoc}
+ */
+function ccdh_page_top(array &$page_top) {
+
+  if (\Drupal::moduleHandler()->moduleExists('google_tag')) {
+    // override the default google_tag noscript settings, add at a lighter weight
+    $manager = \Drupal::service('ccdh_google_tag.ccdh_container_manager');
+    $manager->getNoScriptAttachments($page_top);
+  }
+
+  $page_top['ccdh_foundation'] = [
+    '#markup' => '<a href="#main-content" class="visually-hidden focusable">' .
+     t('Skip to main content') .
+     '</a>',
+    '#weight' => -99,
+  ];
+
+  // kint($page_top);
+}
+
