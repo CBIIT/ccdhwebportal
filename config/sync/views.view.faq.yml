@@ -313,7 +313,7 @@ display:
             default:
               index: true
               priority: '0.9'
-              changefreq: ''
+              changefreq: weekly
               arguments: {  }
               max_links: 100
       path: faq
