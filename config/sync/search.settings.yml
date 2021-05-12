@@ -1,7 +1,7 @@
 and_or_limit: 7
 default_page: node_search
 index:
-  cron_limit: 100
+  cron_limit: 200
   overlap_cjk: true
   minimum_word_size: 3
   tag_weights:
@@ -17,6 +17,6 @@ index:
     strong: 3
     em: 3
     a: 10
-logging: false
+logging: true
 _core:
   default_config_hash: hvVxL1G-ZCxaq32IZws0YsfuhvaDiQE_np-0g35KjUk
