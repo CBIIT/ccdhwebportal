@@ -1,0 +1,4 @@
+services:
+  ccdh_google_tag.ccdh_container_manager:
+    class: Drupal\ccdh\Entity\CcdhContainerManager
+    arguments: ['@entity_type.manager', '@module_handler', '@file_system', '@messenger', '@logger.factory']

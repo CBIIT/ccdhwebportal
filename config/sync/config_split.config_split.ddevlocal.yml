@@ -6,7 +6,8 @@ id: ddevlocal
 label: ddevlocal
 description: ccdhwebportal.ddev.site
 folder: ../config/ddevlocal
-module: {  }
+module:
+  devel: 0
 theme: {  }
 blacklist:
   - backup_migrate.backup_migrate_schedule.daily_schedule

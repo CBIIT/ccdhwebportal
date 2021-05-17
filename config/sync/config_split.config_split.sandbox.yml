@@ -6,7 +6,8 @@ id: sandbox
 label: sandbox
 description: ccdhportaldev.pedscommons.org
 folder: ../config/sandbox
-module: {  }
+module:
+  devel: 0
 theme: {  }
 blacklist:
   - backup_migrate.backup_migrate_schedule.daily_schedule

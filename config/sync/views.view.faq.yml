@@ -301,13 +301,21 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_answer'
-  page_1:
+  faq:
     display_plugin: page
-    id: page_1
+    id: faq
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        simple_sitemap_display_extender:
+          variants:
+            default:
+              index: true
+              priority: '0.9'
+              changefreq: weekly
+              arguments: {  }
+              max_links: 100
       path: faq
       sorts:
         field_sort_order_value:
@@ -329,8 +337,8 @@ display:
         title: FAQ
         description: ''
         expanded: false
-        parent: ''
-        weight: -46
+        parent: 'menu_link_content:f99a2e83-8d45-4ece-a77a-c73f799ba48b'
+        weight: -50
         context: '0'
         menu_name: main
     cache_metadata:
