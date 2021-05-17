@@ -33,7 +33,6 @@
         "drupal/ldap_auth": "^1.23",
         "drupal/menu_link_attributes": "^1.2",
         "drupal/module_filter": "^3.2",
-        "drupal/password_policy": "^3.0@beta",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.6",
         "drupal/simple_sitemap": "^3.10",
