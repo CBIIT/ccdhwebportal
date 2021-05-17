@@ -1,0 +1,8 @@
+uuid: 3dbdb2e5-11d9-49bd-95c5-e4919fb498fb
+langcode: en
+status: true
+dependencies: {  }
+name: Glossary
+vid: glossary
+description: 'Terminologies referenced in this site'
+weight: 0
