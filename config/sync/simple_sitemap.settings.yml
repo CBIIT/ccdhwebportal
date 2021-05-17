@@ -2,7 +2,7 @@ max_links: 1000
 cron_generate: true
 cron_generate_interval: 168
 generate_duration: 10000
-remove_duplicates: true
+remove_duplicates: false
 skip_untranslated: true
 xsl: true
 base_url: ''

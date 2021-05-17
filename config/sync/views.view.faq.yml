@@ -337,8 +337,8 @@ display:
         title: FAQ
         description: ''
         expanded: false
-        parent: ''
-        weight: -46
+        parent: 'menu_link_content:f99a2e83-8d45-4ece-a77a-c73f799ba48b'
+        weight: -50
         context: '0'
         menu_name: main
     cache_metadata:
