@@ -3,6 +3,8 @@ global:
   css:
     base:
       css/ccdh_foundation.css: {}
+      custom/ccdh.css: {}
+      custom/ccdh_nav.css: {}
   js:
     js/ccdh_foundation.js: {}
     js/sticky_footer.js: {}
