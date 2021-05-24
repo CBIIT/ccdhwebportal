@@ -37,6 +37,7 @@
         "drupal/redirect": "^1.6",
         "drupal/simple_sitemap": "^3.10",
         "drupal/token": "^1.9",
+        "drupal/zurb_foundation": "^6.0@alpha",
         "drush/drush": "^10.4.1",
         "enlightn/security-checker": "^1",
         "vlucas/phpdotenv": "^5.3"

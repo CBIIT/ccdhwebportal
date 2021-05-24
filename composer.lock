@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bea51efc16eb1f8e617b03fce0a321be",
+    "content-hash": "c1187c0d47850bfdbda154c053816e1b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3230,32 +3230,35 @@
         },
         {
             "name": "drupal/zurb_foundation",
-            "version": "dev-6.x",
+            "version": "6.0.0-alpha6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/zurb-foundation.git",
-                "reference": "cff12d9e4e73ac308f76cc023f501706b9e4aff8"
+                "reference": "8.x-6.0-alpha6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/zurb_foundation-8.x-6.0-alpha6.zip",
+                "reference": "8.x-6.0-alpha6",
+                "shasum": "9a7f023056cffe61f867854adb106d8978ff551a"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
             },
             "type": "drupal-theme",
             "extra": {
-                "branch-alias": {
-                    "dev-6.x": "6.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-6.0-alpha6+9-dev",
-                    "datestamp": "1618421403",
+                    "version": "8.x-6.0-alpha6",
+                    "datestamp": "1591824433",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "message": "Alpha releases are not covered by Drupal security advisories."
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
@@ -3269,14 +3272,12 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "Simone Wood (sim_1)",
-                    "homepage": "https://www.drupal.org/u/sim_1",
-                    "role": "Co-Maintainer"
+                    "name": "asrob",
+                    "homepage": "https://www.drupal.org/user/105777"
                 },
                 {
-                    "name": "Dan Feidt (HongPong)",
-                    "homepage": "https://www.drupal.org/u/hongpong",
-                    "role": "Co-Maintainer"
+                    "name": "kevinquillen",
+                    "homepage": "https://www.drupal.org/user/317279"
                 },
                 {
                     "name": "sim_1",
@@ -7892,7 +7893,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/zurb_foundation": 20
+        "drupal/zurb_foundation": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

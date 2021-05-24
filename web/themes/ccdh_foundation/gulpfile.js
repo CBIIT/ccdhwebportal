@@ -80,7 +80,8 @@
 
   function cleanTask() {
 
-      return del([dir.buildFolder]);
+      // delete css files not sub dirs
+      return del([dir.buildFolder + '/*.css']);
 
   }
 

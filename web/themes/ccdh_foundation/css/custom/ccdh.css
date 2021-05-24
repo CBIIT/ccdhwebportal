@@ -192,6 +192,104 @@ footer {
   padding: 50px 0 42px 0;
 }
 
+footer .footer-internal-links .row {
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+}
+
+footer .footer-internal-links .column {
+  align-self: center;
+}
+
+@media all and (max-width: 767px) {
+  footer .footer-internal-links .row {
+    flex-wrap: wrap;
+  }
+  footer .footer-internal-links .column {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+  }
+  footer .footer-internal-links .wordmark {
+    align-content: center;
+    width: 100%;
+  }
+  footer .footer-internal-links .more-info {
+    align-content: center;
+    width: 100%;
+  }
+
+  footer .more-info,
+  footer .wordmark {
+    margin: 15px 0 15px 0;
+    text-align: center;
+  }
+  footer .nci-wordmark {
+    text-align: center;
+  }
+  footer ul.more-info-links {
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 768px) {
+  footer .footer-internal-links .row {
+    flex-wrap: nowrap;
+  }
+  footer .footer-internal-links .column {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    /* flex-basis: 50%; */
+  }
+  footer .footer-internal-links .wordmark {
+    align-content: left;
+  }
+  footer .footer-internal-links .more-info {
+    align-content: right;
+  }
+
+  footer ul.more-info-links,
+  footer .more-info {
+    margin: 0;
+    text-align: left;
+  }
+  footer .nci-wordmark {
+    text-align: left;
+  }
+  footer .wordmark {
+    margin: 0;
+    text-align: left;
+  }
+}
+
+@media all and (min-width: 768px and max-width: 830px) {
+  footer .footer-internal-links .wordmark {
+    padding-right: 0;
+    flex-basis: 50%;
+  }
+  footer .footer-internal-links .more-info {
+    padding-left: 0;
+    flex-basis: 50%;
+  }
+}
+
+@media all and (min-width: 900px) {
+  footer .footer-internal-links .wordmark {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-basis: 60%;
+  }
+  footer .footer-internal-links .more-info {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-basis: 40%;
+  }
+}
+
+
 footer ul {
   list-style-type: none;
   list-style-position: unset;
@@ -206,22 +304,7 @@ footer ul.agencies li {
   justify-content: center;
 }
 
-@media all and (max-width: 640px) {
-  /* footer {
-    padding: 30px 0 30px 0;
-  } */
-  footer .more-info,
-  footer .wordmark {
-    margin: 15px 0 15px 0;
-    text-align: center;
-  }
-  footer .nci-wordmark {
-    text-align: center;
-  }
-  footer ul.more-info-links {
-    text-align: center;
-  }
-}
+
 /* just for handling some quirkiness with the agencies links wrapping */
 @media all and (max-width: 660px) {
   footer ul.agencies {
@@ -234,22 +317,7 @@ footer ul.agencies li {
     padding: 0;
   }
 }
-@media all and (min-width: 641px) {
-  /* footer {
-    padding: 30px 15px 30px 15px;
-  } */
-  footer ul.more-info-links,
-  footer .more-info {
-    margin: 0;
-    text-align: center;
-  }
-  footer .nci-wordmark {
-    text-align: left;
-  }
-  footer .wordmark {
-    margin: 0;
-    text-align: left;
-  }
+@media all and (min-width: 768px) {
   footer ul.agencies li {
     font-size: 16px;
   }
@@ -263,7 +331,7 @@ footer ul.agencies li {
   }
   footer ul.agencies li:nth-child(2)::before,
   footer ul.agencies li:nth-child(4)::before {
-    content: "|";g
+    content: "|";
     padding: 0 4px 0 4px;
   }
 }
@@ -293,7 +361,6 @@ footer .footer-internal-links {
   padding-bottom: 60px;
 }
 
-footer .footer-internal-links,
 footer .footer-external-links {
   display: block;
 }
@@ -622,6 +689,10 @@ START: GDPR POPUP - EU COOKIE COMPLIANCE
 END: GDPR POPUP
 */
 
+
+/*
+BEGIN: TAGLINE
+*/
 .ccdh-tagline {
   background-color: #C3E0EC;"
 }
@@ -642,4 +713,15 @@ END: GDPR POPUP
     font-size: 16px;
   }
 }
+/*
+END: TAGLINE
+*/
 
+/*
+BEGIN: HOMEPAGE
+*/
+
+
+/*
+END: HOMEPAGE
+*/
