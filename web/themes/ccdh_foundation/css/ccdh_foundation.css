@@ -253,6 +253,9 @@ footer ul.agencies li {
     margin: 15px 0 15px 0;
     text-align: center;
   }
+  footer .more-info {
+    padding-left: 24px;
+  }
   footer .nci-wordmark {
     text-align: center;
   }
@@ -279,7 +282,10 @@ footer ul.agencies li {
   footer ul.more-info-links,
   footer .more-info {
     margin: 0;
-    text-align: center;
+    text-align: left;
+  }
+  footer .more-info {
+    padding-left: 24px;
   }
   footer .nci-wordmark {
     text-align: left;
