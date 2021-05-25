@@ -2534,3 +2534,13 @@ END: GDPR POPUP
 .section-glossary .field-taxonomy-term--name .field-items .field-item {
   font-size: 85%;
 }
+.section-glossary .field-taxonomy-term--name {
+  margin-top: 12px;
+}
+.section-glossary .field-taxonomy-term--description {
+  margin-bottom: 24px;
+}
+
+nav.pager {
+  margin-top: 24px;
+}
