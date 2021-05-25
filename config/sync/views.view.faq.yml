@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_answer
     - node.type.faq
-    - system.menu.main
   module:
     - node
     - text
@@ -333,11 +332,11 @@ display:
       defaults:
         sorts: false
       menu:
-        type: normal
+        type: none
         title: FAQ
         description: ''
         expanded: false
-        parent: 'menu_link_content:f99a2e83-8d45-4ece-a77a-c73f799ba48b'
+        parent: 'menu_link_content:f1466ee3-8b42-4cf3-8f0e-7c8df5b2d179'
         weight: -50
         context: '0'
         menu_name: main
