@@ -2529,3 +2529,8 @@ START: GDPR POPUP - EU COOKIE COMPLIANCE
 /*
 END: GDPR POPUP
 */
+
+
+.section-glossary .field-taxonomy-term--name .field-items .field-item {
+  font-size: 85%;
+}
