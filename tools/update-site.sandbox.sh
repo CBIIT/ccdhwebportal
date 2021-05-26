@@ -19,8 +19,5 @@ git reset --hard origin/master
 git pull
 ./tools/deploy.sh master $SITE
 
-echo "regenerate sitemap"
-drush -y --uri="https://ccdhportaldev.pedscommons.org" simple-sitemap:generate
-
 echo "Done!"
 
