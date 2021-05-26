@@ -10,7 +10,7 @@ echo "Update CCDH Web Portal site"
 
 echo "Archive sites"
 mkdir -p /local/drupal/backups/sites-archive
-tar -czvf /local/drupal/backups/sites-archive/sites.`date + "%Y%m%d_%H%M%S"`.tgz /local/drupal/harmonization/web/sites
+tar -czvf /local/drupal/backups/sites-archive/sites.`date +"%Y%m%d_%H%M%S"`.tgz /local/drupal/harmonization/web/sites
 
 echo "Update code & run deploy script"
 cd /local/drupal/harmonization
