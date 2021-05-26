@@ -19,8 +19,5 @@ git reset --hard origin/master
 git pull
 ./tools/deploy.sh master $SITE
 
-echo "regenerate sitemap"
-drush -y --uri="https://harmonization-$SITE.datacommons.cancer.gov" simple-sitemap:generate
-
 echo "Done!"
 

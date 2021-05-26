@@ -146,5 +146,20 @@ chmod 775 ./web/sites/default/files/google_tag
 echo "Clear Drupal Cache"
 ${DDEV}drush -y cache:rebuild
 
+echo "Regenerate Sitemap"
+URI="https://harmonization.datacommons.cancer.gov"
+
+if [ "$ENV_TIER"  == "ddevlocal" ]; then
+  URI="https://ccdhwebportal.ddev.site"
+elif [ "$ENV_TIER"  == "sandbox" ]; then
+  URI="https://ccdhportaldev.pedscommons.org"
+elif [ "$ENV_TIER"  == "production" ]; then
+  URI="https://harmonization.datacommons.cancer.gov"
+else
+  # dev, qa, stage
+  URI="https://harmonization-$ENV_TIER.datacommons.cancer.gov"
+fi
+drush -y --uri="$URI" simple-sitemap:generate
+
 # Done!
 echo "Site Deployed"
