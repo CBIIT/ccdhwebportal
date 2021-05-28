@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1187c0d47850bfdbda154c053816e1b",
+    "content-hash": "13c9f49b1b08cba7ce8fa29cb401752b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2933,6 +2933,70 @@
             }
         },
         {
+            "name": "drupal/metatag",
+            "version": "1.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/metatag.git",
+                "reference": "8.x-1.16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.16.zip",
+                "reference": "8.x-1.16",
+                "shasum": "1c0028f4ff4583dc6601035657dd631c351b290c"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/token": "^1.0"
+            },
+            "require-dev": {
+                "drupal/devel": "^4.0",
+                "drupal/metatag_dc": "*",
+                "drupal/metatag_open_graph": "*",
+                "drupal/page_manager": "4.x-dev",
+                "drupal/panelizer": "4.x-dev",
+                "drupal/redirect": "1.x-dev"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.16",
+                    "datestamp": "1615820867",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/640498/committers",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                }
+            ],
+            "description": "Manage meta tags for all entities.",
+            "homepage": "https://www.drupal.org/project/metatag",
+            "keywords": [
+                "Drupal",
+                "seo"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/metatag",
+                "issues": "https://www.drupal.org/project/issues/metatag",
+                "docs": "https://www.drupal.org/docs/8/modules/metatag"
+            }
+        },
+        {
             "name": "drupal/module_filter",
             "version": "3.2.0",
             "source": {
@@ -5722,16 +5786,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.2.4",
+            "version": "v5.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "0d639a0943822626290d169965804f79400e6a04"
+                "reference": "ccccb9d48ca42757dd12f2ca4bf857a4e217d90d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/0d639a0943822626290d169965804f79400e6a04",
-                "reference": "0d639a0943822626290d169965804f79400e6a04",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/ccccb9d48ca42757dd12f2ca4bf857a4e217d90d",
+                "reference": "ccccb9d48ca42757dd12f2ca4bf857a4e217d90d",
                 "shasum": ""
             },
             "require": {
@@ -5763,7 +5827,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v5.2.4"
+                "source": "https://github.com/symfony/finder/tree/v5.2.9"
             },
             "funding": [
                 {
@@ -5779,7 +5843,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-15T18:55:04+00:00"
+            "time": "2021-05-16T13:07:46+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -6488,16 +6552,16 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.22.1",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "dc3063ba22c2a1fd2f45ed856374d79114998f91"
+                "reference": "eca0bf41ed421bed1b57c4958bab16aa86b757d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/dc3063ba22c2a1fd2f45ed856374d79114998f91",
-                "reference": "dc3063ba22c2a1fd2f45ed856374d79114998f91",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/eca0bf41ed421bed1b57c4958bab16aa86b757d0",
+                "reference": "eca0bf41ed421bed1b57c4958bab16aa86b757d0",
                 "shasum": ""
             },
             "require": {
@@ -6506,7 +6570,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.22-dev"
+                    "dev-main": "1.23-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -6551,7 +6615,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.22.1"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.0"
             },
             "funding": [
                 {
@@ -6567,7 +6631,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-07T16:49:33+00:00"
+            "time": "2021-02-19T12:13:01+00:00"
         },
         {
             "name": "symfony/polyfill-util",

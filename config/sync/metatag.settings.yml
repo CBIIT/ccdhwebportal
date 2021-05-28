@@ -1,0 +1,17 @@
+entity_type_groups:
+  node:
+    faq:
+      basic: basic
+    full_page_:
+      basic: basic
+    page:
+      basic: basic
+  path_alias:
+    path_alias:
+      basic: basic
+  redirect:
+    redirect:
+      basic: basic
+  taxonomy_term:
+    glossary:
+      basic: basic
