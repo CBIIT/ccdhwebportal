@@ -234,7 +234,7 @@ $input-error-font-weight: $global-weight-bold;
 $accordion-background: $white;
 $accordion-plusminus: true;
 $accordion-title-font-size: rem-calc(12);
-$accordion-item-color: $primary-color;
+$accordion-item-color: $light-blue;
 $accordion-item-background-hover: $light-gray;
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
@@ -256,7 +256,7 @@ $accordionmenu-submenu-toggle-background: null;
 $accordion-submenu-toggle-border: $accordionmenu-border;
 $accordionmenu-submenu-toggle-width: 100%;
 $accordionmenu-submenu-toggle-height: $accordionmenu-submenu-toggle-width;
-$accordionmenu-arrow-size: 6px;
+$accordionmenu-arrow-size: 10px;
 
 // 9. Badge
 // --------
@@ -291,7 +291,7 @@ $button-font-family: inherit;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $primary-color;
+$button-background: transparent;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;

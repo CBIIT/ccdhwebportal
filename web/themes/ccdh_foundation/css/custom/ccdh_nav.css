@@ -1,4 +1,3 @@
-
 .site-navigation {
   background-color: #1074b9;
 }
@@ -27,12 +26,7 @@
     max-width: 100%;
     margin: 0 auto;
   }
-
-
 }
-
-
-
 
 /*
 BEGIN: TOPBAR
@@ -69,66 +63,61 @@ BEGIN: TOPBAR
 }
 
 @media (max-width: 767px) {
-  .top-bar .top-bar-right ul > li,
+  /* .top-bar .top-bar-right ul > li, */
   .top-bar .top-bar-right ul li > a  {
     border-bottom: 2px solid #fefefe;
   }
-  .top-bar .top-bar-right ul li > a {
+  .top-bar .top-bar-right ul.menu li a.menu-link {
       font-size: 26px;
-      padding: 21px 15px 20px 65px;
+      padding: 20px 15px 20px 65px;
   }
   .site-navigation .top-bar a.menu-link {
     color: #000000;
   }
-  /* .top-bar .top-bar-right ul li > a, .top-bar .top-bar-right ul li > span {
-      color: #0a0a0a;
-  } */
 
-  .top-bar .menu li  a:hover {
-    /* background: #d5e4f1; */
-    /* border-radius: 0; */
-    font-weight: bold;
+  .top-bar ul.menu a.menu-link:hover {
+    font-weight: bolder;
   }
-  .top-bar .menu li.is-active a  {
+  .top-bar ul.menu li.menu-item.is-active a {
     background-color: #77b1da;
   }
 
-  ul.menu.vertical span.menuTopArrow {
-    height: 1px;
+  .top-bar ul.menu.vertical span.menuTopArrow {
+    display:none;
+  }
+
+  .top-bar ul.submenu li.is-submenu-item {
+    display: block;
+    padding-left: 65px;
+    width:100%;
+    border-top: 1px solid #356F9E;
+    background-color: #ffffff;
+  }
+  .top-bar ul.submenu li.is-submenu-item a.menu-link {
+    color: #14456A;
+    background-color: transparent;
+    font-size: 22px;
+    padding: 20px 15px 20px 35px;
+  }
+
+  .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a.menu-link::after {
+    left: 1.5rem;
+  }
+
+  .accordion-menu .is-accordion-submenu-parent[aria-expanded='false'] > a::after {
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    /* transform-origin: 50% 50%; */
+  }
+
+  .accordion-menu .is-accordion-submenu-parent[aria-expanded='true'] > a::after {
+    transform: rotate(0deg);
   }
 }
+
 @media (min-width: 768px) {
   .top-bar .top-bar-right ul li ul.submenu li a:hover {
-    /* background: #3185bf; */
     border-radius: 0 25px 25px 0;
   }
 }
 
-
-
-/* @media (max-width: 767px) {
-  .top-bar ul {
-    background-color: #77b1da;
-  }
-
-  .top-bar ul:hover,
-  .top-bar ul:active {
-    background-color: #77b1da;
-  }
-} */
-
-/*
-END: TOPBAR
-*/
-
-/*
-BEGIN: MENU
-*/
-
-
-
-
-
-/*
-END: MENU
-*/
