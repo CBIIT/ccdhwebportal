@@ -25,7 +25,7 @@
   <div id="top-bar-sticky-container" data-sticky-container>
   {% endif %}
     <div {{ top_bar_attributes }}>
-      <div class="site-navigation" >
+      <div class="site-navigation site-navigation-hide-during-page-load" >
         <div class="grid-container">
 
           <div class="title-bar small" data-responsive-toggle="main-menu" data-hide-for="medium">
@@ -69,7 +69,7 @@
         <ul{{ attributes.addClass('menu', 'vertical', 'medium-horizontal').setAttribute('data-responsive-menu', 'accordion medium-dropdown') }}>
       {% else %}
         <ul class="submenu menu vertical" data-submenu data-submenu-toggle="true">
-        <!-- span class="menuTopArrow"><svg class="svg-inline--fa fa-caret-up fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg><!-- <i class="fas fa-caret-up"></i> -- ></span -->
+        <span class="menuTopArrow"><svg class="svg-inline--fa fa-caret-up fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg><!-- <i class="fas fa-caret-up"></i> --></span>
       {% endif %}
     {% else %}
       {% if menu_level == 0 %}
