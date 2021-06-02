@@ -159,7 +159,7 @@ else
   # dev, qa, stage
   URI="https://harmonization-$ENV_TIER.datacommons.cancer.gov"
 fi
-drush -y --uri="$URI" simple-sitemap:generate
+${DDEV}drush -y --uri="$URI" simple-sitemap:generate
 
 # Done!
 echo "Site Deployed"
