@@ -12,6 +12,12 @@
           $(this).append('<i class="fa fa-external-link" aria-label="external link"></i>');
         }
       })
+
+      // Hide the site-navigation during pageload to avoid the element artifacts from
+      // flashing on the screen
+      $(".site-navigation-hide-during-page-load").each(function (index, element) {
+          setTimeout(function () { $(element).removeClass("site-navigation-hide-during-page-load") }, 10);
+      });
     }
   };
 

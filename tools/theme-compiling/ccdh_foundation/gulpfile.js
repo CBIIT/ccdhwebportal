@@ -12,6 +12,7 @@
       // directory locations
       dir = {
           // 'scss/' is the assumed folder watch location.  You can modify this below under CSS CONFIG.
+          // deletes *.css files in cleanup
           buildFolder: 'css/', // css will be generated to this folder. !! Files here will be cleaned before compile.
           imgSource: 'images-source/', // source image folder for image optimization.
           imgBuild: 'images/', // final location for optimized images.

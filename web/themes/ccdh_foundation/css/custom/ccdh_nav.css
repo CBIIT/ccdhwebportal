@@ -1,0 +1,184 @@
+/* Hide the site-navigation during pageload to avoid the element artifacts from
+ * flashing on the screen
+*/
+.site-navigation-hide-during-page-load {
+  display:none;
+}
+
+.site-navigation {
+  background-color: #1074b9;
+}
+.site-navigation .top-bar a.menu-link {
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+}
+.site-navigation .title-bar {
+  height: 40px;
+}
+
+/* Small only */
+@media all and (max-width: 767px) {
+  .grid-container {
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    max-width: 75rem;
+    margin: 0 auto;
+  }
+}
+
+/* Medium and up */
+@media all and (min-width: 768px) {
+  .grid-container {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/*
+BEGIN: TOPBAR
+*/
+
+.top-bar {
+  width: 100%;
+  padding: 0;
+}
+
+/* Small only */
+@media all and (max-width: 767px) {
+  .top-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 9;
+  }
+}
+
+/* Medium and up */
+@media all and (min-width: 768px) {
+  .site-navigation .top-bar {
+    width: 100%;
+    height: 60px;
+  }
+}
+.top-bar ul.menu-vertical li {
+  background-color: #77b1da;
+}
+
+.top-bar ul.menu-horizontal li {
+  background-color: #1074b9;s
+}
+
+@media (max-width: 767px) {
+  /* .top-bar .top-bar-right ul > li, */
+  .top-bar .top-bar-right ul li > a  {
+    border-bottom: 2px solid #fefefe;
+  }
+  .top-bar .top-bar-right ul.menu li a.menu-link {
+      font-size: 26px;
+      padding: 20px 15px 20px 65px;
+  }
+  .site-navigation .top-bar a.menu-link {
+    color: #000000;
+  }
+
+  .top-bar ul.menu a.menu-link:hover {
+    font-weight: bolder;
+  }
+  /* .top-bar ul.accordion-menu li.has-submenu.active, */
+  .top-bar ul.accordion-menu li.menu-item a.is-active {
+    background-color: #77b1da;
+  }
+
+  .top-bar ul.menu span.menuTopArrow {
+    display:none;
+  }
+
+  .top-bar ul.submenu li.is-submenu-item {
+    display: block;
+    padding-left: 65px;
+    width:100%;
+    border-top: 1px solid #356F9E;
+    background-color: #ffffff;
+  }
+  .top-bar ul.menu ul.submenu:last-child li.is-submenu-item:last-child {
+    border-bottom: 1px solid #356F9E;
+  }
+  .top-bar ul.submenu li.is-submenu-item a.menu-link {
+    color: #14456A;
+    background-color: transparent;
+    font-size: 22px;
+    padding: 20px 15px 20px 35px;
+  }
+
+  .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a.menu-link::after {
+    left: 1.5rem;
+  }
+
+  .accordion-menu .is-accordion-submenu-parent[aria-expanded='false'] > a::after {
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    /* transform-origin: 50% 50%; */
+  }
+
+  .accordion-menu .is-accordion-submenu-parent[aria-expanded='true'] > a::after {
+    transform: rotate(0deg);
+  }
+}
+
+@media all and (min-width: 768px) {
+  .top-bar ul.menu.dropdown a.menu-link {
+    font-size: 18px;
+  }
+  .top-bar ul.menu.dropdown li.menu-item:not(.is-submenu-item) {
+    padding: 0;
+  }
+  .top-bar ul.menu.dropdown ul.is-dropdown-submenu li.is-submenu-item {
+    /* position:relative; */
+    overflow: hidden;
+    padding-right: 14px;
+  }
+  .top-bar ul.menu.dropdown ul.is-dropdown-submenu li.is-submenu-item a.menu-link:hover {
+    border-radius: 0 25px 25px 0;
+    background-color: #3185bf;
+  }
+  .top-bar ul.menu.medium-horizontal.dropdown ul.is-dropdown-submenu {
+    background-color: rgb(3, 38, 63);
+  }
+  .top-bar ul.menu.medium-horizontal.dropdown ul.is-dropdown-submenu li.is-submenu-item a {
+    background-color: transparent;
+    /* padding-left: 25px; */
+    font-size: 16px;
+    color: #fefefe;
+    padding: 6px 20px;
+    display: block;
+  }
+  .top-bar ul.menu.medium-horizontal.dropdown ul.is-dropdown-submenu {
+    border: none;
+    width: auto;
+    min-width: 365px;
+    top: 50px !important;
+    text-align: left;
+    z-index: 999;
+    padding: 15px 0;
+  }
+  .top-bar ul.menu.medium-horizontal.dropdown ul.is-dropdown-submenu a.menu-link {
+    white-space: nowrap;
+  }
+
+  .top-bar ul.menu.medium-horizontal.dropdown ul.is-dropdown-submenu .menuTopArrow {
+    display: block;
+    position: absolute;
+    right: 2.25rem;
+    top: -24px;
+    font-size: 40px;
+    line-height: 40px;
+    color: #03263f;
+    z-index: 999;
+  }
+}
+@media all and (min-width: 900px) {
+  .top-bar ul.menu.dropdown li.menu-item:not(.is-submenu-item) {
+    padding: 0 10px 0 10px;
+  }
