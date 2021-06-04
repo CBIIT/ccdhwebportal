@@ -157,7 +157,7 @@ BEGIN: TOPBAR
   .top-bar ul.menu.medium-horizontal.dropdown ul.is-dropdown-submenu {
     border: none;
     width: auto;
-    min-width: 365px;
+    min-width: 300px;
     top: 50px !important;
     text-align: left;
     z-index: 999;
@@ -170,16 +170,60 @@ BEGIN: TOPBAR
   .top-bar ul.menu.medium-horizontal.dropdown ul.is-dropdown-submenu .menuTopArrow {
     display: block;
     position: absolute;
-    right: 2.25rem;
+    /* right: 2.25rem; */
     top: -24px;
     font-size: 40px;
     line-height: 40px;
     color: #03263f;
     z-index: 999;
   }
+  /* .top-bar ul.menu.medium-horizontal.dropdown > li.opens-left > .is-dropdown-submenu {
+    right: 0 !important;
+    left: auto;
+  }
+
+  .top-bar ul.menu.medium-horizontal.dropdown > li.opens-right > .is-dropdown-submenu {
+    right: auto;
+    left: 0 !important;
+  } */
+
+  .top-bar ul.menu li:first-child ul.submenu,
+  .top-bar ul.menu li:nth-child(2) ul.submenu,
+  .top-bar ul.menu li:nth-child(3) ul.submenu {
+    right: auto;
+    left: 0 !important;
+  }
+  .top-bar ul.menu li:nth-last-child(2) ul.submenu,
+  .top-bar ul.menu li:last-child ul.submenu {
+    right: 0 !important;
+    left: auto;
+  }
+  .top-bar .top-bar-right ul.menu li:first-child ul.submenu .menuTopArrow,
+  .top-bar .top-bar-right ul.menu li:nth-child(2) ul.submenu .menuTopArrow,
+  .top-bar .top-bar-right ul.menu li:nth-child(3) ul.submenu .menuTopArrow{
+    left: 3.8rem;
+    right: auto;
+  }
+  .top-bar .top-bar-right ul.menu li:nth-last-child(2) ul.submenu .menuTopArrow {
+    left: auto;
+    right: 2.2rem;
+  }
+  .top-bar .top-bar-right ul.menu li:last-child ul.submenu .menuTopArrow {
+    left: auto;
+    right: 3.2rem;
+  }
 }
+
 @media all and (min-width: 900px) {
   .top-bar ul.menu.dropdown li.menu-item:not(.is-submenu-item) {
     padding: 0 10px 0 10px;
+  }
+  .top-bar .top-bar-right ul.menu li:nth-last-child(2) ul.submenu .menuTopArrow {
+    left: auto;
+    right: 2.8rem;
+  }
+  .top-bar .top-bar-right ul.menu li:last-child ul.submenu .menuTopArrow {
+    left: auto;
+    right: 3.8rem;
   }
 }
