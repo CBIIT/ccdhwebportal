@@ -909,7 +909,7 @@ BEGIN: HOMEPAGE
   .project-spotlight .spotlight-image {
     height: 500px;
     margin-top: -80px;
-    margin-left: -20%;
+    /* margin-left: -20%; */
   }
   .project-spotlight .feature-block {
     right: 0;
@@ -920,6 +920,12 @@ BEGIN: HOMEPAGE
   .project-spotlight .feature-block p {
     font-size: 48px;
     line-height: 40px;
+  }
+}
+@media all and (min-width: 1650px) {
+  .project-spotlight .spotlight-image {
+    margin-left: -30%;
+    margin-right: -30%;
   }
 }
 
