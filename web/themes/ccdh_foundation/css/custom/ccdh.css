@@ -926,3 +926,35 @@ BEGIN: HOMEPAGE
 /*
 END: HOMEPAGE
 */
+
+/*
+BEGIN: JOIN-US
+*/
+
+#block-joinusonslack {
+  border: 2px solid #1074B9;
+  padding: 10px 10px 10px 10px;
+  text-align: left;
+}
+.block--join-us img{
+  padding-top:6px;
+}
+
+/*
+END: JOIN-US
+*/
+
+/*
+BEGIN: GLOSSARY
+*/
+
+.section-glossary .views-row h2 .field-item {
+  font-size: 90%;
+}
+.section-glossary .views-row {
+  margin-bottom: 20px;
+}
+
+/*
+END: GLOSSARY
+*/

@@ -1,0 +1,31 @@
+uuid: f829696d-6402-4c1e-acea-64ed635f042d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:afe2d83f-392f-4fba-8c26-7c08a87bc7d1'
+  module:
+    - block_content
+    - system
+  theme:
+    - ccdh_foundation
+id: joinusonslack
+theme: ccdh_foundation
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'block_content:afe2d83f-392f-4fba-8c26-7c08a87bc7d1'
+settings:
+  id: 'block_content:afe2d83f-392f-4fba-8c26-7c08a87bc7d1'
+  label: 'Join Us on'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/concierge\r\n/faq"
+    negate: false
+    context_mapping: {  }
