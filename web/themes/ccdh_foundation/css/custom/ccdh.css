@@ -353,12 +353,23 @@ footer ul.agencies li {
 }
 
 footer .footer-internal-links {
-  margin-bottom: 60px;
   max-width: 75rem;
   text-align: center;
   margin-right: auto;
   margin-left: auto;
-  padding-bottom: 60px;
+}
+
+@media all and (max-width: 767px) {
+  footer .footer-internal-links {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+@media all and (min-width: 768px) {
+  footer .footer-internal-links {
+    margin-bottom: 60px;
+    /* padding-bottom: 60px; */
+  }
 }
 
 footer .footer-external-links {
