@@ -1,131 +1,175 @@
-'use strict';
+(() => {
 
-// Load Gulp and tools we will use.
-var $          = require('gulp-load-plugins')(),
-  del        = require('del'),
-  extend     = require('extend'),
-  fs         = require("fs"),
-  gulp       = require('gulp'),
-  importOnce = require('node-sass-import-once');
+  'use strict';
 
-var options = {};
+  /**************** Gulp.js 4 configuration ****************/
 
-options.gulpWatchOptions = {};
+  const
 
-// The root paths are used to construct all the other paths in this
-// configuration. The "project" root path is where this gulpfile.js is located.
-// While ZURB Foundation distributes this in the theme root folder, you can also
-// put this (and the package.json) in your project's root folder and edit the
-// paths accordingly.
-options.rootPath = {
-  project     : __dirname + '/',
-  theme       : __dirname + '/'
-};
+      // development or production
+      devBuild = ((process.env.NODE_ENV || 'development').trim().toLowerCase() === 'development'),
 
-options.theme = {
-  root       : options.rootPath.theme,
-  scss       : options.rootPath.theme + 'scss/',
-  css        : options.rootPath.theme + 'css/'
-};
+      // directory locations
+      dir = {
+          // 'scss/' is the assumed folder watch location.  You can modify this below under CSS CONFIG.
+          buildFolder: 'css/', // css will be generated to this folder. !! Files here will be cleaned before compile.
+          imgSource: 'images-source/', // source image folder for image optimization.
+          imgBuild: 'images/', // final location for optimized images.
+      },
 
-// Define the node-scss configuration.
-options.scss = {
-  importer: importOnce,
-  outputStyle: 'compressed',
-  lintIgnore: ['scss/_settings.scss', 'scss/base/_drupal.scss'],
-  includePaths: [
-    options.rootPath.project + 'node_modules/foundation-sites/scss',
-    options.rootPath.project + 'node_modules/motion-ui/src'
-  ],
-};
+      // base modules
+      gulp = require('gulp'),
+      del = require('del'),
+      noop = require('gulp-noop'),
+      newer = require('gulp-newer'),
+      size = require('gulp-size'),
 
-// Define which browsers to add vendor prefixes for.
-options.autoprefixer = {
-  browsers: [
-    'last 2 versions',
-    'ie >= 9'
-  ]
-};
+      // @TODO finish browsersync work
+      // browsersync = require('browser-sync').create(),
 
-// If config.js exists, load that config and overriding the options object.
-if (fs.existsSync(options.rootPath.project + "/config.js")) {
-  var config = {};
-  config = require("./config");
-  extend(true, options, config);
-}
+      // image modules
+      imagemin = require('gulp-imagemin'),
 
-var scssFiles = [
-  options.theme.scss + '**/*.scss',
-  // Do not open scss partials as they will be included as needed.
-  '!' + options.theme.scss + '**/_*.scss',
-];
+      // SCSS modules
+      sass = require('gulp-sass'),
+      postcss = require('gulp-postcss'),
+      sassLint = require('gulp-sass-lint'),
+      sourcemaps = devBuild ? require('gulp-sourcemaps') : null,
 
-// The default task.
-gulp.task('default', ['build']);
+      // IMG CONFIG
+      imgConfig = {
+          src: dir.imgSource + '**/*',
+          build: dir.imgBuild,
+          minOpts: {
+              optimizationLevel: 5
+          }
+      },
 
-// Build everything.
-gulp.task('build', ['sass', 'drush:cc', 'lint']);
+      // CSS CONFIG
+      cssConfig = {
+          src: 'scss/*.scss',
+          scssFolder: 'scss/**/*.scss',
+          buildFolder: dir.buildFolder,
+          sassOpts: {
+              sourceMap: devBuild,
+              outputStyle: 'nested',
+              imagePath: '/images/', // @TODO redundant and needs to be removed.
+              includePaths: [ // REQUIRED FOR ZURB
+                  'node_modules/foundation-sites/scss',
+                  'node_modules/motion-ui/src'
+              ],
+              precision: 3,
+              errLogToConsole: true
+          },
 
-// Default watch task.
-// @todo needs to add a javascript watch task.
-gulp.task('watch', ['watch:css']);
+          postCSS: [
+              require('postcss-assets')({
+                  loadPaths: ['images/'],
+                  basePath: dir.build
+              }),
+              require('autoprefixer')({
+                  overrideBrowserslist: ['> 1%']
+              })
+          ]
 
-// Watch for changes for scss files and rebuild.
-gulp.task('watch:css', ['sass', 'drush:cc', 'lint:sass'], function () {
-  return gulp.watch(options.theme.scss + '**/*.scss', options.gulpWatchOptions, ['sass', 'drush:cc', 'lint:sass']);
-});
+      };
 
-// Lint Sass and JavaScript.
-// @todo needs to add a javascript lint task.
-gulp.task('lint', ['lint:sass']);
+  console.log('Gulp', devBuild ? 'development' : 'production', 'build');
 
-// Build CSS for development environment.
-gulp.task('sass', ['clean:css'], function () {
-  return gulp.src(scssFiles)
-    .pipe($.sourcemaps.init())
-    // Allow the options object to override the defaults for the task.
-    .pipe($.sass(extend(true, {
-      noCache: true,
-      outputStyle: options.scss.outputStyle,
-      sourceMap: true
-    }, options.scss)).on('error', $.sass.logError))
-    .pipe($.autoprefixer(options.autoprefixer))
-    .pipe($.rename({dirname: ''}))
-    .pipe($.size({showFiles: true}))
-    .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest(options.theme.css));
-});
+  /**************** clean task ****************/
 
-// Clean CSS files.
-gulp.task('clean:css', function () {
-  return del([
-    options.theme.css + '**/*.css',
-    options.theme.css + '**/*.map'
-  ], {force: true});
-});
+  function cleanTask() {
 
-// Defines a task that triggers a Drush cache clear (css-js), you need to edit
-// config.js to be able to use this task.
-gulp.task('drush:cc', function () {
-  if (!options.drush.enabled) {
-    return;
+      // delete css files not sub dirs
+      return del([dir.buildFolder + '/*.css']);
+
   }
 
-  return gulp.src('', {read: false})
-    .pipe($.shell([
-      options.drush.alias.css_js
-    ]));
-});
+  exports.clean = cleanTask;
+  exports.wipe = cleanTask; // Redundant
 
-// Lint Sass.
-gulp.task('lint:sass', function () {
-  return gulp.src(options.theme.scss + '**/*.scss')
-    // use gulp-cached to check only modified files.
-    .pipe($.sassLint({
-      files: {
-        include: $.cached('scsslint'),
-        ignore: options.scss.lintIgnore
-      }
-    }))
-    .pipe($.sassLint.format());
-});
+  /**************** images task ****************/
+
+  function imagesTask() {
+
+      return gulp.src(imgConfig.src)
+          .pipe(newer(imgConfig.build))
+          .pipe(imagemin(imgConfig.minOpts))
+          .pipe(size({showFiles: true}))
+          .pipe(gulp.dest(imgConfig.build));
+
+  }
+
+  exports.images = imagesTask;
+
+  /**************** CSS ****************/
+
+
+  // CSS
+  function cssTask(done) {
+      cleanTask();
+      return gulp.src(cssConfig.src)
+          .pipe(sourcemaps ? sourcemaps.init() : noop())
+          .pipe(sass(cssConfig.sassOpts).on('error', sass.logError))
+          .pipe(postcss(cssConfig.postCSS))
+          .pipe(sourcemaps ? sourcemaps.write() : noop())
+          .pipe(size({showFiles: true}))
+          .pipe(gulp.dest(cssConfig.buildFolder))
+      //.pipe(browsersync ? browsersync.reload({stream: true}) : noop());
+
+  }
+
+  // Minify for production CSS
+  if (!devBuild) {
+
+      cssConfig.postCSS.push(
+          // require('usedcss')({html: ['index.html']}),
+          require('cssnano')
+      );
+
+  }
+
+  // LINT WORK
+  function lintTask(done) {
+      return gulp.src(cssConfig.scssFolder)
+          // use gulp-cached to check only modified files.
+          .pipe(sassLint())
+          .pipe(sassLint.format())
+          .pipe(sassLint.failOnError());
+  }
+
+  exports.lint = lintTask;
+
+  /**************** server task (now private) ****************/
+
+  const syncConfig = {
+      server: {
+          baseDir: './',
+          index: 'index.html'
+      },
+      port: 8000,
+      open: false
+  };
+
+  // browser-sync
+  function sync(done) {
+      if (browsersync) browsersync.init(syncConfig);
+      done();
+  }
+
+  /**************** watch task ****************/
+
+  function watchTask(){
+      gulp.watch(
+          [cssConfig.scssFolder, imgConfig.src],
+          gulp.series(imagesTask,lintTask,cssTask)
+      );
+  }
+
+  /**************** default task ****************/
+  exports.default = gulp.series(cssTask);
+
+  /**************** watch task ******************/
+  exports.watch = gulp.series(lintTask,cssTask,watchTask);
+
+})();

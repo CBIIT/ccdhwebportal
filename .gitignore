@@ -4,13 +4,16 @@
 /vendor/
 /web/core/
 /web/modules/contrib/
-/web/themes/contrib/
 /web/profiles/contrib/
+/web/themes/contrib/
 #/web/libraries/contrib/
 /web/tmp/
 
 # Ignore  NPM Packages
 /node_modules/
+
+# Ignore *.map files to avoid vulnerability
+*.map
 
 # DEPRECATED - local no longer being used for sensitive info
 # Ignore configuration files that may contain sensitive information.

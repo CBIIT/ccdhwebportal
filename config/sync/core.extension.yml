@@ -37,6 +37,7 @@ module:
   link: 0
   menu_link_attributes: 0
   menu_ui: 0
+  metatag: 0
   migrate: 0
   module_filter: 0
   node: 0

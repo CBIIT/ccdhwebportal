@@ -25,21 +25,21 @@
   <div id="top-bar-sticky-container" data-sticky-container>
   {% endif %}
     <div {{ top_bar_attributes }}>
-      <div class="site-navigation" >
+      <div class="site-navigation site-navigation-hide-during-page-load" >
         <div class="grid-container">
 
-          <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+          <div class="title-bar small" data-responsive-toggle="main-menu" data-hide-for="medium">
             <button class="menu-icon" type="button" data-toggle></button>
             <div class="title-bar-title">{{ top_bar_menu_text }}</div>
           </div>
-          <nav class="top-bar" id="main-menu" role="navigation">
+          <nav class="top-bar medium large" id="main-menu" role="navigation">
             <div class="top-bar-left">
-              <ul class="dropdown menu" data-dropdown-menu>
-                <li class="menu-text">
-                  {#{{ site_name }}#}
+              <!-- ul class="dropdown menu" data-dropdown-menu>
+                 <li class="menu-text">
+                  {{ site_name }}
                   <img src="/themes/ccdh_foundation/images/1x60-0000ff7f.png" alt="CRDC" />
                 </li>
-              </ul>
+              </ul -->
             </div>
             <div class="top-bar-right">
               {{ menus.menu_links(items, attributes, 0, 1) }}
@@ -66,9 +66,9 @@
   {% if items %}
     {% if top_bar %}
       {% if menu_level == 0 %}
-        <ul{{ attributes.addClass('menu', 'vertical', 'medium-horizontal').setAttribute('data-responsive-menu', 'drilldown medium-dropdown') }}>
+        <ul{{ attributes.addClass('menu', 'vertical', 'medium-horizontal').setAttribute('data-responsive-menu', 'accordion medium-dropdown') }}>
       {% else %}
-        <ul class="submenu menu vertical" data-submenu>
+        <ul class="submenu menu vertical" data-submenu data-submenu-toggle="true">
         <span class="menuTopArrow"><svg class="svg-inline--fa fa-caret-up fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg><!-- <i class="fas fa-caret-up"></i> --></span>
       {% endif %}
     {% else %}
@@ -82,15 +82,16 @@
       {% if top_bar %}
         {%
           set item_classes = [
-            item.below is not empty ? 'has-submenu' ,
+            'menu-item',
+            item.below is not empty ? 'has-submenu' : 'no-submenu' ,
             item.is_expanded ? 'menu-item--expanded',
             item.is_collapsed ? 'menu-item--collapsed',
             item.in_active_trail ? 'menu-item--active-trail is-active',
           ]
         %}
       {% endif %}
-      <li{{ item.attributes.addClass(item_classes) }}>
-        {{ link(item.title, item.url) }}
+      <li{{ item.attributes.addClass(item_classes) }} >
+        {{ link(item.title, item.url, { 'class': ['menu-link'] }) }}
         {% if item.below %}
             {{ menus.menu_links(item.below, attributes, menu_level + 1, top_bar) }}
         {% endif %}
