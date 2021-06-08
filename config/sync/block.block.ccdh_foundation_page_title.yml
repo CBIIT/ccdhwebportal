@@ -22,6 +22,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "front\r\n/node/14\r\n/node/19"
+    pages: '<front>'
     negate: true
     context_mapping: {  }
