@@ -22,8 +22,14 @@
  *
  * Adds additional classes.
  */
-// function ccdh_foundation_preprocess_html(&$variables) {
-// }
+function ccdh_foundation_preprocess_html(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+      if ($node->id() == 14) {
+          $variables['attributes']['class'][] = 'frontpage';
+      }
+  }
+}
 
 /**
  * Implements template_preprocess_node.
