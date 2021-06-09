@@ -874,6 +874,10 @@ BEGIN: HOMEPAGE
     max-width: 80%;
     margin-bottom: 24px;
   }
+  .homeIntro .ccdh-components .ccdh-component,
+  .homeIntro .ccdh-components .ccdh-component img {
+    z-index: 9;
+  }
   .homeIntro .ccdh-components .ccdh-component:first-child img {
     margin-left: 100px;
   }
@@ -911,30 +915,36 @@ BEGIN: HOMEPAGE
 .project-spotlight {
   overflow-x:visible;
   width: 100%;
-  z-index: 0;
+  z-index: -1;
 }
-.project-spotlight .spotlight-image {
-  /* position:relative; */
+/* .project-spotlight .spotlight-image { */
+.project-spotlight {
+  position:relative;
   background: url(/themes/ccdh_foundation/images/mid-page-bkgd-blue-tint.jpg);
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-left: -20%;
-  margin-right: -20%;
+  z-index: -1;
   overflow-x: visible;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 .project-spotlight .feature-block {
-  /* background-color: #679abd; */
+  position:relative;
   background-image: linear-gradient(to right,#6C4DBF,#5062C4,#2E88CA);
   background-color: #6C4DBF;
   border: 4px white solid;
   height: 200px;
   width: 350px;
   padding: 20px 12px 20px 12px;
-  margin-right: 20%;
   margin-top: 180px;
   text-align: center;
   vertical-align: middle;
+  /* right: 30%; */
+  /* margin-right: -30vw; */
 }
 .project-spotlight .feature-block a {
   font-family: "Nunito Sans",sans-serif;
@@ -979,12 +989,18 @@ BEGIN: HOMEPAGE
     line-height: 40px;
   }
 }
-@media all and (min-width: 1650px) {
+/* @media all and (min-width: 1650px) {
   .project-spotlight .spotlight-image {
     margin-left: -30%;
     margin-right: -30%;
   }
 }
+@media all and (min-width: 1900px) {
+  .project-spotlight .spotlight-image {
+    margin-left: -50%;
+    margin-right: -50%;
+  }
+} */
 
 /*
 END: HOMEPAGE
