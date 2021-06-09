@@ -16,25 +16,7 @@
   height: 40px;
 }
 
-/* Small only */
-@media all and (max-width: 767px) {
-  .grid-container {
-    padding-right: 0.625rem;
-    padding-left: 0.625rem;
-    max-width: 75rem;
-    margin: 0 auto;
-  }
-}
 
-/* Medium and up */
-@media all and (min-width: 768px) {
-  .grid-container {
-    padding-right: 0.9375rem;
-    padding-left: 0.9375rem;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-}
 
 /*
 BEGIN: TOPBAR

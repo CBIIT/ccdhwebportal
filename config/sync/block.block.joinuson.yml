@@ -1,22 +1,22 @@
-uuid: f829696d-6402-4c1e-acea-64ed635f042d
+uuid: 93f2dee4-90b6-4845-9547-ce4472361580
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:afe2d83f-392f-4fba-8c26-7c08a87bc7d1'
+    - 'block_content:basic:3e4cbf62-93b5-4f08-b611-9bf2de5a4835'
   module:
     - block_content
     - system
   theme:
     - ccdh_foundation
-id: joinusonslack
+id: joinuson
 theme: ccdh_foundation
 region: sidebar_second
 weight: 0
 provider: null
-plugin: 'block_content:afe2d83f-392f-4fba-8c26-7c08a87bc7d1'
+plugin: 'block_content:3e4cbf62-93b5-4f08-b611-9bf2de5a4835'
 settings:
-  id: 'block_content:afe2d83f-392f-4fba-8c26-7c08a87bc7d1'
+  id: 'block_content:3e4cbf62-93b5-4f08-b611-9bf2de5a4835'
   label: 'Join Us on'
   provider: block_content
   label_display: visible
