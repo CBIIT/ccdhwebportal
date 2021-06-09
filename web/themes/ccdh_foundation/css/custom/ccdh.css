@@ -63,6 +63,56 @@ START: BASE STYLES
 END: BASE STYLES
 */
 
+/*
+START: BASE RESPONSIVE
+*/
+.row {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 20px;
+}
+
+@media all and (max-width: 767px) {
+  .row .columns {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+  }
+}
+@media all and (min-width: 768px) {
+  .row .columns {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+/* Small only */
+@media all and (max-width: 767px) {
+  .grid-container {
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    max-width: 75rem;
+    margin: 0 auto;
+  }
+}
+
+/* Medium and up */
+@media all and (min-width: 768px) {
+  .grid-container {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/*
+END: BASE RESPONSIVE
+*/
+
 
 /*
 START: HEADER
@@ -479,23 +529,19 @@ ul.agencies,
 END: FOOTER
 */
 
+
 /*
 START: CONTENT - styling for db-stored content
 */
-
+.block-page-title-block h1 {
+  line-height:110%;
+}
 
 
 /*
 END: CONTENT
 */
 
-
-.row {
-  max-width: 75rem;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 20px;
-}
 
 .card-profile-stats {
   border: 1px solid #cacaca;
@@ -948,15 +994,32 @@ END: HOMEPAGE
 BEGIN: JOIN-US
 */
 
-#block-joinusonslack {
+/* #block-joinusonslack {
   border: 2px solid #1074B9;
   padding: 10px 10px 10px 10px;
   text-align: left;
-}
+} */
 .block--join-us img{
   padding-top:6px;
 }
 
+@media all and (max-width: 767px) {
+  #block-joinuson {
+    max-width: 40%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  #block-joinuson {
+    /* max-width: 50%; */
+    /* margin: 0 auto; */
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+}
 /*
 END: JOIN-US
 */
