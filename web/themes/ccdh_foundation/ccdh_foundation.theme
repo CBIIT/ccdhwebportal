@@ -25,9 +25,9 @@
 function ccdh_foundation_preprocess_html(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof \Drupal\node\NodeInterface) {
-      if ($node->id() == 14) {
-          $variables['attributes']['class'][] = 'frontpage';
-      }
+    if ($node->id() == 14) {
+        $variables['attributes']['class'][] = 'frontpage';
+    }
   }
 }
 
