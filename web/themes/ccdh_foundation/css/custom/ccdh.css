@@ -1072,6 +1072,10 @@ BEGIN: VIEWS
   margin-bottom: 20px;
 }
 
+.faq-row .field-content {
+  margin-bottom: 20px;
+}
+
 /*
 END: VIEWS
 */
