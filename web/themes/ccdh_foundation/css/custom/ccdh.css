@@ -21,7 +21,7 @@ START: BASE STYLES
  h1,
  .as-h1 {
    font-size: 48px;
-   line-height: 39px;
+   line-height: 46px;
    font-weight: 600;
    letter-spacing: -1px;
  }
@@ -30,15 +30,16 @@ START: BASE STYLES
  .as-h2 {
    color: #0a0a0a;
    font-size: 33px;
-   line-height: 27.5px;
+   line-height: 31px;
    font-weight: 800;
-   letter-spacing: -1.5px;
+   letter-spacing: -1px;
  }
 
  h3,
  .as-h3 {
    color: #0772b6;
    font-size: 20px;
+   line-height: 28px;
    font-weight: 600;
    text-transform: uppercase;
    letter-spacing: 1.5px;
@@ -48,6 +49,7 @@ START: BASE STYLES
  .as-h4 {
    color: #0a0a0a;
    font-size: 16px;
+   line-height: 14px;
    font-weight: 700;
  }
 
@@ -55,6 +57,7 @@ START: BASE STYLES
  .as-h5 {
    font-family: "Inter", sans-serif;
    font-size: 16px;
+   line-height: 14px;
    font-weight: 700;
    letter-spacing: 1.5px;
  }
@@ -66,15 +69,18 @@ END: BASE STYLES
 /*
 START: BASE RESPONSIVE
 */
-.row {
+/* .row {
   max-width: 75rem;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 20px;
-}
+  /* padding-top: 20px; */
+} */
+/* .row main, .row aside  {
+  padding-top: 50px;
+} */
 
 @media all and (max-width: 767px) {
-  .row .columns {
+  .row.row-main .columns {
     -ms-flex-direction: column;
     flex-direction: column;
     flex-wrap: wrap;
@@ -82,11 +88,7 @@ START: BASE RESPONSIVE
   }
 }
 @media all and (min-width: 768px) {
-  .row .columns {
-    -ms-flex-direction: row;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
+
 }
 
 /* Small only */
@@ -97,6 +99,15 @@ START: BASE RESPONSIVE
     max-width: 75rem;
     margin: 0 auto;
   }
+  .row.row-main .columns {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+  }
+  .row-main {
+    padding: 30px 15px 0 15px;
+  }
 }
 
 /* Medium and up */
@@ -106,6 +117,14 @@ START: BASE RESPONSIVE
     padding-left: 0.9375rem;
     max-width: 100%;
     margin: 0 auto;
+  }
+  .row.row-main .columns {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .row-main {
+    padding: 50px 80px 0 80px;
   }
 }
 
@@ -240,12 +259,18 @@ footer {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   padding: 50px 0 42px 0;
+  margin-top: 50px;
+}
+
+.frontpage footer {
+  margin-top: 0;
 }
 
 footer .footer-internal-links .row {
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  /* padding-top: 0; */
 }
 
 footer .footer-internal-links .column {
@@ -533,6 +558,9 @@ END: FOOTER
 /*
 START: CONTENT - styling for db-stored content
 */
+.block-page-title-block {
+  margin-bottom: 20px;
+}
 .block-page-title-block h1 {
   line-height:110%;
 }
@@ -626,9 +654,9 @@ END: CONTENT
   }
 }
 
-.block-ccdh-foundation-content {
-  padding: 30px 0px 0px 0px;
-}
+/* .block-ccdh-foundation-content {
+  padding: 10px 0px 0px 0px;
+} */
 
 #contactCard ul {
   list-style: none;
@@ -959,7 +987,7 @@ BEGIN: HOMEPAGE
 
 @media all and (max-width: 767px) {
   .project-spotlight .spotlight-image {
-    height: 400px;
+    height: 300px;
     margin-top: 20px;
   }
   .project-spotlight .feature-block {
@@ -981,7 +1009,7 @@ BEGIN: HOMEPAGE
   .project-spotlight .feature-block {
     right: 0;
     float: right;
-    margin-right: 21%;
+    margin-right: 10vw;
     margin-top: 180px;
   }
   .project-spotlight .feature-block p {
@@ -1010,18 +1038,14 @@ END: HOMEPAGE
 BEGIN: JOIN-US
 */
 
-/* #block-joinusonslack {
-  border: 2px solid #1074B9;
-  padding: 10px 10px 10px 10px;
-  text-align: left;
-} */
+
 .block--join-us img{
   padding-top:6px;
 }
 
 @media all and (max-width: 767px) {
   #block-joinuson {
-    max-width: 40%;
+    max-width: 60%;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -1041,16 +1065,47 @@ END: JOIN-US
 */
 
 /*
-BEGIN: GLOSSARY
+BEGIN: VIEWS
 */
 
 .section-glossary .views-row h2 .field-item {
   font-size: 90%;
 }
-.section-glossary .views-row {
+.section-glossary .views-element-container h3,
+.section-glossary .views-element-container .pager {
+  display:none;
+}
+.section-glossary .views-element-container .glossary-index {
+  margin: 20px 0 30px 0;
+}
+.section-glossary .views-element-container .glossary-index span {
+  text-align: center;
+}
+.section-glossary .views-element-container .glossary-index span a {
+  display: inline-block;
+  border: .5px solid #77b1da;
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.section-glossary .views-element-container .glossary-index span a:hover {
+  background-color: rgb(3, 38, 63);
+  color: #ffffff;
+}
+.section-glossary .views-view-grid {
+  padding-top: 30px;
+}
+.views-element-container .views-row {
+  margin-bottom: 20px;
+}
+
+.faq-row .field-content {
   margin-bottom: 20px;
 }
 
 /*
-END: GLOSSARY
+END: VIEWS
 */
