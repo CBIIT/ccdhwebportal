@@ -37,3 +37,15 @@ function ccdh_page_top(array &$page_top) {
   // kint($page_top);
 }
 
+/**
+ * Implements hook_views_pre_render.
+ *
+ * @param \Drupal\views\ViewExecutable $view
+ * @return void
+ */
+function ccdh_views_pre_render(\Drupal\views\ViewExecutable $view) {
+  // Remove pager from glossary view
+  if ($view->id() == "glossary") {
+    $view->pager == null;
+  }
+}

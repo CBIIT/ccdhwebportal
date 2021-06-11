@@ -558,6 +558,9 @@ END: FOOTER
 /*
 START: CONTENT - styling for db-stored content
 */
+.block-page-title-block {
+  margin-bottom: 20px;
+}
 .block-page-title-block h1 {
   line-height:110%;
 }
@@ -651,9 +654,9 @@ END: CONTENT
   }
 }
 
-.block-ccdh-foundation-content {
-  padding: 30px 0px 0px 0px;
-}
+/* .block-ccdh-foundation-content {
+  padding: 10px 0px 0px 0px;
+} */
 
 #contactCard ul {
   list-style: none;
@@ -1067,6 +1070,33 @@ BEGIN: VIEWS
 
 .section-glossary .views-row h2 .field-item {
   font-size: 90%;
+}
+.section-glossary .views-element-container h3,
+.section-glossary .views-element-container .pager {
+  display:none;
+}
+.section-glossary .views-element-container .glossary-index {
+  margin: 20px 0 30px 0;
+}
+.section-glossary .views-element-container .glossary-index span {
+  text-align: center;
+}
+.section-glossary .views-element-container .glossary-index span a {
+  display: inline-block;
+  border: .5px solid #77b1da;
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.section-glossary .views-element-container .glossary-index span a:hover {
+  background-color: rgb(3, 38, 63);
+  color: #ffffff;
+}
+.section-glossary .views-view-grid {
+  padding-top: 30px;
 }
 .views-element-container .views-row {
   margin-bottom: 20px;
