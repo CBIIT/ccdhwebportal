@@ -44,8 +44,12 @@ function ccdh_foundation_preprocess_html(&$variables) {
  *
  * Add convenience variables and template suggestions.
  */
-// function ccdh_foundation_preprocess_page(&$variables) {
-// }
+function ccdh_foundation_preprocess_page(&$variables) {
+  $version_text = file_get_contents(DRUPAL_ROOT . "/release.version");
+  $version_array = explode('=', $version_text);
+  // kint($version_array);
+  $variables['release_version'] = $version_array[1] ?? '';
+}
 
 /**
  * Implements template_preprocess_views_view().

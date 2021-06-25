@@ -9,6 +9,9 @@
 #/web/libraries/contrib/
 /web/tmp/
 
+# ignore the release.version file
+/web/release.version
+
 # Ignore  NPM Packages
 /node_modules/
 
