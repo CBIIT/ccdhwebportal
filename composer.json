@@ -25,7 +25,7 @@
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "8.9.*",
-        "drupal/ctools": "^3.5",
+        "drupal/ctools": "^3.7",
         "drupal/devel": "^4.1",
         "drupal/eu_cookie_compliance": "^1.14",
         "drupal/gdoc_field": "^1.1",
