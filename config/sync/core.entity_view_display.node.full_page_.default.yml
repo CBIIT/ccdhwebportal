@@ -20,6 +20,7 @@ third_party_settings:
         layout_id: layout_onecol
         layout_settings:
           label: ''
+          context_mapping: {  }
         components:
           ae27c4f3-12e6-443f-8d98-c22d61a8d2ea:
             uuid: ae27c4f3-12e6-443f-8d98-c22d61a8d2ea
