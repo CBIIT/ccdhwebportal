@@ -20,15 +20,15 @@
         "drupal/admin_toolbar": "^2.3",
         "drupal/admin_toolbar_tools": "^2.3",
         "drupal/back_to_top": "^1.1",
-        "drupal/backup_migrate": "^4.1",
+        "drupal/backup_migrate": "^5.0",
         "drupal/config_split": "^1.7",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-project-message": "^8.8",
-        "drupal/core-recommended": "8.9.*",
-        "drupal/ctools": "^3.5",
+        "drupal/core": "9.2.0",
+        "drupal/core-composer-scaffold": "^9.2.0",
+        "drupal/core-project-message": "^9.2.0",
+        "drupal/core-recommended": "^9.2.0",
+        "drupal/ctools": "^3.7",
         "drupal/devel": "^4.1",
         "drupal/eu_cookie_compliance": "^1.14",
-        "drupal/gdoc_field": "^1.1",
         "drupal/google_analytics": "^2.5",
         "drupal/google_tag": "^1.4",
         "drupal/ldap_auth": "^1.23",
@@ -110,10 +110,10 @@
                 "      composer remove drupal/core-project-message"
             ]
         },
-        "enable-patching": true,
-        "patches": {
-            "drupal/core": {
-                "Modernizr Upgrade 3.11.7": "patches/ModernizrUpgrade.patch"
+        "enable-patching": false,
+        "__patches__": {
+            "__drupal/core__": {
+                "Modernizr Upgrade 3.11.7": "_patches/ModernizrUpgrade.patch"
             }
         }
     },

@@ -533,6 +533,12 @@ ul.agencies,
   font-size: 16px;
 }
 
+.release-version {
+  position: absolute;
+  font-size: 12px;
+  right: 16px;
+  bottom: 12px;
+}
 
 /* .follow-us {
   text-align: center;
@@ -1109,3 +1115,4 @@ BEGIN: VIEWS
 /*
 END: VIEWS
 */
+

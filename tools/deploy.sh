@@ -161,5 +161,9 @@ else
 fi
 ${DDEV}drush -y --uri="$URI" simple-sitemap:generate
 
+# Get the latest tag across all branches and create the version file
+echo "Create Version Tag"
+echo "VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)" > ./web/release.version
+
 # Done!
 echo "Site Deployed"
