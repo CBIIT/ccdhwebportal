@@ -6,8 +6,10 @@
 /web/modules/contrib/
 /web/profiles/contrib/
 /web/themes/contrib/
-#/web/libraries/contrib/
 /web/tmp/
+
+# don't commit, is deployed either by drupal or the deploy.sh script
+/web/robots.txt
 
 # ignore the release.version file
 /web/release.version

@@ -26,7 +26,6 @@ module:
   field_ui: 0
   file: 0
   filter: 0
-  gdoc_field: 0
   google_analytics: 0
   google_tag: 0
   help: 0
