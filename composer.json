@@ -19,7 +19,6 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^2.3",
         "drupal/admin_toolbar_tools": "^2.3",
-        "drupal/back_to_top": "^1.1",
         "drupal/backup_migrate": "^5.0",
         "drupal/config_split": "^1.7",
         "drupal/core": "9.2.0",
@@ -112,8 +111,8 @@
         },
         "enable-patching": false,
         "__patches__": {
-            "__drupal/core__": {
-                "Modernizr Upgrade 3.11.7": "_patches/ModernizrUpgrade.patch"
+            "drupal/back_to_top": {
+                "back_to_top-jquery": "patches/back_to_top-jquery.patch"
             }
         }
     },
