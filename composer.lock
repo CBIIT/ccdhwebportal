@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "688c8c71e44a4617e70c99b6384667f4",
+    "content-hash": "9f28e5c1a3cf786c3ca06d6a70a52b86",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8682,14 +8682,7 @@
             "time": "2021-04-09T00:54:41+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "drupal/core",
-            "version": "9.2.0.0",
-            "alias": "8.9.16",
-            "alias_normalized": "8.9.16.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/zurb_foundation": 15
