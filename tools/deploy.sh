@@ -89,6 +89,11 @@ else
   git pull origin $BRANCH
 fi
 
+# Temporarily adjust permissions before composer install
+echo "Temporarily adjust permissions for 'web/sites/default during deployment"
+chmod 777 ./web/sites/default
+find ./web/sites/default -name "*settings.php" -exec chmod 777 {} \;
+find ./web/sites/default -name "*services.yml" -exec chmod 777 {} \;
 
 # Update vendor sources
 ${DDEV}composer install
@@ -128,17 +133,21 @@ ${DDEV}drush -y updatedb
 echo "Turn OFF maintenance mode"
 ${DDEV}drush -y state:set system.maintenance_mode 0 --input-format=integer
 
-echo "Deploy robots.txt"
-if [ "$ENV_TIER"  == "production" ]; then
-  # production
-  cp -f ./robots/robots.txt ./web/robots.txt
-else
-  # all non-production tiers - Disallow crawls
+echo "Deploy custom robots.txt"
+if [ "$ENV_TIER"  != "production" ]; then
+  # all non-production tiers, use custom robots.txt to Disallow crawls
+  # production - auto deploys with composer/drupal from assets/scaffold/files/robots.txt
   cp -f ./robots/robots-preprod.txt ./web/robots.txt
 fi
 
-echo "Adjust permissions for group write to files directory"
+# Revert permissions after deployment
+echo "Revert permissions after deployment"
+chmod 755 web/sites/default
+find ./web/sites/default -name "*settings.php" -exec chmod 644 {} \;
+find ./web/sites/default -name "*services.yml" -exec chmod 644 {} \;
+
 # allow group write to directories
+echo "Adjust permissions for group write to files directory"
 chmod 775 ./web/sites/default/files
 chmod 775 ./web/sites/default/files/google_tag
 #chmod 664 ./web/sites/default/files/gooogle_tag/ccdh_web_portal/*.js
