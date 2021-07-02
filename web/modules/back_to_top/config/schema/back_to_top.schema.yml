@@ -1,0 +1,9 @@
+# Schema for the configuration files of the back to top module.
+
+back_to_top.settings:
+  type: config_object
+  label: 'Back to top settings'
+  mapping:
+    back_to_top_button_text:
+      type: label
+      label: 'Button text'
