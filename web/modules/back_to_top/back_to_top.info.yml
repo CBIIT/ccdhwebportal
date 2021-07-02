@@ -6,6 +6,6 @@ configure: back_to_top_settings
 package: "User interface"
 type: module
 
-dependencies:
-  - jquery_ui:jquery_ui
-  - jquery_ui_effects:jquery_ui_effects
+# dependencies:
+#   - jquery_ui:jquery_ui
+#   - jquery_ui_effects:jquery_ui_effects
