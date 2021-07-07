@@ -19,6 +19,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^2.3",
         "drupal/admin_toolbar_tools": "^2.3",
+        "drupal/back_to_top": "^1.1",
         "drupal/backup_migrate": "^5.0",
         "drupal/config_split": "^1.7",
         "drupal/core": "9.2.0",
@@ -109,8 +110,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         },
-        "enable-patching": false,
-        "__patches__": {
+        "enable-patching": true,
+        "patches": {
             "drupal/back_to_top": {
                 "back_to_top-jquery": "patches/back_to_top-jquery.patch"
             }
