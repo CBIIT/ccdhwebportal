@@ -60,7 +60,7 @@ if [ "$ENV_TIER"  == "ddevlocal" ]; then
   cp -f ./env/.env.${ENV_TIER} ./.ddev/homeadditions/.env
   DDEV='ddev '
   DB_EXPORT_DIR="./database/export"
-
+  DBFILE=`ls $DB_EXPORT_DIR/ccdh*sql | grep -E  'ccdh.(\d{14})\.(?:my)?sql' | sort -k1.6,1.14 | head -1`
 elif [ "$ENV_TIER"  == "sandbox" ]; then
 
   # Git pull, keep local changes in the even there are uncommitted image files
@@ -87,6 +87,8 @@ else
   cd $PROJ_DIR
   git reset --hard origin/$BRANCH
   git pull origin $BRANCH
+
+  DBFILE=`ls $DB_EXPORT_DIR/*.sql | sort -r | head -1`
 fi
 
 # Temporarily adjust permissions before composer install
@@ -103,17 +105,15 @@ ${DDEV}composer install
 # echo "Turn ON maintenance mode"
 # ${DDEV}drush state:set system.maintenance_mode 1 --input-format=integer --quiet
 
-if [ ! -z "$DB_EXPORT_DIR" ]; then
+if [ ! -z "$DB_EXPORT_DIR" ] && [ ! -z "$DBFILE" ]; then
   # Load database
   # simple sort, we need something more sophisticated now
   # DBFILE=`ls $DB_EXPORT_DIR/*.sql | sort -r | head -1`
-  DBFILE=`ls $DB_EXPORT_DIR/ccdh*sql | grep -E  'ccdh.(\d{14})\.(?:my)?sql' | sort -k1.6,1.14 | head -1`
-  if [ ! -z "$DBFILE" ]; then
-    echo "Loading latest database: $DBFILE"
-    ${DDEV}drush -y sql-cli < $DBFILE
-  else
-    echo "Unable to find database to load."
-  fi
+  # DBFILE=`ls $DB_EXPORT_DIR/ccdh*sql | grep -E  'ccdh.(\d{14})\.(?:my)?sql' | sort -k1.6,1.14 | head -1`
+  echo "Loading latest database: $DBFILE"
+  ${DDEV}drush -y sql-cli < $DBFILE
+else
+  echo "No database to load."
 fi
 
 # Import config settings
