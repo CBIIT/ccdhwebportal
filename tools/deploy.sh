@@ -96,6 +96,7 @@ find ./web/sites/default -name "*settings.php" -exec chmod 777 {} \;
 find ./web/sites/default -name "*services.yml" -exec chmod 777 {} \;
 
 # Update vendor sources
+echo "composer install"
 ${DDEV}composer install
 
 # Turn ON maint mode -- don't do this, causing more problems than it's worth
@@ -107,7 +108,7 @@ if [ ! -z "$DB_EXPORT_DIR" ]; then
   # simple sort, we need something more sophisticated now
   # DBFILE=`ls $DB_EXPORT_DIR/*.sql | sort -r | head -1`
   DBFILE=`ls $DB_EXPORT_DIR/ccdh*sql | grep -E  'ccdh.(\d{14})\.(?:my)?sql' | sort -k1.6,1.14 | head -1`
-  if [ ! -z "DBFILE" ]; then
+  if [ ! -z "$DBFILE" ]; then
     echo "Loading latest database: $DBFILE"
     ${DDEV}drush -y sql-cli < $DBFILE
   else
