@@ -104,7 +104,9 @@ ${DDEV}composer install
 
 if [ ! -z "$DB_EXPORT_DIR" ]; then
   # Load database
-  DBFILE=`ls $DB_EXPORT_DIR/*.sql | sort -r | head -1`
+  # simple sort, we need something more sophisticated now
+  # DBFILE=`ls $DB_EXPORT_DIR/*.sql | sort -r | head -1`
+  DBFILE=`ls $DB_EXPORT_DIR/ccdh*sql | grep -E  'ccdh.(\d{14})\.(?:my)?sql' | sort -k1.6,1.14 | head -1`
   if [ ! -z "DBFILE" ]; then
     echo "Loading latest database: $DBFILE"
     ${DDEV}drush -y sql-cli < $DBFILE
