@@ -181,7 +181,7 @@ if [ "$ENV_TIER"  == "production" ] || [ "$ENV_TIER"  == "stage" ] || [ "$ENV_TI
   echo "VERSION=$(git describe --tags --abbrev=0)" > ./web/release.version
 else
   # Get the latest tag across all branches and create the version file
-  echo "VERSION=$(git describe --tags `git rev-list --tags --max-count=1`)" > ./web/release.version
+  echo "VERSION=$(git describe --abbrev=0)" > ./web/release.version
 fi
 
 # Done!
