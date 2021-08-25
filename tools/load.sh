@@ -23,7 +23,8 @@ DB_EXPORT_DIR="./database/export"
 
 if [ -e "$DB_EXPORT_DIR" ]; then
   # Load database
-  DBFILE=`ls $DB_EXPORT_DIR/ccdh*sql | grep -E  'ccdh.(\d{14})\.(?:my)?sql' | sort -k1.6,1.14 | head -1`
+  # DBFILE=`ls $DB_EXPORT_DIR/ccdh*sql | grep -E  'ccdh.(\d{14})\.(?:my)?sql' | sort -k1.6,1.14 | head -1`
+  DBFILE=`ls -t $DB_EXPORT_DIR/ccdh*sql | head -n1`
   if [ ! -z "DBFILE" ]; then
     echo "Loading latest database: $DBFILE"
     ${DDEV}drush -y sql-cli < $DBFILE

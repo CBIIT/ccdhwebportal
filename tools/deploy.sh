@@ -60,7 +60,8 @@ if [ "$ENV_TIER"  == "ddevlocal" ]; then
   cp -f ./env/.env.${ENV_TIER} ./.ddev/homeadditions/.env
   DDEV='ddev '
   DB_EXPORT_DIR="./database/export"
-  DBFILE=`ls $DB_EXPORT_DIR/ccdh*sql | grep -E  'ccdh.(\d{14})\.(?:my)?sql' | sort -k1.6,1.14 | head -1`
+  # DBFILE=`ls $DB_EXPORT_DIR/ccdh*sql | grep -E  'ccdh.(\d{14})\.(?:my)?sql' | sort -k1.6,1.14 | head -1`
+  DBFILE=`ls -t $DB_EXPORT_DIR/ccdh*sql | head -n1`
 elif [ "$ENV_TIER"  == "sandbox" ]; then
 
   # Git pull, keep local changes in the even there are uncommitted image files
@@ -88,7 +89,7 @@ else
   git reset --hard origin/$BRANCH
   git pull origin $BRANCH
 
-  DBFILE=`ls $DB_EXPORT_DIR/*.sql | sort -r | head -1`
+  DBFILE=`ls -t $DB_EXPORT_DIR/*.sql | head -n1`
 fi
 
 # Temporarily adjust permissions before composer install
