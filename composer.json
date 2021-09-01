@@ -114,6 +114,9 @@
         "patches": {
             "drupal/back_to_top": {
                 "back_to_top-jquery": "patches/back_to_top-jquery.patch"
+            },
+            "drupal/zurb_foundation": {
+                "zurb_foundation.js.map": "patches/zurb-foundation-foundation-js-map.patch"
             }
         }
     },
