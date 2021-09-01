@@ -10,6 +10,7 @@ module: {  }
 theme: {  }
 blacklist:
   - backup_migrate.backup_migrate_schedule.daily_schedule
+  - google_analytics.settings
   - google_tag.container.ccdh_web_portal
 graylist: {  }
 graylist_dependents: true
