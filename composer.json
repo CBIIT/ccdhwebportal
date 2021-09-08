@@ -117,6 +117,9 @@
             },
             "drupal/zurb_foundation": {
                 "zurb_foundation.js.map": "patches/zurb-foundation-foundation-js-map.patch"
+            },
+            "drupal/google_analytics": {
+                "google_analytics-requirements": "patches/google_analytics-4.x-requirements.patch"
             }
         }
     },
