@@ -1,0 +1,13 @@
+diff --git a/google_analytics.install b/google_analytics.install
+index 67ce13f..6aba376 100644
+--- a/google_analytics.install
++++ b/google_analytics.install
+@@ -42,7 +42,7 @@ function google_analytics_requirements($phase) {
+     $config = \Drupal::config('google_analytics.settings');
+ 
+     // Raise warning if Google user account has not been set yet.
+-    if (!preg_match('/^UA-\d+-\d+$/', $config->get('account'))) {
++    if (!preg_match('/^(UA-\d+-\d+|(?:G|AW|DC)-[A-Za-z0-9]+)?$/', $config->get('account'))) {
+       $requirements['google_analytics_account'] = [
+         'title' => t('Google Analytics module'),
+         'description' => t('Google Analytics module has not been configured yet. Please configure its settings from the <a href=":url">Google Analytics settings page</a>.', [':url' => Url::fromRoute('google_analytics.admin_settings_form')->toString()]),
