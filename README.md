@@ -1,9 +1,9 @@
 # CCDH Web Portal
-### (ccdhwebportal)
+### (ccdhwebportal) updated 10.06.2021
 
 ### Deploy the Site
 1. Git clone/pull this repo
-2. If deploying locally, have DDEV-Local running a [Drupal 8 project](https://ddev.readthedocs.io/en/stable/users/cli-usage/#drupal-8-quickstart)
+2. If deploying locally, have DDEV-Local running a [Drupal 9 project](https://ddev.readthedocs.io/en/stable/users/cli-usage/#drupal-9-quickstart)
 2. Git clone/pull the repo for the database backup files
 3. Place the preferred *.sql backup file in ccdhwebportal/database/export
 4. ```cd ccdhwebportal```
