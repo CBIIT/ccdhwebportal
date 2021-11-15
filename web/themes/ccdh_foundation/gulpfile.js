@@ -21,17 +21,17 @@
       gulp = require('gulp'),
       del = require('del'),
       noop = require('gulp-noop'),
-      newer = require('gulp-newer'),
+      // newer = require('gulp-newer'),
       size = require('gulp-size'),
 
-      // @TODO finish browsersync work
+      // @TODO finish browsersync npm work
       // browsersync = require('browser-sync').create(),
 
       // image modules
-      imagemin = require('gulp-imagemin'),
+      // imagemin = require('gulpf-imagemin'),
 
       // SCSS modules
-      sass = require('gulp-sass'),
+      sass = require('gulp-sass')(require('sass')),
       postcss = require('gulp-postcss'),
       sassLint = require('gulp-sass-lint'),
       sourcemaps = devBuild ? require('gulp-sourcemaps') : null,
@@ -52,7 +52,7 @@
           buildFolder: dir.buildFolder,
           sassOpts: {
               sourceMap: devBuild,
-              outputStyle: 'nested',
+              outputStyle: 'expanded',
               imagePath: '/images/', // @TODO redundant and needs to be removed.
               includePaths: [ // REQUIRED FOR ZURB
                   'node_modules/foundation-sites/scss',
@@ -90,17 +90,17 @@
 
   /**************** images task ****************/
 
-  function imagesTask() {
+  // function imagesTask() {
 
-      return gulp.src(imgConfig.src)
-          .pipe(newer(imgConfig.build))
-          .pipe(imagemin(imgConfig.minOpts))
-          .pipe(size({showFiles: true}))
-          .pipe(gulp.dest(imgConfig.build));
+  //     return gulp.src(imgConfig.src)
+  //         .pipe(newer(imgConfig.build))
+  //         // .pipe(imagemin(imgConfig.minOpts))
+  //         .pipe(size({showFiles: true}))
+  //         .pipe(gulp.dest(imgConfig.build));
 
-  }
+  // }
 
-  exports.images = imagesTask;
+  // exports.images = imagesTask;
 
   /**************** CSS ****************/
 
@@ -123,7 +123,6 @@
   if (!devBuild) {
 
       cssConfig.postCSS.push(
-          // require('usedcss')({html: ['index.html']}),
           require('cssnano')
       );
 
@@ -132,7 +131,6 @@
   // LINT WORK
   function lintTask(done) {
       return gulp.src(cssConfig.scssFolder)
-          // use gulp-cached to check only modified files.
           .pipe(sassLint())
           .pipe(sassLint.format())
           .pipe(sassLint.failOnError());
