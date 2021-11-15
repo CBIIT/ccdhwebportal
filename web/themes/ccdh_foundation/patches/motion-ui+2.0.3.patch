@@ -1,0 +1,19 @@
+diff --git a/node_modules/motion-ui/src/util/_unit.scss b/node_modules/motion-ui/src/util/_unit.scss
+index fd39166..e569371 100644
+--- a/node_modules/motion-ui/src/util/_unit.scss
++++ b/node_modules/motion-ui/src/util/_unit.scss
+@@ -2,6 +2,13 @@
+ /// @param {Number} $num - Number to strip unit from.
+ /// @return {Number} The same number, sans unit.
+ /// @access private
++
++// COREHACK
++@use 'sass:math';
++
+ @function strip-unit($num) {
+-  @return $num / ($num * 0 + 1);
++
++  // COREHACK
++  // @return $num / ($num * 0 + 1);
++  @return math.div($num, $num * 0 + 1);
+ }

@@ -37,7 +37,7 @@
         "drupal/module_filter": "^3.2",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.6",
-        "drupal/simple_sitemap": "^3.10",
+        "drupal/simple_sitemap": "^4.0",
         "drupal/token": "^1.9",
         "drupal/zurb_foundation": "^6.0@alpha",
         "drush/drush": "^10.4.1",
