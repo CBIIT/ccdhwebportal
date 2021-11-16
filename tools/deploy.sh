@@ -175,14 +175,19 @@ fi
 ${DDEV}drush -y --uri="$URI" simple-sitemap:generate
 
 # Create Version Tag
+# git v1.8.3 is installed on the pre-prod + prod servers
+# this limits our ability to sort semantic version tags through git itself (feature not avail until v2.2+)
+# we need to fallback to linux sort for the task
 echo "Create Version Tag"
+EXCLUDE=""
 if [ "$ENV_TIER"  == "production" ] || [ "$ENV_TIER"  == "stage" ] || [ "$ENV_TIER"  == "qa" ]; then
-  # Get the latest tag from master branch
-  echo "VERSION=$(git describe --tags --abbrev=0)" > ./web/release.version
-else
-  # Get the latest tag across all branches and create the version file
-  echo "VERSION=$(git describe --abbrev=0)" > ./web/release.version
+  # Get the latest tag for stable release by excluding pre-release tags (dev/alpha/beta/rc)
+  # set the grep exclude flag
+  EXCLUDE="v"
 fi
+# for tiers: ddevlocal, sandbox, dev
+# get the latest pre-release tag including (dev/alpha/beta/rc)
+echo "VERSION=$(git tag | grep -E${EXCLUDE} 'dev|alpha|beta|rc' | sort -t "." -k1,1nr -k2,2nr -k3,3r | head -n 1)" > ./web/release.version
 
 # Done!
 echo "Site Deployed"
