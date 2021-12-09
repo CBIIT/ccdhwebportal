@@ -179,15 +179,16 @@ ${DDEV}drush -y --uri="$URI" simple-sitemap:generate
 # this limits our ability to sort semantic version tags through git itself (feature not avail until v2.2+)
 # we need to fallback to linux sort for the task
 echo "Create Version Tag"
-EXCLUDE=""
+# for tiers: ddevlocal, sandbox, dev (tags in format:  9.9.9-dev)
+LIST_PATTERN="*.*.*-*"
 if [ "$ENV_TIER"  == "production" ] || [ "$ENV_TIER"  == "stage" ] || [ "$ENV_TIER"  == "qa" ]; then
   # Get the latest tag for stable release by excluding pre-release tags (dev/alpha/beta/rc)
-  # set the grep exclude flag
-  EXCLUDE="v"
+  # (tags in format:  9.9.9)
+  LIST_PATTERN="*.*.[0-9]"
 fi
 # for tiers: ddevlocal, sandbox, dev
-# get the latest pre-release tag including (dev/alpha/beta/rc)
-echo "VERSION=$(git tag | grep -E${EXCLUDE} 'dev|alpha|beta|rc' | sort -t "." -k1,1nr -k2,2nr -k3,3r | head -n 1)" > ./web/release.version
+# include pre-release tags (dev/alpha/beta/rc)
+echo "VERSION=$(git tag --list '${LIST_PATTERN}' --sort=-v:refname | head -n 1)" > ./web/release.version
 
 # Done!
 echo "Site Deployed"
