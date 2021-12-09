@@ -188,7 +188,7 @@ if [ "$ENV_TIER"  == "production" ] || [ "$ENV_TIER"  == "stage" ] || [ "$ENV_TI
 fi
 # for tiers: ddevlocal, sandbox, dev
 # include pre-release tags (dev/alpha/beta/rc)
-echo "VERSION=$(git tag --list '${LIST_PATTERN}' --sort=-v:refname | head -n 1)" > ./web/release.version
+echo "VERSION=$(git tag --list ${LIST_PATTERN} --sort=-v:refname | head -n 1)" > ./web/release.version
 
 # Done!
 echo "Site Deployed"
