@@ -30,8 +30,8 @@ visibility:
     negate: true
     context_mapping: {  }
     pages: '<front>'
-  node_type:
-    id: node_type
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
