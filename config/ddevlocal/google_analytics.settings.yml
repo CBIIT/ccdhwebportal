@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: HD-kJquDfx3JureBUmIIt_ADNReD_jLvKg4fwKISoJs
 account: G-7M4EM35JTC
 premium: false
 domain_mode: 0
@@ -33,5 +35,3 @@ codesnippet:
 translation_set: false
 cache: false
 debug: false
-_core:
-  default_config_hash: HD-kJquDfx3JureBUmIIt_ADNReD_jLvKg4fwKISoJs

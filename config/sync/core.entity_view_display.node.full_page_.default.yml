@@ -13,8 +13,8 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: true
     enabled: true
+    allow_custom: true
     sections:
       -
         layout_id: layout_onecol
@@ -26,27 +26,27 @@ third_party_settings:
             uuid: ae27c4f3-12e6-443f-8d98-c22d61a8d2ea
             region: content
             configuration:
+              id: 'extra_field_block:node:full_page_:links'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'extra_field_block:node:full_page_:links'
-            additional: {  }
             weight: 0
+            additional: {  }
           30caa797-a305-4914-9f72-6caf4efb1b31:
             uuid: 30caa797-a305-4914-9f72-6caf4efb1b31
             region: content
             configuration:
+              id: 'field_block:node:full_page_:body'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:full_page_:body'
               formatter:
-                label: hidden
                 type: text_default
+                label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
         third_party_settings: {  }
 id: node.full_page_.default
 targetEntityType: node
@@ -54,16 +54,16 @@ bundle: full_page_
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 101
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 101
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   layout_builder__layout: true

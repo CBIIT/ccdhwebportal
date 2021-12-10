@@ -5,6 +5,7 @@ dependencies: {  }
 id: qa
 label: qa
 description: harmonization-qa.datacommons.cancer.gov
+weight: 0
 folder: ../config/qa
 module: {  }
 theme: {  }
@@ -15,4 +16,3 @@ blacklist:
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: false
-weight: 0

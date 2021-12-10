@@ -17,8 +17,8 @@ plugin: 'block_content:6c7d48b1-a998-44d4-8ede-e8b919d9ca0e'
 settings:
   id: 'block_content:6c7d48b1-a998-44d4-8ede-e8b919d9ca0e'
   label: 'Other Resources'
-  provider: block_content
   label_display: visible
+  provider: block_content
   status: true
   info: ''
   view_mode: full
