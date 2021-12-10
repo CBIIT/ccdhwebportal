@@ -19,23 +19,23 @@ plugin: 'block_content:4c367fb6-a0eb-4267-89a9-927298d2dfcd'
 settings:
   id: 'block_content:4c367fb6-a0eb-4267-89a9-927298d2dfcd'
   label: 'Contact Us'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
     negate: true
     context_mapping: {  }
+    pages: '<front>'
   node_type:
     id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
     bundles:
       article: article
       faq: faq
       page: page
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'

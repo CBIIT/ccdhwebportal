@@ -18,14 +18,14 @@ plugin: 'block_content:3e4cbf62-93b5-4f08-b611-9bf2de5a4835'
 settings:
   id: 'block_content:3e4cbf62-93b5-4f08-b611-9bf2de5a4835'
   label: 'Join Us on'
-  provider: block_content
   label_display: visible
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: "/concierge\r\n/faq"
     negate: false
     context_mapping: {  }
+    pages: "/concierge\r\n/faq"

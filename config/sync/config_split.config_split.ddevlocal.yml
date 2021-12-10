@@ -5,6 +5,7 @@ dependencies: {  }
 id: ddevlocal
 label: ddevlocal
 description: ccdhwebportal.ddev.site
+weight: 0
 folder: ../config/ddevlocal
 module:
   devel: 0
@@ -16,4 +17,3 @@ blacklist:
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: false
-weight: 0

@@ -5,6 +5,7 @@ dependencies: {  }
 id: sandbox
 label: sandbox
 description: ccdhportaldev.pedscommons.org
+weight: 0
 folder: ../config/sandbox
 module:
   devel: 0
@@ -16,4 +17,3 @@ blacklist:
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: false
-weight: 0
